@@ -59,7 +59,7 @@ portfolios and high/low return profile portfolios.
 Example
 ========
 
-In the directory example, there is a simple express configuration.
+In the examples directory there is a simple express configuration.
 
 Installation
 ============

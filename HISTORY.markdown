@@ -1,3 +1,8 @@
+1.1.0 / 2011-10-02
+==================
+
+* R script of the portfolio optimization is provided server-side.
+
 1.0.1 / 2011-10-01
 ==================
 

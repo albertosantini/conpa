@@ -104,6 +104,8 @@ The module adds the following routes to the express instance:
 
 - /ConPA/getOptimalPortfolio
 
+- /ConPA/getScriptOptimalPortfolio
+
 - /ConPA/getKeyStatistics
 
 - /ConPA/getImpliedVolatility
@@ -134,7 +136,7 @@ Methods
 configure(app, express, config)
 ---------
 
-It creates an optimal portfolio. If *config* is defined, the method call a 
+It creates an optimal portfolio. If *config* is defined, the method call a
 Rserve instance, otherwise a native implementation is used.
 
 - *app* an instance of the express.HTTPServer, created with createServer().

@@ -1,3 +1,8 @@
+1.1.3 / 2011-11-14
+==================
+
+* Fixed get optimal portfolio when timeout condition is raised.
+
 1.1.2 / 2011-11-13
 ==================
 

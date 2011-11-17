@@ -1,7 +1,7 @@
 {
     "name" : "conpa",
     "description" : "Asset allocation application",
-    "version" : "1.1.4",
+    "version" : "1.1.5",
     "main" : "index",
     "repository" : "http://github.com/albertosantini/node-conpa",
     "keywords": ["finance", "asset allocation", "optimization"],
@@ -14,7 +14,7 @@
     ],
     "engines" : { "node" : ">=0.4.x" },
     "dependencies" : {
-        "finance" : ">=1.2.7"
+        "finance" : ">=1.2.8"
     }
 }
 

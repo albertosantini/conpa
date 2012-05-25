@@ -1,3 +1,10 @@
+1.2.2 / 2012-05-25
+==================
+
+* Updated to YUI 3.5.1.
+* Ported performance graph to YUI 3.
+* Modifed the footer.
+
 1.2.1 / 2012-04-13
 ==================
 

@@ -68,7 +68,7 @@ To install with [npm](http://github.com/isaacs/npm):
 
     npm install conpa
 
-Tested with node 0.4.12.
+Tested with node 0.8.x.
 
 Notes
 =====

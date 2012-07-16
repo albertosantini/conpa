@@ -52,6 +52,7 @@
                 </div>
                 <div class="span6">
                     <h2>Latest Portfolios</h2>
+                    <ul id="latest-portfolios-list"></ul>
                 </div>
                 <div class="span3">
                     <h2>Worst Portfolios</h2>
@@ -70,9 +71,18 @@
 
         </div> <!-- /container -->
 
+        <script id="latest-portfolios-template" type="text/x-handlebars-template">
+        {{#this}}
+        <li>id {{id}}</li>
+        {{/this}}
+        </script>
+
         <script src="assets/js/jquery-1.7.2.min.js"></script>
+        <script src="assets/js/handlebars-1.0.0.beta.6.js"></script>
         <script src="assets/js/bootstrap-typeahead.js"></script>
+
         <script src="js/assetSearch.js"></script>
+        <script src="js/app.js"></script>
     </body>
 
 </html>

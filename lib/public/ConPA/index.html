@@ -17,6 +17,13 @@
             body {
               padding-top: 60px;
             }
+
+            .table {
+                font-size: 11px;
+            }
+            .table th, .table td {
+                text-align: right;
+            }
         </style>
         <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet">
     </head>
@@ -49,10 +56,11 @@
             <div class="row">
                 <div class="span3">
                     <h2>Best Portfolios</h2>
+                    <div id="best-performing-portfolios-list"></div>
                 </div>
                 <div class="span6">
                     <h2>Latest Portfolios</h2>
-                    <ul id="latest-portfolios-list"></ul>
+                    <div id="latest-portfolios-list"></div>
                 </div>
                 <div class="span3">
                     <h2>Worst Portfolios</h2>
@@ -72,9 +80,53 @@
         </div> <!-- /container -->
 
         <script id="latest-portfolios-template" type="text/x-handlebars-template">
-        {{#this}}
-        <li>id {{id}}</li>
-        {{/this}}
+        <table class="table table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th>To Date</th>
+                    <th>Reference Date</th>
+                    <th>Last Created</th>
+                    <th>Perf</th>
+                    <th>Risk</th>
+                    <th>Ret</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#this}}
+                <tr>
+                    <td>{{key}}</td>
+                    <td>{{value.ref}}</td>
+                    <td>{{hyphenFormatter id}}</td>
+                    <td>{{percentageFormatter value.perf}}</td>
+                    <td>{{percentageFormatter value.risk}}</td>
+                    <td>{{percentageFormatter value.ret}}</td>
+                </tr>
+                {{/this}}
+            </tbody>
+        </table>
+        </script>
+
+        <script id="other-portfolios-template" type="text/x-handlebars-template">
+        <table class="table table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th>{{keyName}}</th>
+                    <th>To Date</th>
+                    <th>{{idDesc}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#with data}}
+                {{#this}}
+                <tr>
+                    <td>{{percentageFormatter key}}</td>
+                    <td>{{value.created_at}}</td>
+                    <td>{{hyphenFormatter id}}</td>
+                </tr>
+                {{/this}}
+                {{/with}}
+            </tbody>
+        </table>
         </script>
 
         <script src="assets/js/jquery-1.7.2.min.js"></script>

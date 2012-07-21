@@ -140,6 +140,10 @@ body {
     font-size: 9px;
 }
 
+canvas {
+    margin: 5px;
+}
+
 .table {
     font-size: 11px;
 }

@@ -15,7 +15,7 @@ body {
 #asset-list li {
     position: relative;
     font-size: 24px;
-    border-bottom: 1px dotted #ccc;
+    /* border-bottom: 1px dotted #ccc; */
 }
 
 #asset-list li:last-child {
@@ -73,7 +73,7 @@ body {
 
 #asset-list li label {
     word-break: break-word;
-    margin: 15px 15px 15px 60px;
+    /* margin: 10px 10px 10px 60px; */
     display: inline-block;
     line-height: 1.2;
     -webkit-transition: color 0.4s;
@@ -91,7 +91,7 @@ body {
 #asset-list li .destroy {
     display: none;
     position: absolute;
-    top: 0;
+    top: 10;
     right: 10px;
     bottom: 0;
     width: 40px;
@@ -130,6 +130,10 @@ body {
 
 #asset-list li.editing:last-child {
     margin-bottom: -1px;
+}
+
+.well {
+    margin-bottom: 0px;
 }
 
 #asset-stats-list1, #asset-stats-list2 {

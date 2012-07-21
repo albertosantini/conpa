@@ -45,6 +45,8 @@
 
                     <ul id="asset-list"></ul>
 
+                    <div id="message"></div>
+
                     <h2>Charts</h2>
 
                     <div id="basket-pie-chart"></div>
@@ -62,13 +64,13 @@
             </div>
 
             <div class="row">
-                <div class="span3">
-                    <h2>Best Portfolios</h2>
-                    <div id="best-performing-portfolios-list"></div>
-                </div>
                 <div class="span6">
                     <h2>Latest Portfolios</h2>
                     <div id="latest-portfolios-list"></div>
+                </div>
+                <div class="span3">
+                    <h2>Best Portfolios</h2>
+                    <div id="best-performing-portfolios-list"></div>
                 </div>
                 <div class="span3">
                     <h2>Worst Portfolios</h2>
@@ -157,9 +159,18 @@
         </table>
         </script>
 
+        <script id="message-template" type="text/x-handlebars-template">
+        <div class="alert alert-block {{type}}">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">{{heading}}</h4>
+            {{message}}
+        </div>
+        </script>
+
         <script src="assets/js/jquery-1.7.2.min.js"></script>
         <script src="assets/js/handlebars-1.0.0.beta.6.js"></script>
         <script src="assets/js/jquery.sparkline.min.js"></script>
+        <script src="assets/js/bootstrap-alert.js"></script>
         <script src="assets/js/bootstrap-typeahead.js"></script>
 
         <script src="js/assetSearch.js"></script>

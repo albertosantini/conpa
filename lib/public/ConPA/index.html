@@ -126,64 +126,15 @@
         </dl>
         </script>
 
-        <script id="latest-portfolios-template" type="text/x-handlebars-template">
-        <table class="table table-bordered table-condensed">
-            <thead>
-                <tr>
-                    <th>To Date</th>
-                    <th>Reference Date</th>
-                    <th>Last Created</th>
-                    <th>Perf</th>
-                    <th>Risk</th>
-                    <th>Ret</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#this}}
-                <tr>
-                    <td>{{key}}</td>
-                    <td>{{value.ref}}</td>
-                    <td>{{hyphenFormatter id}}</td>
-                    <td>{{percentageFormatter value.perf}}</td>
-                    <td>{{percentageFormatter value.risk}}</td>
-                    <td>{{percentageFormatter value.ret}}</td>
-                </tr>
-                {{/this}}
-            </tbody>
-        </table>
-        </script>
-
-        <script id="other-portfolios-template" type="text/x-handlebars-template">
-        <table class="table table-bordered table-condensed">
-            <thead>
-                <tr>
-                    <th>{{keyName}}</th>
-                    <th>To Date</th>
-                    <th>{{idDesc}}</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#with data}}
-                {{#this}}
-                <tr>
-                    <td>{{percentageFormatter key}}</td>
-                    <td>{{value.created_at}}</td>
-                    <td>{{hyphenFormatter id}}</td>
-                </tr>
-                {{/this}}
-                {{/with}}
-            </tbody>
-        </table>
-        </script>
-
         <script src="assets/js/jquery-1.7.2.min.js"></script>
         <script src="assets/js/jquery.pubsub-0.7.min.js"></script>
         <script src="assets/js/jquery.sparkline.min.js"></script>
         <script src="assets/js/handlebars-1.0.0.beta.6.js"></script>
         <script src="assets/js/bootstrap.js"></script>
 
-        <script src="js/assetSearch.js"></script>
         <script src="js/errorMessage.js"></script>
+        <script src="js/portfolioDashboard.js"></script>
+        <script src="js/assetSearch.js"></script>
         <script src="js/app.js"></script>
     </body>
 

@@ -1,3 +1,47 @@
+Todo for ConPA 2 (see conpa2-jquery branch)
+================
+
+- Update README for ConPA 2 (events, architecture, etc.).
+
+- Add a link to large application doc by Addy Osmani.
+
+- Add a note about the videos related with ConPA 1.
+
+- Update portfolio charts on one row using span 2.
+
+- Add most used symols tag cloud above the charts.
+
+- Add volatility graphs below asset stats.
+
+- Add user portofolios in local storage above latest portfolios.
+
+- Update the labels in portfolio dashboard.
+
+- Remove close link in error alert.
+
+- Add a route to aggregate the dashboard calls.
+
+- Update the search field to the big one.
+
+- Add the description to the symbol.
+
+- Add the constraints.
+
+- Update the footer.
+
+- Add a tooltip with the stats of the portfolio in the dashboard for the ids.
+
+- Add the loading of the portfolio, if the id of the dashboard is clicked.
+
+- Fix the list of the assets is not displayed on iPhone.
+
+- Add default assets to the basket, if it is empty.
+
+- Add an automate dev process with brunch (review the folder layout).
+
+- Add the version to the bootstrap js file.
+
+
 CONPA
 =====
 
@@ -57,7 +101,7 @@ last created portfolios, best/worst performing porfolios, high/low risk profile
 portfolios and high/low return profile portfolios.
 
 Example
-========
+=======
 
 In the examples directory there is a simple express configuration.
 

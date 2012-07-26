@@ -37,9 +37,7 @@ Todo for ConPA 2 (see conpa2-jquery branch)
 
 - Add default assets to the basket, if it is empty.
 
-- Add an automate dev process with brunch (review the folder layout).
-
-- Add the version to the bootstrap js file.
+- Add a note for grunt file.
 
 
 CONPA

@@ -64,7 +64,11 @@ module.exports = function (grunt) {
         },
 
         watch: {
-            files: ['<config:concat.dist.src>'],
+            files: [
+                'lib/**/*.js',
+                'lib/**/*.html',
+                'lib/**/*.css'
+            ],
             tasks: 'lint:before concat lint:after min shell'
         }
     });

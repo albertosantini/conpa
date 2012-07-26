@@ -17,8 +17,6 @@ Todo for ConPA 2 (see conpa2-jquery branch)
 
 - Update the labels in portfolio dashboard.
 
-- Remove close link in error alert.
-
 - Add a route to aggregate the dashboard calls.
 
 - Update the search field to the big one.

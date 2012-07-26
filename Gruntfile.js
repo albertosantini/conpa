@@ -22,23 +22,23 @@ module.exports = function (grunt) {
         },
 
         lint: {
-            before: ['<config:concat.dist.src'],
-            after: ['<config:concat.dist.dest']
+            before: ['<config:concat.dist.src>'],
+            after: ['<config:concat.dist.dest>']
         },
         jshint: {
             options: {
                 // https://github.com/jquery/jquery/blob/master/.jshintrc
-                "curly": true,
-                "eqnull": true,
-                "eqeqeq": true,
-                "expr": true,
-                "latedef": true,
-                "noarg": true,
-                "smarttabs": true,
-                "trailing": true,
-                "undef": true,
+                'curly': true,
+                'eqnull': true,
+                'eqeqeq': true,
+                'expr': true,
+                'latedef': true,
+                'noarg': true,
+                'smarttabs': true,
+                'trailing': true,
+                'undef': true,
                 // personal options
-                "white": true
+                'white': true
             }
         },
 
@@ -69,13 +69,19 @@ module.exports = function (grunt) {
                 'lib/**/*.html',
                 'lib/**/*.css'
             ],
-            tasks: 'lint:before concat lint:after min shell'
+            tasks: [
+                'lint:before',
+                'concat',
+                'lint:after',
+                'min',
+                'shell'
+            ]
         }
     });
 
     // https://github.com/sindresorhus/grunt-shell/blob/master/tasks/shell.js
     grunt.registerMultiTask('shell', 'Run shell commands', function () {
-        var _ = grunt.utils._,
+        var _ = grunt.util._,
             data = _.extend([], grunt.config.get('shell')._options, this.data),
             exec = require('child_process').exec,
             done = this.async();
@@ -85,6 +91,12 @@ module.exports = function (grunt) {
         });
     });
 
-    grunt.registerTask('default',
-        'lint:before concat lint:after min shell watch');
+    grunt.registerTask('default', [
+        'lint:before',
+        'concat',
+        'lint:after',
+        'min',
+        'shell',
+        'watch'
+    ]);
 };

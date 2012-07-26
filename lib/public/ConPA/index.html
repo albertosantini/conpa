@@ -20,11 +20,12 @@
     <body>
 
         <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="brand" href="https://github.com/albertosantini/node-conpa">ConPA 2</a>
-                </div>
-            </div>
+        <div class="navbar-inner">
+        <div class="container">
+            <a class="brand"
+                href="https://github.com/albertosantini/node-conpa">ConPA 2</a>
+        </div>
+        </div>
         </div>
 
         <div class="container">
@@ -32,13 +33,13 @@
             <div class="row">
                 <div class="span6">
                     <h2>Basket</h2>
-
                     <div class="controls">
                         <div class="input-prepend">
                             <span class="add-on">
                                 <i class="icon-search"></i>
-                            </span><input id="new-asset" class="span4"
-                                        type="text" data-provide="typeahead"
+                            </span><input id="new-asset" class="span3"
+                                        type="text"
+                                        data-provide="typeahead"
                                         placeholder="What assets to be added?">
                         </div>
                     </div>
@@ -47,36 +48,26 @@
 
                     <div id="message"></div>
 
-                    <div class="row">
-                        <div class="span6">
-                            <h2>Charts</h2>
-                            <div class="row">
-                                <div class="span2">
-                                    <span class="label label-info">Today Weights</span>
-                                    <div id="basket-pie-chart"></div>
-                                </div>
-                                <div class="span2">
-                                    <span class="label label-info">Year To Date Weights</span>
-                                    <div id="basket-pie-ytd-chart"></div>
-                                </div>
-                                <div class="span2">
-                                    <span class="label label-info">Year To Date Performance</span>
-                                    <div id="basket-performance-ytd-chart"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <div class="row">
-                    <div class="span6">
-                        <h2 id="asset-stats-name">Asset Stats</h2>
-                        <div class="row">
-                            <div class="span3">
-                                <div id="asset-stats-list1"></div>
-                            </div>
-                            <div class="span3">
-                                <div id="asset-stats-list2"></div>
-                            </div>
+
+                <div class="span2">
+                    <h2>Charts</h2>
+                    <span class="label label-info">Today Weights</span>
+                    <div id="basket-pie-chart"></div>
+                    <span class="label label-info">Year To Date Weights</span>
+                    <div id="basket-pie-ytd-chart"></div>
+                    <span class="label label-info">Year To Date Performance</span>
+                    <div id="basket-performance-ytd-chart"></div>
+                </div>
+
+                <div class="span4">
+                    <h2 id="asset-stats-name">Asset Stats</h2>
+                    <div class="row">
+                        <div class="span2">
+                            <div id="asset-stats-list1"></div>
+                        </div>
+                        <div class="span2">
+                            <div id="asset-stats-list2"></div>
                         </div>
                     </div>
                 </div>
@@ -104,11 +95,11 @@
             <hr>
 
             <footer>
-                <p class="pull-right">
-                    P0wer3d by <a href="http://nodejs.org/">Node.js</a>,
-                    Relax3d by <a href="http://cloudant.com">Cloudant</a> and
-                    Devel0p3d by <a href="https://github.com/albertosantini">as</a>
-                </p>
+            <p class="pull-right">
+                P0wer3d by <a href="http://nodejs.org/">Node.js</a>,
+                Relax3d by <a href="http://cloudant.com">Cloudant</a> and
+                Devel0p3d by <a href="https://github.com/albertosantini">as</a>
+            </p>
             </footer>
 
         </div> <!-- /container -->

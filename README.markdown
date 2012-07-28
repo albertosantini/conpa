@@ -7,7 +7,7 @@ Todo for ConPA 2 (see conpa2-jquery branch)
 
 - Add a note about the videos related with ConPA 1.
 
-- Add a note for grunt file.
+- Add a note for grunt and supervisor file.
 
 - Add most used symols tag cloud above the charts.
 
@@ -29,7 +29,7 @@ Todo for ConPA 2 (see conpa2-jquery branch)
 
 - Add the loading of the portfolio, if the id of the dashboard is clicked.
 
-- Fix the list of the assets is not displayed on iPhone.
+- Fix the header page on iPhone.
 
 - Add default assets to the basket, if it is empty.
 

@@ -33,64 +33,51 @@ Todo for ConPA 2 (see conpa2-jquery branch)
 
 - Add default assets to the basket, if it is empty.
 
+- Add ie support: http://todomvc.com/assets/ie.js
+
 
 CONPA
 =====
 
-This module contains an asset allocation application.
+This module contains a complete frontend stack for an asset allocation 
+application.
 
-The entry point is:
+The entry point may be the following one:
 
-http://my.address.com:myport/ConPA/ConPA.html
+http://my.address.com:myport/ConPA/
 
 It depends how the [express](http://github.com/visionmedia/express) instance
 is configured.
 
 For instance,
 
-http://localhost:8001/ConPA/ConPA.html
+http://localhost:8001/ConPA/
 
-See [welcome](http://www.youtube.com/watch?v=ia_UVHtuBTM) and
-[tutorial](http://www.youtube.com/watch?v=xIwbc6lQzNk) videos.
+There are two old videos about ConPA 1:
+[welcome](http://www.youtube.com/watch?v=ia_UVHtuBTM) and
+[tutorial](http://www.youtube.com/watch?v=xIwbc6lQzNk).
 
-There are two tabs: basket and dashboard.
+ConPA aggregates a few components in a single page: the asset search, the list
+of assets, the portfolio charts, the assets stats and the dashboard.
 
-In basket tab firstly you should build a basket of assets and, then, get the
-optimal weights for each assets.
+To fill the basket, the user needs to add an asset, using the search edit field: 
+typing the name or the symbol of an asset, the autocomplete component suggests a 
+few assets. When the user selects an asset, it is added to the basket, 
+displaying the symbol.
 
-"Add Asset" field is a autocomplete field: if you start to type some character,
-it will open a list of products, matching with the string.
+In the meantime for the last asset added to the basket, the app provides the key
+statistics.
 
-You have to select the product and press enter (or click the left button of the
-mouse) to insert the product in the basket. The first product of the list is
-automatically selected.
+When the basket contains at least three assets, the basket is optimized, 
+creating two portfolios: the first portfolio contains the optimal weights of the
+assets at the actual date; the second one contains the optimal weights of the
+portfolio as it was created one year ago (year to date). The performances of the
+portfolio created in the past are calculated and displayed.
 
-You have to insert minimum three assets (and a maximum of ten) to get the
-weights of the optimal portfolio. Finally, you could the constraints for each
-asset and, after pushing the button "Get Optimal Portfolio", please, wait a few
-seconds to get the result: we should retrieve the historical prices,
-create the covariance matrix, set the constraints and optimize a la Markowitz
-the asset allocation.
-
-The optimized portfolio is identified with an id: hoovering on id, a tooltip
-displays performance, risk (the standard deviation of the portfolio returns)
-and return of the portfolio.
-
-The covariance matrix is built using weekly returns since two years before the
-reference date.
-
-You can set the annual target return. The default is 0%: it means the target
-return is calculated as the mean of the asset returns.
-
-If you (left) click on the symbol of the asset in the basket, you can see the
-key statistics and implied volatility graphs for that asset.
-
-If you want to check the figures, you can click on the script icon and an
-R script, corresponding to the optimal portfolio, is displayed.
-
-In dashboard tab there are stats of all portfolios created by the users:
-last created portfolios, best/worst performing porfolios, high/low risk profile
-portfolios and high/low return profile portfolios.
+Below basket and asset info there is the dashboard: it contains the stats of all 
+portfolios created by the users: last created portfolios, best/worst performing 
+porfolios, high/low risk profile portfolios and high/low return profile 
+portfolios.
 
 Example
 =======
@@ -146,6 +133,8 @@ The module adds the following routes to the express instance:
 
 - /ConPA/getImpliedVolatility
 
+- /ConPA/getPortfolio
+
 - /ConPA/putPortfolioOnCRM
 
 - /ConPA/getLastCreatedPortfolios
@@ -165,6 +154,8 @@ The module adds the following routes to the express instance:
 - /ConPA/getPortfolioCount
 
 - /ConPA/getMostUsedAssets
+
+In lib/ConPA/public folder there is the frontend implementation.
 
 Methods
 =======

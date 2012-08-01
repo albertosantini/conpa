@@ -1,42 +1,3 @@
-Todo for ConPA 2 (see conpa2-jquery branch)
-================
-
-- Update README for ConPA 2 (events, architecture, etc.).
-
-- Add a link to large application doc by Addy Osmani.
-
-- Add a note about the videos related with ConPA 1.
-
-- Add a note for grunt and supervisor file.
-
-- Update charts labels when the the portfolio is reset.
-
-- Add most used symols tag cloud above the charts.
-
-- Add volatility graphs below asset stats.
-
-- Add user portofolios in local storage above latest portfolios.
-
-- Update the labels in portfolio dashboard.
-
-- Add a route to aggregate the dashboard calls.
-
-- Update the search field to the big one.
-
-- Add the description to the symbol.
-
-- Add the constraints.
-
-- Add a tooltip with the stats of the portfolio in the dashboard for the ids.
-
-- Add the loading of the portfolio, if the id of the dashboard is clicked.
-
-- Fix the header page on iPhone.
-
-- Add default assets to the basket, if it is empty.
-
-- Add ie support: http://todomvc.com/assets/ie.js
-
 
 CONPA
 =====
@@ -45,10 +6,6 @@ Overview
 --------
 
 ConPA 2 is a complete frontend stack for an asset allocation application.
-
-There are two old videos about ConPA 1:
-[welcome](http://www.youtube.com/watch?v=ia_UVHtuBTM) and
-[tutorial](http://www.youtube.com/watch?v=xIwbc6lQzNk).
 
 ConPA aggregates a few components in a single page: the asset search, the list
 of assets, the portfolio charts, the assets stats and the dashboard.
@@ -67,10 +24,55 @@ assets at the actual date; the second one contains the optimal weights of the
 portfolio as it was created one year ago (year to date). The performances of the
 portfolio created in the past are calculated and displayed.
 
-Below basket and asset info, there is the dashboard: it contains the stats of
+Below basket and asset info, there is the dashboard. It contains the stats of
 all portfolios created by the users: last created portfolios, best/worst
 performing porfolios, high/low risk profile portfolios and high/low return
 profile portfolios.
+
+There are two old videos about ConPA 1:
+[welcome](http://www.youtube.com/watch?v=ia_UVHtuBTM) and
+[tutorial](http://www.youtube.com/watch?v=xIwbc6lQzNk).
+
+Architecture
+============
+
+After reading the following paper
+[Patterns For Large-Scale JavaScript Application Architecture]
+(http://addyosmani.com/largescalejavascript/),
+ConPA is based on modules loosely coupled, using a pub/sub pattern to exchange
+information.
+
+The asset libraries are the following:
+
+- [Bootstrap](http://twitter.github.com/bootstrap/) - 2.1.0 -
+  css and the patched typeahead and alert components.
+
+- [jQuery](http://jquery.com/) - 1.7.2
+
+- [Sparklines](http://omnipotent.net/jquery.sparkline/) - 2.0 -
+  to draw the graphs.
+
+- [Lo-Dash](http://lodash.com/) - 0.4.2 -
+  drop-in replacement for [Underscore.js]
+  (http://documentcloud.github.com/underscore/).
+
+- [jQuery Tiny Pub/Sub](https://gist.github.com/661855) - 0.7
+
+The app may evolve using [Backbone.js]
+(http://documentcloud.github.com/backbone/).
+
+Just in case the following libraries are in the radar:
+
+- [Datepicker for Bootstrap](http://www.eyecon.ro/bootstrap-datepicker/)
+
+- [A localStorage adapter for Backbone.js]
+  (https://github.com/jeromegn/Backbone.localStorage)
+
+- [Underscore.string](http://epeli.github.com/underscore.string/)
+
+- [A lightweight javascript date library](http://momentjs.com/)
+
+- [A conditional AMD loader](http://yepnopejs.com/)
 
 assetSearch
 -----------
@@ -79,11 +81,11 @@ assetSearch
   suggestions (symbol, name, type and market) to complete the string typed. It
   fills the input with the quote symbol.
 
-- *Tags*: 'input'
+- *Tag*: 'input'
 
-- *Routes*: http://autoc.finance.yahoo.com/autoc
+- *Route*: http://autoc.finance.yahoo.com/autoc
 
-- *Events*
+- *Event*
 
     - selectitem, fired when the user selects an item in the suggestion box.
 
@@ -94,9 +96,9 @@ assetList
   can delete an asset. When there are less than three assets in the basket, the
   reference date is reset to year-to-date.
 
-- *Tags*: '#asset-list'
+- *Tag*: '#asset-list'
 
-- *Routes*: none
+- *Route*: none
 
 - *Events*
 
@@ -118,19 +120,19 @@ assetStats
 
     - '#asset-stats-list2'
 
-- *Routes*: /ConPA/getKeyStatistics
+- *Route*: /ConPA/getKeyStatistics
 
-- *Events*
+- *Event*
 
     - stats.asset.conpa, subscribed when an asset is added to the basket.
 
 portfolioOptimization
 ---------------------
 
-- *Description*: It displays the optimal weights of the assets in the basket
-  at two reference dates: today and the reference date (default is year to
-  date). It draw two pie charts and a one bar chart related to the performance
-  of the portfolio since the reference date until today.
+- *Description*: It displays the optimal weights of the assets in the basket at
+  two reference dates: today and the reference date (default is year to date).
+  It draw two pie charts and a one bar chart related to the performance of the
+  portfolio since the reference date until today.
 
 - *Tags*:
 
@@ -166,50 +168,136 @@ portfolioOptimization
 portfolioDashboard
 ------------------
 
-- *Description*:
+- *Description*: It display the latest optimized portfolios and the best or the
+  worst portfolios with respect to performance, risk and return.
 
-- *Tag*:
+- *Tags*:
 
-- *Route*:
+    - '#latest-portfolios-list'
+
+    - '#best-performing-portfolios-list'
+
+    - '#worst-performing-portfolios-list'
+
+    - '#lowprofile-risk-portfolios-list'
+
+    - '#highprofile-risk-portfolios-list'
+
+    - '#lowprofile-return-portfolios-list'
+
+    - '#highprofile-return-portfolios-list'
+
+- *Routes*:
+
+    - /ConPA/getLastCreatedPortfolios
+
+    - /ConPA/getBestPerformingPortfolios
+
+    - /ConPA/getWorstPerformingPortfolios
+
+    - /ConPA/getLowProfileRiskPortfolios
+
+    - /ConPA/getHighProfileRiskPortfolios
+
+    - /ConPA/getLowProfileReturnPortfolios
+
+    - /ConPA/getHighProfileReturnPortfolios
 
 - *Events*
+
+    - render.app.conpa, fired when the user click on a row of the dashboard
+      tables to load a stored portfolio.
+
+    - render.dashboard.conpa, subscribed when the app renders.
 
 
 portfolioCRM
 ------------
 
-- *Description*:
+- *Description*: It saves a portfolio in the backend.
 
-- *Tag*:
+- *Tag*: none
 
-- *Route*:
+- *Route*: /ConPA/putPortfolioOnCRM
 
 - *Events*
 
+    - render.dashboard.conpa, fired when a new portfolio is saved to the
+      backend.
+
+    - crm.portfolio.conpa, subscribed when the portfolio is optimized to save
+      it.
 
 errorMessage
 ------------
 
-- *Description*:
+- *Description*: It displays an error message.
 
-- *Tag*:
+- *Tag*: '#message'
 
-- *Route*:
+- *Route*: none
 
 - *Events*
+
+    - clear.message.conpa, subscribed to clear the message.
+
+    - error.message.conpa, subscribed to display an error message.
 
 appUtil
 -------
 
+- string $.conpa.utils.rfc4122v4()
+
+- string $.conpa.helpers.percentageFormatter(number)
+
+- string $.conpa.helpers.hyphenFormatter(id)
+
+- date $.conpa.dates.today()
+
+- boolean $.conpa.dates.isToday(date)
+
+- date $.conpa.dates.yearToDate()
+
+- string $.conpa.dates.ymdDate(date)
+
 model
 -----
 
+    {
+        assets: [{
+           id: uuid
+           symbol: string
+        }],
 
+        refdate: date string
+    }
 
-Example
-=======
+Todo
+====
 
-In the examples directory there is a simple express configuration.
+- Update charts labels when the the portfolio is reset.
+
+- Add most used symbols tag cloud above the charts.
+
+- Add user portfolios in local storage above latest portfolios.
+
+- Update the labels in portfolio dashboard.
+
+- Update the search field to the big one.
+
+- Add the description to the symbol (maybe using jquery-handsontable).
+
+- Add a route to aggregate the dashboard calls.
+
+- Add volatility graphs below asset stats.
+
+- Add the constraints.
+
+- Add a tooltip with the assets of the portfolio in the dashboard for the ids.
+
+- Check the top of the page on iPhone, because it seems there is a margin.
+
+- Add default assets to the basket, if it is empty.
 
 Installation
 ============
@@ -220,7 +308,8 @@ To install with [npm](http://github.com/isaacs/npm):
 
 Tested with node 0.8.x.
 
-The module adds the following routes to the [express](http://github.com/visionmedia/express) instance:
+The module adds the following routes to the
+[express](http://github.com/visionmedia/express) instance:
 
 - /ConPA/getOptimalPortfolio
 
@@ -251,6 +340,8 @@ The module adds the following routes to the [express](http://github.com/visionme
 - /ConPA/getPortfolioCount
 
 - /ConPA/getMostUsedAssets
+
+In the examples directory there is a simple express configuration.
 
 Notes
 =====
@@ -297,6 +388,8 @@ Rserve instance, otherwise a native implementation is used.
 
 - *config*
 
+    - *pubdir* folder for the frontend files (default "/public").
+
     - *crm*
 
         - *liveDomain* url for the live domain.
@@ -305,7 +398,8 @@ Rserve instance, otherwise a native implementation is used.
 
         - *liveDb* name of live instance.
 
-        - *testingUrl* url for the testing instance, eventually with the credentials.
+        - *testingUrl* url for the testing instance, eventually with the
+          credentials.
 
         - *testingDb* name of testing instance.
 

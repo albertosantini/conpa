@@ -1,13 +1,9 @@
-
 CONPA
 =====
 
-Overview
---------
-
 ConPA 2 is a complete frontend stack for an asset allocation application.
 
-ConPA aggregates a few components in a single page: the asset search, the list
+ConPA is a single page with the following components: the asset search, the list
 of assets, the portfolio charts, the assets stats and the dashboard.
 
 To fill the basket, the user needs to add an asset, using the search edit field:
@@ -68,9 +64,11 @@ Just in case the following libraries are in the radar:
 - [A localStorage adapter for Backbone.js]
   (https://github.com/jeromegn/Backbone.localStorage)
 
-- [Underscore.string](http://epeli.github.com/underscore.string/)
+- [Underscore.string](http://epeli.github.com/underscore.string/) -
+  to format strings and numbers.
 
-- [A lightweight javascript date library](http://momentjs.com/)
+- [A lightweight javascript date library](http://momentjs.com/) -
+  to format dates.
 
 - [A conditional AMD loader](http://yepnopejs.com/)
 
@@ -104,7 +102,7 @@ assetList
 
     - render.app.conpa, fired when an asset is deleted.
 
-    - render.assetlist.conpa, subscribed when an asset is added to the basket.
+    - render.assetlist.conpa, catched when an asset is added to the basket.
 
 assetStats
 ----------
@@ -124,7 +122,7 @@ assetStats
 
 - *Event*
 
-    - stats.asset.conpa, subscribed when an asset is added to the basket.
+    - stats.asset.conpa, catched when an asset is added to the basket.
 
 portfolioOptimization
 ---------------------
@@ -158,12 +156,11 @@ portfolioOptimization
 
     - crm.portfolio.conpa, fired when the portfolio is optimized.
 
-    - clear.portfolio.conpa, subscribed when the assets in the basket are
+    - clear.portfolio.conpa, catched when the assets in the basket are
       greater than two.
 
-    - optimization.portfolio.conpa, subscribed when the assets in the basket are
+    - optimization.portfolio.conpa, catched when the assets in the basket are
       greater than two.
-
 
 portfolioDashboard
 ------------------
@@ -208,8 +205,7 @@ portfolioDashboard
     - render.app.conpa, fired when the user click on a row of the dashboard
       tables to load a stored portfolio.
 
-    - render.dashboard.conpa, subscribed when the app renders.
-
+    - render.dashboard.conpa, catched when the app renders.
 
 portfolioCRM
 ------------
@@ -225,7 +221,7 @@ portfolioCRM
     - render.dashboard.conpa, fired when a new portfolio is saved to the
       backend.
 
-    - crm.portfolio.conpa, subscribed when the portfolio is optimized to save
+    - crm.portfolio.conpa, catched when the portfolio is optimized to save
       it.
 
 errorMessage
@@ -239,9 +235,9 @@ errorMessage
 
 - *Events*
 
-    - clear.message.conpa, subscribed to clear the message.
+    - clear.message.conpa, catched to clear the message.
 
-    - error.message.conpa, subscribed to display an error message.
+    - error.message.conpa, catched to display an error message.
 
 appUtil
 -------
@@ -291,9 +287,9 @@ Todo
 
 - Add volatility graphs below asset stats.
 
-- Add the constraints.
+- Add the assets constraints.
 
-- Add a tooltip with the assets of the portfolio in the dashboard for the ids.
+- Add a tooltip to the ids with the assets of the portfolio in the dashboard.
 
 - Check the top of the page on iPhone, because it seems there is a margin.
 

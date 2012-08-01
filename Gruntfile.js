@@ -5,6 +5,17 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         concat: {
+            vendor: {
+                src: [
+                    'lib/public/ConPA/assets/js/jquery-1.7.2.min.js',
+                    'lib/public/ConPA/assets/js/jquery.pubsub-0.7.min.js',
+                    'lib/public/ConPA/assets/js/jquery.sparkline-2.0.min.js',
+                    'lib/public/ConPA/assets/js/jquery.localstorage-0.1.js',
+                    'lib/public/ConPA/assets/js/lodash-0.4.2.min.js',
+                    'lib/public/ConPA/assets/js/bootstrap-2.1.0.js'
+                ],
+                dest: 'lib/public/ConPA/build/vendor.js'
+            },
             dist: {
                 src: [
                     'lib/public/ConPA/js/errorMessage.js',

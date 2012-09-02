@@ -1,3 +1,10 @@
+2.0.2 / 2012-09-02
+==================
+
+* Updated external libraries: Lo-Dash 0.6.1.
+
+* Added table-hover to the dashboard tables.
+
 2.0.1 / 2012-08-23
 ==================
 

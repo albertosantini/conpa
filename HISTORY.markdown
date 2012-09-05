@@ -1,3 +1,11 @@
+2.0.3 / 2012-09-05
+==================
+
+* Updated external libraries: Bootstrap 2.1.1.
+
+* The selection of an asset in the suggestion box fires a change event and not
+a selectitem event.
+
 2.0.2 / 2012-09-02
 ==================
 

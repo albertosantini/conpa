@@ -85,7 +85,7 @@ assetSearch
 
 - *Event*
 
-    - selectitem, fired when the user selects an item in the suggestion box.
+    - change, fired when the user selects an item in the suggestion box.
 
 assetList
 ---------

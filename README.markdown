@@ -3,7 +3,7 @@ CONPA
 
 ConPA 2 is a complete frontend stack for an asset allocation application.
 
-ConPA is a single page with the following components: the asset search, the list
+ConPA 2 is a single page with the following components: the asset search, the list
 of assets, the portfolio charts, the assets stats and the dashboard.
 
 To fill the basket, the user needs to add an asset, using the search edit field:
@@ -35,20 +35,20 @@ Architecture
 After reading the following paper
 [Patterns For Large-Scale JavaScript Application Architecture]
 (http://addyosmani.com/largescalejavascript/),
-ConPA is based on modules loosely coupled, using a pub/sub pattern to exchange
+ConPA 2 is based on modules loosely coupled, using a pub/sub pattern to exchange
 information.
 
 The asset libraries are the following:
 
-- [Bootstrap](http://twitter.github.com/bootstrap/) - 2.1.0 -
-  css, (patched) typeahead and alert components.
+- [Bootstrap](http://twitter.github.com/bootstrap/) - 2.1.1 -
+  css, typeahead and alert components.
 
-- [jQuery](http://jquery.com/) - 1.8.0
+- [jQuery](http://jquery.com/) - 1.8.1
 
 - [Sparklines](http://omnipotent.net/jquery.sparkline/) - 2.0 -
   to draw the graphs.
 
-- [Lo-Dash](http://lodash.com/) - 0.5.2 -
+- [Lo-Dash](http://lodash.com/) - 0.6.1 -
   drop-in replacement for [Underscore.js]
   (http://documentcloud.github.com/underscore/).
 

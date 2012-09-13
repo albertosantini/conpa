@@ -48,7 +48,7 @@ The asset libraries are the following:
 - [Sparklines](http://omnipotent.net/jquery.sparkline/) - 2.0 -
   to draw the graphs.
 
-- [Lo-Dash](http://lodash.com/) - 0.6.1 -
+- [Lo-Dash](http://lodash.com/) - 0.7.0 -
   drop-in replacement for [Underscore.js]
   (http://documentcloud.github.com/underscore/).
 

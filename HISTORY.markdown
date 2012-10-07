@@ -1,3 +1,10 @@
+2.0.5 / 2012-10-07
+==================
+
+* Fix json response in getPortfolio.
+
+* Updated external libraries: jQuery 1.8.2, Lo-Dash 0.8.1.
+
 2.0.4 / 2012-09-06
 ==================
 

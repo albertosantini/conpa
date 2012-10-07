@@ -7,7 +7,6 @@ module.exports = function (grunt) {
         concat: {
             vendor: {
                 src: [
-                    'lib/public/ConPA/assets/js/json2-20111019.js',
                     'lib/public/ConPA/assets/js/jquery-1.8.2.min.js',
                     'lib/public/ConPA/assets/js/jquery.pubsub-0.7.min.js',
                     'lib/public/ConPA/assets/js/jquery.sparkline-2.0.min.js',

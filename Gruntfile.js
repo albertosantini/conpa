@@ -11,7 +11,7 @@ module.exports = function (grunt) {
                     'lib/public/ConPA/assets/js/jquery.pubsub-0.7.min.js',
                     'lib/public/ConPA/assets/js/jquery.sparkline-2.0.min.js',
                     'lib/public/ConPA/assets/js/jquery.localstorage-0.1.js',
-                    'lib/public/ConPA/assets/js/lodash-0.8.2.min.js',
+                    'lib/public/ConPA/assets/js/lodash-0.9.0.min.js',
                     'lib/public/ConPA/assets/js/bootstrap-2.1.1.min.js'
                 ],
                 dest: 'lib/public/ConPA/build/vendor.js'
@@ -40,15 +40,18 @@ module.exports = function (grunt) {
         jshint: {
             options: {
                 // https://github.com/jquery/jquery/blob/master/.jshintrc
-                'curly': true,
-                'eqnull': true,
-                'eqeqeq': true,
-                'expr': true,
-                'latedef': true,
-                'noarg': true,
-                'smarttabs': true,
-                'trailing': true,
-                'undef': true,
+                "curly": true,
+                "eqeqeq": true,
+                "eqnull": true,
+                "expr": true,
+                "latedef": true,
+                "noarg": true,
+                "node": true,
+                // "quotmark": "double",
+                "smarttabs": true,
+                "trailing": true,
+                "undef": true,
+                "unused": true,
                 // project options
                 'white': true
             }
@@ -70,7 +73,7 @@ module.exports = function (grunt) {
             },
             _options: {
                 execOptions: {
-                    cwd: '../nodejitsu/conpa/'
+                    cwd: '../nodester/conpa/'
                 }
             }
         },
@@ -93,7 +96,7 @@ module.exports = function (grunt) {
 
     // https://github.com/sindresorhus/grunt-shell/blob/master/tasks/shell.js
     grunt.registerMultiTask('shell', 'Run shell commands', function () {
-        var _ = grunt.util._,
+        var _ = grunt.utils._,
             data = _.extend([], grunt.config.get('shell')._options, this.data),
             exec = require('child_process').exec,
             done = this.async();

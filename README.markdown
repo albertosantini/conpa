@@ -40,15 +40,15 @@ information.
 
 The asset libraries are the following:
 
-- [Bootstrap](http://twitter.github.com/bootstrap/) - 2.1.1 -
+- [Bootstrap](http://twitter.github.com/bootstrap/) - 2.2.1 -
   css, typeahead and alert components.
 
-- [jQuery](http://jquery.com/) - 1.8.2
+- [jQuery](http://jquery.com/) - 1.8.3
 
 - [Sparklines](http://omnipotent.net/jquery.sparkline/) - 2.0 -
   to draw the graphs.
 
-- [Lo-Dash](http://lodash.com/) - 0.8.1 -
+- [Lo-Dash](http://lodash.com/) - 0.10.0 -
   drop-in replacement for [Underscore.js]
   (http://documentcloud.github.com/underscore/).
 

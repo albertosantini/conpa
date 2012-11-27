@@ -1,3 +1,10 @@
+2.0.6 / 2012-11-27
+==================
+
+* Updated finance module: 1.3.1.
+
+* Updated external libraries: jQuery 1.8.3, Lo-Dash 0.10.0, Bootstrap 2.2.1.
+
 2.0.5 / 2012-10-07
 ==================
 

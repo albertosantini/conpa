@@ -7,11 +7,12 @@ module.exports = function (grunt) {
         concat: {
             vendor: {
                 src: [
-                    'lib/public/ConPA/assets/js/jquery-1.8.3.min.js',
+                    'lib/public/ConPA/assets/js/jquery-1.9.0.min.js',
+                    'lib/public/ConPA/assets/js/jquery-migrate-1.0.0.min.js',
                     'lib/public/ConPA/assets/js/jquery.pubsub-0.7.min.js',
-                    'lib/public/ConPA/assets/js/jquery.sparkline-2.0.min.js',
+                    'lib/public/ConPA/assets/js/jquery.sparkline-2.1.min.js',
                     'lib/public/ConPA/assets/js/jquery.localstorage-0.1.js',
-                    'lib/public/ConPA/assets/js/lodash-1.0.0-rc.2.min.js',
+                    'lib/public/ConPA/assets/js/lodash-1.0.0-rc.3.min.js',
                     'lib/public/ConPA/assets/js/bootstrap-2.2.2.min.js'
                 ],
                 dest: 'lib/public/ConPA/build/vendor.js'
@@ -39,21 +40,8 @@ module.exports = function (grunt) {
 
         jshint: {
             options: {
-                // https://github.com/jquery/jquery/blob/master/.jshintrc
-                "curly": true,
-                "eqeqeq": true,
-                "eqnull": true,
-                "expr": true,
-                "latedef": true,
-                "noarg": true,
-                "node": true,
-                // "quotmark": "double",
-                "smarttabs": true,
-                "trailing": true,
-                "undef": true,
-                "unused": true,
-                // project options
-                'white': true
+                // see also .jshintrc
+                "node": true
             }
         },
 

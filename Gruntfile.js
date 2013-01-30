@@ -8,9 +8,8 @@ module.exports = function (grunt) {
             vendor: {
                 src: [
                     'lib/public/ConPA/assets/js/jquery-1.9.0.min.js',
-                    'lib/public/ConPA/assets/js/jquery-migrate-1.0.0.min.js',
                     'lib/public/ConPA/assets/js/jquery.pubsub-0.7.min.js',
-                    'lib/public/ConPA/assets/js/jquery.sparkline-2.1.min.js',
+                    'lib/public/ConPA/assets/js/jquery.sparkline-2.1.1.min.js',
                     'lib/public/ConPA/assets/js/jquery.localstorage-0.1.js',
                     'lib/public/ConPA/assets/js/lodash-1.0.0-rc.3.min.js',
                     'lib/public/ConPA/assets/js/bootstrap-2.2.2.min.js'

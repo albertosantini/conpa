@@ -43,7 +43,7 @@ The asset libraries are the following:
 - [Bootstrap](http://twitter.github.com/bootstrap/) - 2.2.2 -
   css, typeahead and alert components.
 
-- [jQuery](http://jquery.com/) - 1.9.0
+- [jQuery](http://jquery.com/) - 1.9.1
 
 - [Sparklines](http://omnipotent.net/jquery.sparkline/) - 2.1.1 -
   to draw the graphs.

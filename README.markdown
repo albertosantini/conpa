@@ -40,7 +40,7 @@ information.
 
 The asset libraries are the following:
 
-- [Bootstrap](http://twitter.github.com/bootstrap/) - 2.2.2 -
+- [Bootstrap](http://twitter.github.com/bootstrap/) - 2.3.0 -
   css, typeahead and alert components.
 
 - [jQuery](http://jquery.com/) - 1.9.1

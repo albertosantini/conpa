@@ -1,4 +1,4 @@
-/*jslint node:true, nomen:true */
+/*jshint node:true */
 
 module.exports = function (grunt) {
     'use strict';
@@ -32,19 +32,16 @@ module.exports = function (grunt) {
             }
         },
 
-        lint: {
-            before: ['<config:concat.dist.src>'],
-            after: ['<config:concat.dist.dest>']
-        },
-
         jshint: {
+            before: ['<config:concat.dist.src>'],
+            after: ['<config:concat.dist.dest>'],
             options: {
                 // see also .jshintrc
                 "node": true
             }
         },
 
-        min: {
+        uglify: {
             dist: {
                 src: ['lib/public/ConPA/build/conpa.js'],
                 dest: 'lib/public/ConPA/build/conpa.min.js'
@@ -58,10 +55,11 @@ module.exports = function (grunt) {
             install: {
                 command: 'npm install ../../node-conpa'
             },
-            _options: {
+            options: {
                 execOptions: {
                     cwd: '../nodester/conpa/'
-                }
+                },
+                stdout: true
             }
         },
 
@@ -72,32 +70,26 @@ module.exports = function (grunt) {
                 'lib/**/*.css'
             ],
             tasks: [
-                'lint:before',
+                'jshint:before',
                 'concat',
-                'lint:after',
-                'min',
+                'jshint:after',
+                'uglify',
                 'shell'
             ]
         }
     });
 
-    // https://github.com/sindresorhus/grunt-shell/blob/master/tasks/shell.js
-    grunt.registerMultiTask('shell', 'Run shell commands', function () {
-        var _ = grunt.utils._,
-            data = _.extend([], grunt.config.get('shell')._options, this.data),
-            exec = require('child_process').exec,
-            done = this.async();
-
-        exec(data.command, data.execOptions, function () {
-            done();
-        });
-    });
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-shell');
 
     grunt.registerTask('default', [
-        'lint:before',
+        'jshint:before',
         'concat',
-        'lint:after',
-        'min',
+        'jshint:after',
+        'uglify',
         'shell',
         'watch'
     ]);

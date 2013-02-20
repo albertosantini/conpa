@@ -33,8 +33,8 @@ module.exports = function (grunt) {
         },
 
         jshint: {
-            before: ['<config:concat.dist.src>'],
-            after: ['<config:concat.dist.dest>'],
+            before: ['<%= concat.dist.src %>'],
+            after: ['<%= concat.dist.dest %>'],
             options: {
                 // see also .jshintrc
                 "node": true

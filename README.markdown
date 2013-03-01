@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/albertosantini/node-conpa.png)](http://travis-ci.org/albertosantini/node-conpa)
 CONPA
 =====
 

@@ -1,12 +1,10 @@
 {
-    // https://github.com/jquery/jquery/blob/master/.jshintrc
     "curly": true,
     "eqeqeq": true,
     "immed": true,
     "latedef": true,
     "noarg": true,
     "noempty": true,
-    // "quotmark": "double",
     "undef": true,
     "unused": true,
     "strict": true,
@@ -14,7 +12,6 @@
 
     "node": true,
 
-    // my options
     "bitwise": true,
     "forin": true,
     "indent": 4,
@@ -24,4 +21,3 @@
     "regexp": true,
     "white": true
 }
-

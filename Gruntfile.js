@@ -1,5 +1,3 @@
-/*jshint node:true */
-
 module.exports = function (grunt) {
     'use strict';
 
@@ -36,8 +34,7 @@ module.exports = function (grunt) {
             before: ['<%= concat.dist.src %>'],
             after: ['<%= concat.dist.dest %>'],
             options: {
-                // see also .jshintrc
-                "node": true
+                jshintrc: '.jshintrc',
             }
         },
 

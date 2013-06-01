@@ -53,11 +53,11 @@ module.exports = function (grunt) {
                 command: 'npm rm conpa'
             },
             install: {
-                command: 'npm install ../../node-conpa'
+                command: 'npm install ../../../node-conpa'
             },
             options: {
                 execOptions: {
-                    cwd: '../nodester/conpa/'
+                    cwd: '../z/nodester/conpa/'
                 },
                 stdout: true
             }

@@ -31,6 +31,9 @@ module.exports = function (grunt) {
         },
 
         jshint: {
+            backend: [
+                'lib/conpa.js'
+            ],
             before: ['<%= concat.dist.src %>'],
             after: ['<%= concat.dist.dest %>'],
             options: {
@@ -67,11 +70,7 @@ module.exports = function (grunt) {
                 'lib/**/*.css'
             ],
             tasks: [
-                'jshint:before',
-                'concat',
-                'jshint:after',
-                'uglify',
-                'shell'
+                'default'
             ]
         }
     });
@@ -83,6 +82,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-shell');
 
     grunt.registerTask('default', [
+        'jshint:backend',
         'jshint:before',
         'concat',
         'jshint:after',

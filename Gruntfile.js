@@ -37,7 +37,7 @@ module.exports = function (grunt) {
             before: ['<%= concat.dist.src %>'],
             after: ['<%= concat.dist.dest %>'],
             options: {
-                jshintrc: '.jshintrc',
+                jshintrc: '.jshintrc'
             }
         },
 

@@ -13,6 +13,7 @@
     "node": true,
 
     "bitwise": true,
+    "es3": true,
     "forin": true,
     "indent": 4,
     "maxlen": 80,

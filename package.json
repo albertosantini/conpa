@@ -20,14 +20,14 @@
     "node": ">=0.8.x"
   },
   "dependencies": {
-    "finance": ">=1.3.1"
+    "finance": "~1.3.1"
   },
   "devDependencies": {
-    "grunt": ">=0.4.1",
-    "grunt-contrib-concat": ">=0.3.0",
-    "grunt-contrib-jshint": ">=0.6.0",
-    "grunt-contrib-uglify": ">=0.2.2",
-    "grunt-contrib-watch": ">=0.4.4",
-    "grunt-shell": ">=0.2.2"
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-watch": "~0.5.1",
+    "grunt-shell": "~0.3.1"
   }
 }

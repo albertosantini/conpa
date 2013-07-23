@@ -1,5 +1,7 @@
 CONPA
 =====
+[![NPM version](https://badge.fury.io/js/conpa.png)](http://badge.fury.io/js/conpa)
+[![NGN Dependencies](https://david-dm.org/albertosantini/node-conpa.png)](https://david-dm.org/albertosantini/node-conpa)
 
 ConPA 2 is a complete frontend stack for an asset allocation application.
 
@@ -297,6 +299,9 @@ Todo
 
 Installation
 ============
+
+[![NPM](https://nodei.co/npm/conpa.png?downloads=true)](https://nodei.co/npm/conpa/)
+[![NPM](https://nodei.co/npm-dl/conpa.png)](https://nodei.co/npm/conpa/)
 
 To install with [npm](http://github.com/isaacs/npm):
 

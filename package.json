@@ -10,12 +10,7 @@
     "optimization"
   ],
   "author": "Alberto Santini",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://github.com/albertosantini/node-conpa/raw/master/LICENSE"
-    }
-  ],
+  "license": "MIT",
   "engines": {
     "node": ">=0.8.x"
   },

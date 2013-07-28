@@ -38,33 +38,31 @@ After reading the following paper
 [Patterns For Large-Scale JavaScript Application Architecture]
 (http://addyosmani.com/largescalejavascript/),
 ConPA 2 is based on modules loosely coupled, using a pub/sub pattern to exchange
-information.
+information between the components.
 
 The asset libraries are the following:
 
 - [Bootstrap](http://twitter.github.com/bootstrap/) - 2.3.1 -
   css, typeahead and alert components.
 
-- [jQuery](http://jquery.com/) - 1.10.2
+- [jQuery](http://jquery.com/) - 1.10.2 -
+  DOM manipulation.
 
-- [Sparklines](http://omnipotent.net/jquery.sparkline/) - 2.1.1 -
+- [Sparklines](http://omnipotent.net/jquery.sparkline/) - 2.1.2 -
   to draw the graphs.
 
 - [Lo-Dash](http://lodash.com/) - 1.3.1 -
-  drop-in replacement for [Underscore.js]
-  (http://documentcloud.github.com/underscore/).
+  for the templates.
 
 - [jQuery Tiny Pub/Sub](https://gist.github.com/661855) - 0.7
 
-The app may evolve using [Backbone.js]
-(http://documentcloud.github.com/backbone/).
+The app may evolve using [Ractive.js](http://www.ractivejs.org/).
 
 Just in case the following libraries are in the radar:
 
 - [Datepicker for Bootstrap](http://www.eyecon.ro/bootstrap-datepicker/)
 
-- [A localStorage adapter for Backbone.js]
-  (https://github.com/jeromegn/Backbone.localStorage)
+- [Depot.js localStorage wrapper](https://github.com/mkuklis/depot.js)
 
 - [Underscore.string](http://epeli.github.com/underscore.string/) -
   to format strings and numbers.

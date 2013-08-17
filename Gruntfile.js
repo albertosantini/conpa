@@ -53,11 +53,11 @@ module.exports = function (grunt) {
                 command: 'npm rm conpa'
             },
             install: {
-                command: 'npm install ../../../node-conpa'
+                command: 'npm install ../..'
             },
             options: {
                 execOptions: {
-                    cwd: '../z/nodejitsu/conpa/'
+                    cwd: './dist/nodejitsu/'
                 },
                 stdout: true
             }

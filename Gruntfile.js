@@ -57,7 +57,7 @@ module.exports = function (grunt) {
             },
             options: {
                 execOptions: {
-                    cwd: '../z/nodester/conpa/'
+                    cwd: '../z/nodejitsu/conpa/'
                 },
                 stdout: true
             }

@@ -2,6 +2,7 @@ CONPA
 =====
 [![NPM version](https://badge.fury.io/js/conpa.png)](http://badge.fury.io/js/conpa)
 [![NGN Dependencies](https://david-dm.org/albertosantini/node-conpa.png)](https://david-dm.org/albertosantini/node-conpa)
+[![NGN devDependencies](https://david-dm.org/albertosantini/node-conpa/dev-status.png)](https://david-dm.org/albertosantini/node-conpa#info=devDependencies)
 
 ConPA 2 is a complete frontend stack for an asset allocation application.
 

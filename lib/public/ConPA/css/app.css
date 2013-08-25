@@ -1,6 +1,5 @@
 body {
-    /* 60px to make the container go all the way to the bottom of the topbar */
-    padding-top: 60px;
+    padding-top: 50px;
     background-color: #eee;
     background-image: url(../img/grid-18px-masked.png);
     background-repeat: repeat-x;
@@ -20,7 +19,7 @@ body {
 
 #asset-list li:last-child {
     /* border-bottom: none; */
-    margin-bottom: 43px;  
+    margin-bottom: 43px;
 }
 
 #asset-list li label {
@@ -43,9 +42,9 @@ body {
 #asset-list li .destroy {
     display: none;
     position: absolute;
-    top: 10;
+    top: 10px;
     right: 10px;
-    bottom: 0;
+    bottom: 0px;
     width: 40px;
     height: 40px;
     margin: auto 0;

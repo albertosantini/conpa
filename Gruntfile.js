@@ -10,7 +10,7 @@ module.exports = function (grunt) {
                     'lib/public/ConPA/assets/js/jquery.sparkline-2.1.2.min.js',
                     'lib/public/ConPA/assets/js/jquery.localstorage-0.1.js',
                     'lib/public/ConPA/assets/js/lodash-1.3.1.min.js',
-                    'lib/public/ConPA/assets/js/bootstrap-2.3.1.min.js'
+                    'lib/public/ConPA/assets/js/typeahead-2.3.2.min.js'
                 ],
                 dest: 'lib/public/ConPA/build/vendor.js'
             },

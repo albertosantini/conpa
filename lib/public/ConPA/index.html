@@ -1,116 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
+<head>
+    <meta charset="utf-8">
 
-        <title>ConPA</title>
+    <title>ConPA</title>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <meta name="description" content="asset allocation optimization">
-        <meta name="keywords" content="conpa, asset allocation, finance">
+    <meta name="description" content="asset allocation optimization">
+    <meta name="keywords" content="conpa, asset allocation, finance">
 
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 
-        <link href="css/app.css" rel="stylesheet">
-    </head>
+    <link href="css/app.css" rel="stylesheet">
+</head>
 
-    <body>
+<body>
 
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <a class="brand"
-                href="https://github.com/albertosantini/node-conpa">ConPA 2</a>
+            <div class="navbar-header">
+                <a class="navbar-brand"
+                    href="https://github.com/albertosantini/node-conpa">
+                    ConPA 2
+                </a>
+            </div>
         </div>
-        </div>
-        </div>
+    </div>
 
-        <div class="container">
+    <div class="container">
 
-            <div class="row">
-                <div class="span6">
-                    <h2>Basket</h2>
-                    <div class="controls">
-                        <div class="input-prepend">
-                            <span class="add-on">
-                                <i class="icon-search"></i>
-                            </span><input id="new-asset" class="span3"
-                                        type="text"
-                                        data-provide="typeahead"
-                                        placeholder="What assets to be added?">
-                        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Basket</h2>
+
+                <div class="input-group input-group-lg">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-search"></span>
+                </span>
+                <input id="new-asset" class="form-control input-lg"
+                    type="text"
+                    data-provide="typeahead"
+                    placeholder="What assets to be added?">
+                </div>
+
+                <ul id="asset-list"></ul>
+
+                <div id="message"></div>
+
+            </div>
+
+            <div class="col-md-2">
+                <h2>Charts</h2>
+                <span class="label label-info">Today Weights</span>
+                <div id="basket-pie-chart"></div>
+                <span id="basket-pie-refdate-label"
+                        class="label label-info">
+                    Year To Date Weights</span>
+                <div id="basket-pie-ytd-chart"></div>
+                <span id="basket-performance-refdate-label"
+                        class="label label-info">
+                    Year To Date Performance</span>
+                <div id="basket-performance-ytd-chart"></div>
+            </div>
+
+            <div class="col-md-4">
+                <h2 id="asset-stats-name">Asset Stats</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="asset-stats-list1"></div>
                     </div>
-
-                    <ul id="asset-list"></ul>
-
-                    <div id="message"></div>
-
-                </div>
-
-                <div class="span2">
-                    <h2>Charts</h2>
-                    <span class="label label-info">Today Weights</span>
-                    <div id="basket-pie-chart"></div>
-                    <span id="basket-pie-refdate-label"
-                            class="label label-info">
-                        Year To Date Weights</span>
-                    <div id="basket-pie-ytd-chart"></div>
-                    <span id="basket-performance-refdate-label"
-                            class="label label-info">
-                        Year To Date Performance</span>
-                    <div id="basket-performance-ytd-chart"></div>
-                </div>
-
-                <div class="span4">
-                    <h2 id="asset-stats-name">Asset Stats</h2>
-                    <div class="row">
-                        <div class="span2">
-                            <div id="asset-stats-list1"></div>
-                        </div>
-                        <div class="span2">
-                            <div id="asset-stats-list2"></div>
-                        </div>
+                    <div class="col-md-6">
+                        <div id="asset-stats-list2"></div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="row">
-                <div class="span6">
-                    <h2>Latest Portfolios</h2>
-                    <div id="latest-portfolios-list"></div>
-                </div>
-                <div class="span3">
-                    <h2>Best Portfolios</h2>
-                    <div id="best-performing-portfolios-list"></div>
-                    <div id="lowprofile-risk-portfolios-list"></div>
-                    <div id="highprofile-return-portfolios-list"></div>
-                </div>
-                <div class="span3">
-                    <h2>Worst Portfolios</h2>
-                    <div id="worst-performing-portfolios-list"></div>
-                    <div id="highprofile-risk-portfolios-list"></div>
-                    <div id="lowprofile-return-portfolios-list"></div>
-                </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Latest Portfolios</h2>
+                <div id="latest-portfolios-list"></div>
             </div>
+            <div class="col-md-3">
+                <h2>Best Portfolios</h2>
+                <div id="best-performing-portfolios-list"></div>
+                <div id="lowprofile-risk-portfolios-list"></div>
+                <div id="highprofile-return-portfolios-list"></div>
+            </div>
+            <div class="col-md-3">
+                <h2>Worst Portfolios</h2>
+                <div id="worst-performing-portfolios-list"></div>
+                <div id="highprofile-risk-portfolios-list"></div>
+                <div id="lowprofile-return-portfolios-list"></div>
+            </div>
+        </div>
 
-            <hr>
+        <hr>
 
-            <footer>
-            <p class="pull-right">
-                P0wer3d by <a href="http://nodejs.org/">Node.js</a>,
-                Relax3d by <a href="http://cloudant.com">Cloudant</a> and
-                Devel0p3d by <a href="https://github.com/albertosantini">as</a>
-            </p>
-            </footer>
+        <footer>
+        <p class="pull-right">
+            P0wer3d by <a href="http://nodejs.org/">Node.js</a>,
+            Relax3d by <a href="http://cloudant.com">Cloudant</a> and
+            Devel0p3d by <a href="https://github.com/albertosantini">as</a>
+        </p>
+        </footer>
 
-        </div> <!-- /container -->
+    </div> <!-- /container -->
 
-        <script src="build/vendor.js"></script>
-        <script src="build/conpa.js"></script>
-    </body>
+    <script src="build/vendor.js"></script>
+    <script src="build/conpa.js"></script>
+</body>
 
 </html>
 

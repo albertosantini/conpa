@@ -2,7 +2,6 @@ CONPA
 =====
 [![NPM version](https://badge.fury.io/js/conpa.png)](http://badge.fury.io/js/conpa)
 [![NGN Dependencies](https://david-dm.org/albertosantini/node-conpa.png)](https://david-dm.org/albertosantini/node-conpa)
-[![NGN devDependencies](https://david-dm.org/albertosantini/node-conpa/dev-status.png)](https://david-dm.org/albertosantini/node-conpa#info=devDependencies)
 
 ConPA 2 is a complete frontend stack for an asset allocation application.
 
@@ -43,18 +42,11 @@ information between the components.
 
 The asset libraries are the following:
 
-- [Bootstrap](http://twitter.github.com/bootstrap/) - 2.3.1 -
-  css, typeahead and alert components.
-
-- [jQuery](http://jquery.com/) - 1.10.2 -
-  DOM manipulation.
-
-- [Sparklines](http://omnipotent.net/jquery.sparkline/) - 2.1.2 -
-  to draw the graphs.
-
-- [Lo-Dash](http://lodash.com/) - 1.3.1 -
-  for the templates.
-
+- [Bootstrap](http://getbootstrap.com/) - 3.0.0
+- [Typeahead](http://getbootstrap.com/2.3.2/) - 2.3.2
+- [jQuery](http://jquery.com/) - 1.10.2
+- [Sparklines](http://omnipotent.net/jquery.sparkline/) - 2.1.2
+- [Lo-Dash](http://lodash.com/) - 1.3.1
 - [jQuery Tiny Pub/Sub](https://gist.github.com/661855) - 0.7
 
 The app may evolve using [Ractive.js](http://www.ractivejs.org/).

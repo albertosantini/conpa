@@ -20,7 +20,7 @@ module.exports = function (grunt) {
                     'lib/public/ConPA/js/portfolioDashboard.js',
                     'lib/public/ConPA/js/portfolioCRM.js',
                     'lib/public/ConPA/js/portfolioOptimization.js',
-                    'lib/public/ConPA/js/portfolioGraph.js',
+                    'lib/public/ConPA/js/portfolioCharts.js',
                     'lib/public/ConPA/js/assetStats.js',
                     'lib/public/ConPA/js/assetList.js',
                     'lib/public/ConPA/js/assetSearch.js',

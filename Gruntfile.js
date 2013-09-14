@@ -64,6 +64,17 @@ module.exports = function (grunt) {
             }
         },
 
+        karma: {
+            e2e: {
+                configFile: './test/karma-e2e.conf.js',
+                autoWatch: false,
+                singleRun: true
+            },
+            e2e_auto: {
+                configFile: './test/karma-e2e.conf.js'
+            }
+        },
+
         watch: {
             files: [
                 'lib/**/*.js',
@@ -81,6 +92,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-karma');
 
     grunt.registerTask('default', [
         'jshint:backend',
@@ -91,4 +103,5 @@ module.exports = function (grunt) {
         'shell',
         'watch'
     ]);
+
 };

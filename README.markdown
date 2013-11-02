@@ -42,14 +42,14 @@ information between the components.
 
 The asset libraries are the following:
 
-- [Bootstrap](http://getbootstrap.com/) - 3.0.0
+- [Bootstrap](http://getbootstrap.com/) - 3.0.1
 - [Typeahead](http://getbootstrap.com/2.3.2/) - 2.3.2
 - [jQuery](http://jquery.com/) - 1.10.2
 - [Google Charts](https://google-developers.appspot.com/chart/)
-- [Lo-Dash](http://lodash.com/) - 1.3.1
+- [Lo-Dash](http://lodash.com/) - 2.2.1
 - [jQuery Tiny Pub/Sub](https://gist.github.com/661855) - 0.7
 
-The app may evolve using [Ractive.js](http://www.ractivejs.org/).
+The app may evolve using [AngularJS](http://angularjs.org/).
 
 Just in case the following libraries are in the radar:
 
@@ -149,6 +149,12 @@ portfolioOptimization
 
     - crm.portfolio.conpa, fired when the portfolio is optimized.
 
+    - render.piechart.conpa, fired when the portfolio is optimized to draw the
+      pie chart.
+
+    - render.perfchart.conpa, fired when the portfolio is optimized to draw the
+      performances chart.
+
     - clear.portfolio.conpa, catched when the assets in the basket are
       greater than two.
 
@@ -198,7 +204,28 @@ portfolioDashboard
     - render.app.conpa, fired when the user click on a row of the dashboard
       tables to load a stored portfolio.
 
+    - render.latestptfschart.conpa, fired to draw the scatter plot for the
+      latest portfolios.
+
     - render.dashboard.conpa, catched when the app renders.
+
+portfolioCharts
+---------------
+
+- *Description*: it draws the scatter plot for the latest portfolios, the pie
+  charts for the today and year-to-date weights of the optimized portfolios, the
+  column chart of the performances.
+
+- *Events*
+
+  - render.latestptfschart.conpa, catched when the dashboard portfolios are
+    loaded.
+
+  - render.piechart.conpa, catched when the optimized portfolios, actual and
+    year-to-date, are ready.
+
+  - render.perfchart.conpa, catched when the year-to-date optimized portfolio is
+    ready.
 
 portfolioCRM
 ------------

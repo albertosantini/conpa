@@ -45,7 +45,7 @@ The asset libraries are the following:
 - [Bootstrap](http://getbootstrap.com/) - 3.0.0
 - [Typeahead](http://getbootstrap.com/2.3.2/) - 2.3.2
 - [jQuery](http://jquery.com/) - 1.10.2
-- [Sparklines](http://omnipotent.net/jquery.sparkline/) - 2.1.2
+- [Google Charts](https://google-developers.appspot.com/chart/)
 - [Lo-Dash](http://lodash.com/) - 1.3.1
 - [jQuery Tiny Pub/Sub](https://gist.github.com/661855) - 0.7
 

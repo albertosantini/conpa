@@ -1,3 +1,11 @@
+2.3.0 / 2013-11-02
+==================
+
+* Replaced sparkline library with Google Chart.
+* Added karma tests.
+* Updated Bootstrap 3.0.1.
+* Updated Lo-Dash 2.2.1.
+
 2.2.0 / 2013-08-25
 ==================
 

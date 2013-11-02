@@ -1,7 +1,7 @@
 {
   "name": "conpa",
   "description": "Asset allocation application",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "main": "index",
   "repository": "http://github.com/albertosantini/node-conpa",
   "keywords": [
@@ -12,7 +12,7 @@
   "author": "Alberto Santini",
   "license": "MIT",
   "engines": {
-    "node": ">=0.8.x"
+    "node": ">=0.10.x"
   },
   "dependencies": {
     "finance": "~2.0.0"
@@ -20,11 +20,11 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-jshint": "~0.6.4",
-    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-jshint": "~0.7.1",
+    "grunt-contrib-uglify": "~0.2.5",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-shell": "~0.4.0",
-    "karma": "~0.10.2",
+    "grunt-shell": "~0.5.0",
+    "karma": "~0.10.4",
     "grunt-karma": "~0.6.2",
     "karma-ng-scenario": "~0.1.0"
   }

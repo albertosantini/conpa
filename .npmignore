@@ -3,3 +3,4 @@
 dist/
 examples/
 Gruntfile.js
+test/

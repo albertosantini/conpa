@@ -18,13 +18,13 @@
     "finance": "~2.0.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
+    "grunt": "~0.4.2",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-jshint": "~0.7.1",
-    "grunt-contrib-uglify": "~0.2.5",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-contrib-uglify": "~0.2.7",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-shell": "~0.5.0",
-    "karma": "~0.10.4",
+    "grunt-shell": "~0.6.0",
+    "karma": "~0.10.5",
     "grunt-karma": "~0.6.2",
     "karma-ng-scenario": "~0.1.0"
   }

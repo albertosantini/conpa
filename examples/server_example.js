@@ -1,25 +1,24 @@
-/*jslint node:true, sloppy:true, nomen:true */
+// Quick and dirty getting started
+//
+// - clone the repo
+// - cd to the project folder
+// - npm install express@3.5.1
+// - cd to the example folder
+// - node server_example.js
+// - add three assets and you get the optimal portfolio
 
-var express = require('express'),
-    conpa = require('conpa');
+"use strict";
 
-var app = express.createServer();
+var express = require("express"),
+    conpa = require('../lib/conpa');
+
+var app = express();
 
 app.configure(function () {
-    app.use(express.favicon(__dirname + '/favicon.ico'));
-    app.use(express["static"].apply(null, [__dirname + '/public']));
-    app.set('views', __dirname + '/views');
-    app.set('view engine', 'jade');
-    app.set('view options', {layout: false});
+    app.use(express["static"](["../lib/public/ConPA"]));
     app.use(express.bodyParser());
     app.use(express.errorHandler());
     app.use(express.cookieParser());
-    app.use(express.session({
-        secret: "no more secrets",
-        cookie: {
-            maxAge: 60000
-        }
-    }));
 });
 
 app.listen(process.env.PORT || 8001);

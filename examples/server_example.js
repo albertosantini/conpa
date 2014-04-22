@@ -3,8 +3,10 @@
 // - clone the repo
 // - cd to the project folder
 // - npm install express@3.5.1
+// - npm install # to install the dependencies
 // - cd to the example folder
 // - node server_example.js
+// - goto http://localhost:8001
 // - add three assets and you get the optimal portfolio
 
 "use strict";

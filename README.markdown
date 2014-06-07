@@ -42,11 +42,11 @@ information between the components.
 
 The asset libraries are the following:
 
-- [Bootstrap](http://getbootstrap.com/) - 3.0.1
+- [Bootstrap](http://getbootstrap.com/) - 3.1.1
 - [Typeahead](http://getbootstrap.com/2.3.2/) - 2.3.2
-- [jQuery](http://jquery.com/) - 1.10.2
+- [jQuery](http://jquery.com/) - 1.11.1
 - [Google Charts](https://google-developers.appspot.com/chart/)
-- [Lo-Dash](http://lodash.com/) - 2.2.1
+- [Lo-Dash](http://lodash.com/) - 2.4.1
 - [jQuery Tiny Pub/Sub](https://gist.github.com/661855) - 0.7
 
 The app may evolve using [AngularJS](http://angularjs.org/).
@@ -62,8 +62,6 @@ Just in case the following libraries are in the radar:
 
 - [A lightweight javascript date library](http://momentjs.com/) -
   to format dates.
-
-- [A conditional AMD loader](http://yepnopejs.com/)
 
 assetSearch
 -----------
@@ -325,7 +323,7 @@ To install with [npm](http://github.com/isaacs/npm):
 
     npm install conpa
 
-Tested with node 0.8.x.
+Tested with node 0.10.x.
 
 The module adds the following routes to the
 [express](http://github.com/visionmedia/express) instance:

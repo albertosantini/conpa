@@ -5,7 +5,7 @@ module.exports = function (grunt) {
         concat: {
             vendor: {
                 src: [
-                    'lib/public/ConPA/assets/js/jquery-1.10.2.min.js',
+                    'lib/public/ConPA/assets/js/jquery-1.11.1.min.js',
                     'lib/public/ConPA/assets/js/jquery.pubsub-0.7.min.js',
                     'lib/public/ConPA/assets/js/jquery.localstorage-0.1.js',
                     'lib/public/ConPA/assets/js/lodash-2.4.1.min.js',

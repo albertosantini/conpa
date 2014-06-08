@@ -47,7 +47,7 @@ The asset libraries are the following:
 - [jQuery](http://jquery.com/) - 1.11.1
 - [Google Charts](https://google-developers.appspot.com/chart/)
 - [Lo-Dash](http://lodash.com/) - 2.4.1
-- [jQuery Tiny Pub/Sub](https://gist.github.com/661855) - 0.7
+- [jQuery Tiny Pub/Sub](https://github.com/cowboy/jquery-tiny-pubsub) - 0.7.0
 
 The app may evolve using [AngularJS](http://angularjs.org/).
 

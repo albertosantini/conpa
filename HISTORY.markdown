@@ -1,3 +1,11 @@
+2.5.0 / 2015-12-10
+==================
+
+* Update Bootstrap 3.3.5.
+* Update finance 2.4.0.
+* Fix typos.
+* Update deps.
+
 2.4.0 / 2014-06-08
 ==================
 
@@ -153,4 +161,3 @@ a selectitem event.
 ==================
 
 * Initial release.
-

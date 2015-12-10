@@ -1,1 +1,5 @@
-module.exports = require('./lib/conpa');
+(function () {
+    "use strict";
+
+    module.exports = require("./lib/conpa");
+}());

@@ -1,7 +1,7 @@
 {
     "name": "conpa",
     "description": "Asset allocation application",
-    "version": "2.5.0",
+    "version": "3.0.0",
     "main": "index",
     "repository": "http://github.com/albertosantini/node-conpa",
     "keywords": [
@@ -14,20 +14,29 @@
     "engines": {
         "node": ">=0.10.x"
     },
+    "scripts": {
+        "dev": "live-server src/client",
+        "start": "node src/server/app.js"
+    },
     "dependencies": {
         "finance": "~2.4.0"
     },
     "devDependencies": {
+        "body-parser": "~1.14.1",
+        "chai": "~3.4.1",
         "eslint": "~1.10.3",
         "eslint-config-eslint": "~1.0.1",
+        "eslint-plugin-angular": "~0.15.0",
+        "express": "~4.13.3",
         "grunt": "~0.4.5",
-        "grunt-contrib-concat": "~0.5.1",
         "grunt-eslint": "~17.3.1",
-        "grunt-contrib-uglify": "~0.11.0",
-        "grunt-contrib-watch": "~0.6.1",
-        "grunt-shell": "~1.1.2",
         "grunt-karma": "~0.12.1",
         "karma": "~0.13.15",
-        "karma-ng-scenario": "~0.1.0"
+        "karma-mocha": "~0.2.1",
+        "karma-chai": "~0.1.0",
+        "karma-phantomjs-launcher": "~0.2.1",
+        "mocha": "~2.3.4",
+        "phantomjs": "~1.9.19",
+        "live-server": "~0.8.1"
     }
 }

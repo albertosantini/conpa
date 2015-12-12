@@ -1,0 +1,13 @@
+env:
+    browser: true
+
+rules:
+    angular/controller-name:
+        - 2
+        - "/[A-Z].*$/"
+
+globals:
+    angular: false
+
+plugins:
+    - angular

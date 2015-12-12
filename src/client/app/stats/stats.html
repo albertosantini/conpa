@@ -1,0 +1,20 @@
+<h2>Last Asset Stats</h2>
+
+<md-content class="asset-stats">
+
+    <strong>{{ vm.assetStats.symbol}}</strong>
+
+    <md-card ng-repeat="stats in vm.assetStats.stats">
+
+        <div layout="row">
+            <span flex="75">{{ stats.label }}</span>
+            <span flex="25">{{ stats.value }}</span>
+        </div>
+
+    </md-card>
+
+    <md-card ng-show="!vm.assetStats.length">
+        No asset stats available.
+    </md-card>
+
+</md-content>

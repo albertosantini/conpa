@@ -1,0 +1,73 @@
+<h2>Best Portfolios</h2>
+
+<div ng-show="vm.bestPerformingPortfolios.length" layout="row">
+    <b flex="20">Perf</b>
+    <b flex="50">To Date</b>
+    <b flex="30">Best</b>
+</div>
+
+<md-content>
+
+    <md-card ng-repeat="ptf in vm.bestPerformingPortfolios">
+
+        <div layout="row">
+            <span flex="20">{{ ptf.key * 100 | number:1 }}%</span>
+            <span flex="50">{{ ptf.value.created_at }}</span>
+            <span flex="30">{{ ptf.id | limitTo:8 }}</span>
+        </div>
+
+    </md-card>
+
+    <md-card ng-show="!vm.bestPerformingPortfolios.length">
+        No best portfolios.
+    </md-card>
+
+</md-content>
+
+<div ng-show="vm.lowProfileRiskPortfolios.length" layout="row">
+    <b flex="20">Risk</b>
+    <b flex="50">To Date</b>
+    <b flex="30">Low</b>
+</div>
+
+<md-content>
+
+    <md-card ng-repeat="ptf in vm.lowProfileRiskPortfolios">
+
+        <div layout="row">
+            <span flex="20">{{ ptf.key * 100 | number:1 }}%</span>
+            <span flex="50">{{ ptf.value.created_at }}</span>
+            <span flex="30">{{ ptf.id | limitTo:8 }}</span>
+        </div>
+
+    </md-card>
+
+    <md-card ng-show="!vm.lowProfileRiskPortfolios.length">
+        No low profile risk portfolios.
+    </md-card>
+
+</md-content>
+
+<div ng-show="vm.highProfileReturnPortfolios.length" layout="row">
+    <b flex="20">Ret</b>
+    <b flex="50">To Date</b>
+    <b flex="30">High</b>
+</div>
+
+<md-content>
+
+    <md-card ng-repeat="ptf in vm.highProfileReturnPortfolios">
+
+        <div layout="row">
+            <span flex="20">{{ ptf.key * 100 | number:1 }}%</span>
+            <span flex="50">{{ ptf.value.created_at }}</span>
+            <span flex="30">{{ ptf.id | limitTo:8 }}</span>
+        </div>
+
+    </md-card>
+
+    <md-card ng-show="!vm.highProfileReturnPortfolios.length">
+        No high profile return portfolios.
+    </md-card>
+
+</md-content>

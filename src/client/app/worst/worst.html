@@ -1,0 +1,73 @@
+<h2>Worst Portfolios</h2>
+
+<div ng-show="vm.worstPerformingPortfolios.length" layout="row">
+    <b flex="20">Perf</b>
+    <b flex="50">To Date</b>
+    <b flex="30">Worst</b>
+</div>
+
+<md-content>
+
+    <md-card ng-repeat="ptf in vm.worstPerformingPortfolios">
+
+        <div layout="row">
+            <span flex="20">{{ ptf.key * 100 | number:1 }}%</span>
+            <span flex="50">{{ ptf.value.created_at }}</span>
+            <span flex="30">{{ ptf.id | limitTo:8 }}</span>
+        </div>
+
+    </md-card>
+
+    <md-card ng-show="!vm.worstPerformingPortfolios.length">
+        No worst portfolios.
+    </md-card>
+
+</md-content>
+
+<div ng-show="vm.highProfileRiskPortfolios.length" layout="row">
+    <b flex="20">Risk</b>
+    <b flex="50">To Date</b>
+    <b flex="30">High</b>
+</div>
+
+<md-content>
+
+    <md-card ng-repeat="ptf in vm.highProfileRiskPortfolios">
+
+        <div layout="row">
+            <span flex="20">{{ ptf.key * 100 | number:1 }}%</span>
+            <span flex="50">{{ ptf.value.created_at }}</span>
+            <span flex="30">{{ ptf.id | limitTo:8 }}</span>
+        </div>
+
+    </md-card>
+
+    <md-card ng-show="!vm.highProfileRiskPortfolios.length">
+        No high profile risk portfolios.
+    </md-card>
+
+</md-content>
+
+<div ng-show="vm.lowProfileReturnPortfolios.length" layout="row">
+    <b flex="20">Ret</b>
+    <b flex="50">To Date</b>
+    <b flex="30">Low</b>
+</div>
+
+<md-content>
+
+    <md-card ng-repeat="ptf in vm.lowProfileReturnPortfolios">
+
+        <div layout="row">
+            <span flex="20">{{ ptf.key * 100 | number:1 }}%</span>
+            <span flex="50">{{ ptf.value.created_at }}</span>
+            <span flex="30">{{ ptf.id | limitTo:8 }}</span>
+        </div>
+
+    </md-card>
+
+    <md-card ng-show="!vm.lowProfileReturnPortfolios.length">
+        No low profile return portfolios.
+    </md-card>
+
+</md-content>

@@ -1,0 +1,30 @@
+<h2>Basket</h2>
+
+<md-autocomplete
+    md-selected-item="vm.selectedItem"
+    md-search-text="vm.searchText"
+    md-selected-item-change="vm.selectedItemChange(item)"
+    md-items="item in vm.querySearch(vm.searchText)"
+    md-item-text="item.symbol"
+    md-min-length="1"
+    placeholder="What assets to be added?">
+    <md-item-template>
+        <span md-highlight-text="vm.searchText" md-highlight-flags="ig">
+            {{item.symbol}} {{item.name}} ({{item.type}} - {{item.exchDisp}})
+        </span>
+    </md-item-template>
+    <md-not-found>
+        No asset matching "{{vm.searchText}}" were found.
+    </md-not-found>
+</md-autocomplete>
+
+<md-chips ng-model="vm.assets"
+    md-require-match="true"
+    md-on-remove="vm.chipOnRemove($chip)">
+    <md-chip-template>
+        <span>
+            <strong>{{$chip.symbol}}</strong> {{$chip.name}}
+            <em>({{$chip.type}} - {{$chip.exchDisp}})</em>
+        </span>
+    </md-chip-template>
+</md-chips>

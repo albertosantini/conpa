@@ -1,5 +1,3 @@
-(function () {
-    "use strict";
+"use strict";
 
-    module.exports = require("./lib/conpa");
-}());
+module.exports = require("./lib/conpa");

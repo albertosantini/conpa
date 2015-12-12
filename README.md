@@ -3,6 +3,8 @@ CONPA
 [![NPM version](https://badge.fury.io/js/conpa.png)](http://badge.fury.io/js/conpa)
 [![NGN Dependencies](https://david-dm.org/albertosantini/node-conpa.png)](https://david-dm.org/albertosantini/node-conpa)
 
+## Work In Progress release 3.
+
 ConPA 2 is a complete frontend stack for an asset allocation application.
 
 ConPA 2 is a single page with the following components: the asset search, the list
@@ -431,4 +433,3 @@ Rserve instance, otherwise a native implementation is used.
         - *user* username for remote connection of Rserve instance.
 
         - *password* password for remote connection of Rserve instance.
-

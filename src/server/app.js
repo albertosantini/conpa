@@ -22,8 +22,8 @@ app.use(express.static(documentRoot));
 
 routes.configure(app, {
     crm: {
-        // liveDomain: hostname,
-        liveDomain: "foo.com",
+        liveDomain: hostname,
+        // liveDomain: "foo.com",
         liveUrl: process.env.CONPA_LIVE_URL,
         liveDb: "conpa",
         testingUrl: process.env.CONPA_TEST_URL,

@@ -21,6 +21,10 @@ function configure(app, config) {
                 .getOptimalPortfolio(req.body, function (err, data) {
                     if (!err) {
                         res.json(data);
+                    } else {
+                        res.json({
+                            message: err
+                        });
                     }
                 });
         }

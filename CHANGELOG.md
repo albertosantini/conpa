@@ -1,3 +1,8 @@
+3.1.1 / 2015-12-13
+==================
+
+* Reset optimal weights for every optimization. 
+
 3.1.0 / 2015-12-13
 ==================
 

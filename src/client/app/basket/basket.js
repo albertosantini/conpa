@@ -12,7 +12,6 @@
 
         vm.assets = basketService.getAssets();
 
-        vm.selectedItem = "";
         vm.searchText = "";
 
         vm.querySearch = querySearch;

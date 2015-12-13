@@ -5,8 +5,8 @@
         .module("conpa")
         .factory("portfoliosService", portfoliosService);
 
-    portfoliosService.$inject = ["$http", "$q"];
-    function portfoliosService($http, $q) {
+    portfoliosService.$inject = ["$http", "$q", "toastService"];
+    function portfoliosService($http, $q, toastService) {
         var service = {
             getLastCreatedPortfolios: getLastCreatedPortfolios,
             getBestPerformingPortfolios: getBestPerformingPortfolios,
@@ -26,6 +26,7 @@
                 deferred.resolve(res.data.rows);
             }).catch(function (err) {
                 deferred.reject(err);
+                toastService.show("Error retrieving portfolios.");
             });
 
             return deferred.promise;

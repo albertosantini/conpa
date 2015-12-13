@@ -2,18 +2,18 @@
 
 <md-content>
     <strong ng-show="vm.optimalPortfolio.optim.solution.length">Optimal Weights</strong>
-    <md-card ng-repeat="asset in vm.assets" ng-show="vm.optimalPortfolio.optim.solution.length">
+    <md-card ng-repeat="weight in vm.optimalPortfolio.optim.solution">
 
         <div layout="row">
-            <span flex="60">{{ asset.symbol }}</span>
-            <span flex="40">{{ vm.optimalPortfolio.optim.solution[$index] * 100 | number:1 }}%</span>
+            <span flex="60">{{ vm.assets[$index].symbol }}</span>
+            <span flex="40">{{ weight * 100 | number:1 }}%</span>
         </div>
 
     </md-card>
 
     <md-card ng-show="!vm.optimalPortfolio.optim.solution.length">
         <p>No basket info available.</p>
-        <p>You need to add, at least, three assets.</p>
+        <p>Add three or more assets: all with historical prices available.</p>
     </md-card>
 
 </md-content>

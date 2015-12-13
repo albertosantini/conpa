@@ -34,11 +34,11 @@
                 return asset.symbol;
             });
 
+            if (optimalPortfolio && optimalPortfolio.optim) {
+                optimalPortfolio.optim.solution.length = 0;
+            }
+
             if (symbols.length < 3) {
-                if (optimalPortfolio && optimalPortfolio.optim &&
-                        optimalPortfolio.optim.solution.length > 0) {
-                    optimalPortfolio.optim.solution.length = 0;
-                }
                 return deferred.promise;
             }
 

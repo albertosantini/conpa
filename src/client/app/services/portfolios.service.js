@@ -14,7 +14,8 @@
             getLowProfileRiskPortfolios: getLowProfileRiskPortfolios,
             getHighProfileRiskPortfolios: getHighProfileRiskPortfolios,
             getHighProfileReturnPortfolios: getHighProfileReturnPortfolios,
-            getLowProfileReturnPortfolios: getLowProfileReturnPortfolios
+            getLowProfileReturnPortfolios: getLowProfileReturnPortfolios,
+            savePortfolio: savePortfolio
         };
 
         return service;
@@ -58,6 +59,30 @@
 
         function getLowProfileReturnPortfolios() {
             return getPortfolios("/api/getLowProfileReturnPortfolios");
+        }
+
+        function savePortfolio(ptf) {
+            var deferred = $q.defer(),
+                url = "/api/putPortfolioOnCRM";
+
+            $http.post(url, {
+                "symbols": ptf.symbols,
+                "weights": ptf.weights,
+                "ref": ptf.ref,
+                "ret": ptf.ret,
+                "risk": ptf.risk,
+                "perf": ptf.perf,
+                "highs": ptf.highs,
+                "lows": ptf.lows
+            }).then(function (res) {
+                console.log(res.data);
+                deferred.resolve(res.data.rows);
+            }).catch(function (err) {
+                deferred.reject(err);
+                toastService.show("Error saving the portfolio.");
+            });
+
+            return deferred.promise;
         }
     }
 

@@ -5,8 +5,10 @@
         .module("conpa")
         .factory("infoService", infoService);
 
-    infoService.$inject = ["$http", "$q", "toastService"];
-    function infoService($http, $q, toastService) {
+    infoService.$inject = ["$http", "$q", "toastService",
+        "portfoliosService", "latestService"];
+    function infoService($http, $q, toastService,
+            portfoliosService, latestService) {
         var optimalPortfolio = {},
             service = {
                 getOptimalPortfolio: getOptimalPortfolio,
@@ -21,7 +23,7 @@
 
         function calcOptimalPortfolio(symbols, refDate) {
             var url = "/api/getOptimalPortfolio",
-                deferred,
+                deferred = $q.defer(),
                 lows = [],
                 highs = [];
 
@@ -37,12 +39,10 @@
                         optimalPortfolio.optim.solution.length > 0) {
                     optimalPortfolio.optim.solution.length = 0;
                 }
-                return optimalPortfolio;
+                return deferred.promise;
             }
 
             refDate = refDate || (new Date()).toString();
-
-            deferred = $q.defer();
 
             $http.post(url, {
                 prods: symbols,
@@ -55,8 +55,21 @@
                     deferred.reject(res.data.message);
                     toastService.show(res.data.message);
                 } else {
-                    deferred.resolve(res.data);
+                    portfoliosService.savePortfolio({
+                        "symbols": symbols,
+                        "weights": res.data.optim.solution,
+                        "ref": refDate,
+                        "ret": res.data.optim.pm,
+                        "risk": res.data.optim.ps,
+                        "perf": res.data.perf,
+                        "highs": highs,
+                        "lows": lows
+                    }).then(function () {
+                        latestService.refresh();
+                    });
+
                     angular.merge(optimalPortfolio, res.data);
+                    deferred.resolve(res.data);
                 }
             }).catch(function (err) {
                 deferred.reject(err);

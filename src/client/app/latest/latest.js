@@ -5,15 +5,12 @@
         .module("conpa")
         .controller("Latest", Latest);
 
-    Latest.$inject = ["portfoliosService"];
-    function Latest(portfoliosService) {
+    Latest.$inject = ["latestService"];
+    function Latest(latestService) {
         var vm = this;
 
-        vm.latestPortfolios = [];
-
-        portfoliosService.getLastCreatedPortfolios().then(function (ptfs) {
-            angular.merge(vm.latestPortfolios, ptfs);
-        });
+        vm.latestPortfolios = latestService.getLatestPortfolios();
+        latestService.refresh();
     }
 
 }());

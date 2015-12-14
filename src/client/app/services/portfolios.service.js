@@ -75,8 +75,7 @@
                 "highs": ptf.highs,
                 "lows": ptf.lows
             }).then(function (res) {
-                console.log(res.data);
-                deferred.resolve(res.data.rows);
+                deferred.resolve(res.data);
             }).catch(function (err) {
                 deferred.reject(err);
                 toastService.show("Error saving the portfolio.");

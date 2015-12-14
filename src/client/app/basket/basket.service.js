@@ -26,7 +26,7 @@
             }
 
             isNew = assets.filter(function (asset) {
-                if (item.name === asset.name) {
+                if (item.symbol === asset.symbol) {
                     return asset;
                 }
             }).length === 0;

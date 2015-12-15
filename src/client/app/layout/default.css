@@ -28,3 +28,7 @@ body {
 .asset-stats {
     max-height: 256px;
 }
+
+.performances {
+    max-height: 128px;
+}

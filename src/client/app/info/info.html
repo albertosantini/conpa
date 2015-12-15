@@ -1,7 +1,7 @@
 <h2>Info</h2>
 
+<strong ng-show="vm.optimalPortfolioToDate.optim.solution.length">Optimal Weights ToDate</strong>
 <md-content>
-    <strong ng-show="vm.optimalPortfolioToDate.optim.solution.length">Optimal Weights ToDate</strong>
     <md-card ng-repeat="weight in vm.optimalPortfolioToDate.optim.solution track by $index">
 
         <div layout="row">
@@ -10,8 +10,10 @@
         </div>
 
     </md-card>
+</md-content>
 
-    <strong ng-show="vm.optimalPortfolioYearToDate.optim.solution.length">Optimal Weights YearToDate</strong>
+<strong ng-show="vm.optimalPortfolioYearToDate.optim.solution.length">Optimal Weights YearToDate</strong>
+<md-content>
     <md-card ng-repeat="weight in vm.optimalPortfolioYearToDate.optim.solution track by $index">
 
         <div layout="row">
@@ -20,10 +22,23 @@
         </div>
 
     </md-card>
+</md-content>
 
+<strong ng-show="vm.optimalPortfolioYearToDate.perf.length">Weekly Performance</strong>
+<md-content layout-margin class="performances">
+    <md-card ng-repeat="perf in vm.optimalPortfolioYearToDate.perf track by $index">
+
+        <div layout="row">
+            <span flex="60">{{ $index }}</span>
+            <span flex="40">{{ perf * 100 | number:1 }}%</span>
+        </div>
+
+    </md-card>
+</md-content>
+
+<md-content>
     <md-card ng-show="!vm.optimalPortfolioToDate.optim.solution.length">
-        <p>No basket info available.</p>
+        <p>No basket info available.
         <p>Add three or more assets: all with historical prices available.</p>
     </md-card>
-
 </md-content>

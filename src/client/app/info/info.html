@@ -2,7 +2,7 @@
 
 <md-content>
     <strong ng-show="vm.optimalPortfolioToDate.optim.solution.length">Optimal Weights ToDate</strong>
-    <md-card ng-repeat="weight in vm.optimalPortfolioToDate.optim.solution">
+    <md-card ng-repeat="weight in vm.optimalPortfolioToDate.optim.solution track by $index">
 
         <div layout="row">
             <span flex="60">{{ vm.assets[$index].symbol }}</span>
@@ -12,7 +12,7 @@
     </md-card>
 
     <strong ng-show="vm.optimalPortfolioYearToDate.optim.solution.length">Optimal Weights YearToDate</strong>
-    <md-card ng-repeat="weight in vm.optimalPortfolioYearToDate.optim.solution">
+    <md-card ng-repeat="weight in vm.optimalPortfolioYearToDate.optim.solution track by $index">
 
         <div layout="row">
             <span flex="60">{{ vm.assets[$index].symbol }}</span>

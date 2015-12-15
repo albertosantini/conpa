@@ -1,7 +1,13 @@
+3.2.0 / 2015-12-15
+==================
+
+* Add portfolio performances.
+* Add year-to-date portfolio.
+
 3.1.1 / 2015-12-13
 ==================
 
-* Reset optimal weights for every optimization. 
+* Reset optimal weights for every optimization.
 
 3.1.0 / 2015-12-13
 ==================

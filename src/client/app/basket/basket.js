@@ -24,23 +24,34 @@
         }
 
         function selectedItemChange(item) {
+            var symbol,
+                assets;
+
             if (!item) {
                 return;
             }
 
+            symbol = item.symbol;
+            assets = vm.assets;
+
             basketService.addAsset(item);
-            statsService.getKeyStatistics(item.symbol);
-            infoService.calcOptimalPortfolio(vm.assets);
+
+            refresh(symbol, assets);
         }
 
         function chipOnRemove() {
             var latestAsset = vm.assets.slice(-1)[0],
-                symbol = latestAsset && latestAsset.symbol;
+                symbol = latestAsset && latestAsset.symbol,
+                assets = vm.assets;
 
-            statsService.getKeyStatistics(symbol);
-            infoService.calcOptimalPortfolio(vm.assets);
+            refresh(symbol, assets);
         }
 
+        function refresh(symbol, assets) {
+            statsService.getKeyStatistics(symbol);
+            infoService.calcOptimalPortfolioToDate(assets);
+            infoService.calcOptimalPortfolioYearToDate(assets);
+        }
     }
 
 }());

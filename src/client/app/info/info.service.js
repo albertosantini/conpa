@@ -9,16 +9,37 @@
         "portfoliosService", "latestService"];
     function infoService($http, $q, toastService,
             portfoliosService, latestService) {
-        var optimalPortfolio = {},
+        var optimalPortfolioToDate = {},
+            optimalPortfolioYearToDate = {},
             service = {
-                getOptimalPortfolio: getOptimalPortfolio,
-                calcOptimalPortfolio: calcOptimalPortfolio
+                getOptimalPortfolioToDate: getOptimalPortfolioToDate,
+                getOptimalPortfolioYearToDate: getOptimalPortfolioYearToDate,
+                calcOptimalPortfolioToDate: calcOptimalPortfolioToDate,
+                calcOptimalPortfolioYearToDate: calcOptimalPortfolioYearToDate
             };
 
         return service;
 
-        function getOptimalPortfolio() {
-            return optimalPortfolio;
+        function getOptimalPortfolioToDate() {
+            return optimalPortfolioToDate;
+        }
+
+        function getOptimalPortfolioYearToDate() {
+            return optimalPortfolioYearToDate;
+        }
+
+        function calcOptimalPortfolioToDate(symbols) {
+            calcOptimalPortfolio(symbols).then(function (res) {
+                angular.merge(optimalPortfolioToDate, res);
+            });
+        }
+
+        function calcOptimalPortfolioYearToDate(symbols) {
+            var refDate = new Date(new Date() - (1000 * 60 * 60 * 24 * 365));
+
+            calcOptimalPortfolio(symbols, refDate).then(function (res) {
+                angular.merge(optimalPortfolioYearToDate, res);
+            });
         }
 
         function calcOptimalPortfolio(symbols, refDate) {
@@ -34,9 +55,7 @@
                 return asset.symbol;
             });
 
-            if (optimalPortfolio && optimalPortfolio.optim) {
-                optimalPortfolio.optim.solution.length = 0;
-            }
+            resetPortfolioWeights();
 
             if (symbols.length < 3) {
                 return deferred.promise;
@@ -68,7 +87,6 @@
                         latestService.refresh();
                     });
 
-                    angular.merge(optimalPortfolio, res.data);
                     deferred.resolve(res.data);
                 }
             }).catch(function (err) {
@@ -76,6 +94,17 @@
             });
 
             return deferred.promise;
+        }
+
+        function resetPortfolioWeights() {
+            if (optimalPortfolioToDate &&
+                optimalPortfolioToDate.optim) {
+                optimalPortfolioToDate.optim.solution.length = 0;
+            }
+            if (optimalPortfolioYearToDate &&
+                optimalPortfolioYearToDate.optim) {
+                optimalPortfolioYearToDate.optim.solution.length = 0;
+            }
         }
     }
 

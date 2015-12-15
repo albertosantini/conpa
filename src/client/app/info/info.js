@@ -9,7 +9,8 @@
     function Info(infoService, basketService) {
         var vm = this;
 
-        vm.optimalPortfolio = infoService.getOptimalPortfolio();
+        vm.optimalPortfolioToDate = infoService.getOptimalPortfolioToDate();
+        vm.optimalPortfolioYearToDate = infoService.getOptimalPortfolioYearToDate();
         vm.assets = basketService.getAssets();
     }
 

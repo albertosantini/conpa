@@ -55,7 +55,7 @@
                 return asset.symbol;
             });
 
-            resetPortfolioWeights();
+            resetPortfolioWeightsAndPerf();
 
             if (symbols.length < 3) {
                 return deferred.promise;
@@ -96,7 +96,7 @@
             return deferred.promise;
         }
 
-        function resetPortfolioWeights() {
+        function resetPortfolioWeightsAndPerf() {
             if (optimalPortfolioToDate &&
                 optimalPortfolioToDate.optim) {
                 optimalPortfolioToDate.optim.solution.length = 0;
@@ -104,6 +104,7 @@
             if (optimalPortfolioYearToDate &&
                 optimalPortfolioYearToDate.optim) {
                 optimalPortfolioYearToDate.optim.solution.length = 0;
+                optimalPortfolioYearToDate.perf.length = 0;
             }
         }
     }

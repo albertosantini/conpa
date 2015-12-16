@@ -19,6 +19,12 @@
 
         vm.chipOnRemove = chipOnRemove;
 
+        activate();
+
+        function activate() {
+            refreshBasketInfoAndStats(getLastSymbol(), vm.assets);
+        }
+
         function querySearch(query) {
             return yahooService.quoteLookup(query);
         }
@@ -36,21 +42,26 @@
 
             basketService.addAsset(item);
 
-            refresh(symbol, assets);
+            refreshBasketInfoAndStats(symbol, assets);
         }
 
         function chipOnRemove() {
-            var latestAsset = vm.assets.slice(-1)[0],
-                symbol = latestAsset && latestAsset.symbol,
-                assets = vm.assets;
-
-            refresh(symbol, assets);
+            refreshBasketInfoAndStats(getLastSymbol(), vm.assets);
         }
 
-        function refresh(symbol, assets) {
+        function refreshBasketInfoAndStats(symbol, assets) {
+            basketService.saveAssets(assets);
+
             statsService.getKeyStatistics(symbol);
             infoService.calcOptimalPortfolioToDate(assets);
             infoService.calcOptimalPortfolioYearToDate(assets);
+        }
+
+        function getLastSymbol() {
+            var lastAsset = vm.assets.slice(-1)[0],
+                lastSymbol = lastAsset && lastAsset.symbol;
+
+            return lastSymbol;
         }
     }
 

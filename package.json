@@ -1,7 +1,7 @@
 {
     "name": "conpa",
     "description": "Asset allocation application",
-    "version": "3.3.0",
+    "version": "3.4.0",
     "main": "index",
     "repository": "http://github.com/albertosantini/node-conpa",
     "keywords": [
@@ -21,7 +21,7 @@
         "finance": "~2.4.2"
     },
     "devDependencies": {
-        "body-parser": "~1.14.1",
+        "body-parser": "~1.14.2",
         "chai": "~3.4.1",
         "eslint": "~1.10.3",
         "eslint-config-eslint": "~1.0.1",

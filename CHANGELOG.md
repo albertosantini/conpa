@@ -1,3 +1,9 @@
+3.4.0 / 2015-12-17
+==================
+
+* Fix asset stats when basket is empty.
+* Add assets list to portfolios dashboard.
+
 3.3.0 / 2015-12-16
 ==================
 

@@ -3,7 +3,7 @@
 <div ng-show="vm.latestPortfolios.length" layout="row">
     <b flex="25">To Date</b>
     <b flex="20">Reference Date</b>
-    <b flex="25">Last Created</b>
+    <b flex="25">Assets</b>
     <b flex="10">Perf</b>
     <b flex="10">Risk</b>
     <b flex="10">Ret</b>
@@ -11,12 +11,16 @@
 
 <md-content>
 
-    <md-card ng-repeat="ptf in vm.latestPortfolios | limitTo:12">
+    <md-card ng-repeat="ptf in vm.latestPortfolios | limitTo:20" title="{{ ptf.id }}">
 
         <div layout="row">
             <span flex="25">{{ ptf.key }}</span>
             <span flex="20">{{ ptf.value.ref }}</span>
-            <span flex="25">{{ ptf.id | limitTo:16 }}</span>
+            <span flex="25">
+                <span ng-repeat="asset in ptf.value.assets">
+                    {{ asset }}
+                </span>
+            </span>
             <span flex="10">{{ ptf.value.perf * 100 | number:1 }}%</span>
             <span flex="10">{{ ptf.value.risk * 100 | number:1 }}%</span>
             <span flex="10">{{ ptf.value.ret * 100 | number:1 }}%</span>

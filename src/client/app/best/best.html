@@ -2,18 +2,22 @@
 
 <div ng-show="vm.bestPerformingPortfolios.length" layout="row">
     <b flex="20">Perf</b>
-    <b flex="50">To Date</b>
-    <b flex="30">Best</b>
+    <b flex="30">To Date</b>
+    <b flex="40">Best</b>
 </div>
 
 <md-content>
 
-    <md-card ng-repeat="ptf in vm.bestPerformingPortfolios">
+    <md-card ng-repeat="ptf in vm.bestPerformingPortfolios" title="{{ ptf.id }}">
 
         <div layout="row">
             <span flex="20">{{ ptf.key * 100 | number:1 }}%</span>
-            <span flex="50">{{ ptf.value.created_at }}</span>
-            <span flex="30">{{ ptf.id | limitTo:8 }}</span>
+            <span flex="30">{{ ptf.value.created_at | limitTo:10 }}</span>
+            <span flex="40">
+                <span ng-repeat="asset in ptf.value.assets">
+                    {{ asset }}
+                </span>
+            </span>
         </div>
 
     </md-card>
@@ -26,18 +30,22 @@
 
 <div ng-show="vm.lowProfileRiskPortfolios.length" layout="row">
     <b flex="20">Risk</b>
-    <b flex="50">To Date</b>
-    <b flex="30">Low</b>
+    <b flex="30">To Date</b>
+    <b flex="40">Low</b>
 </div>
 
 <md-content>
 
-    <md-card ng-repeat="ptf in vm.lowProfileRiskPortfolios">
+    <md-card ng-repeat="ptf in vm.lowProfileRiskPortfolios" title="{{ ptf.id }}">
 
         <div layout="row">
             <span flex="20">{{ ptf.key * 100 | number:1 }}%</span>
-            <span flex="50">{{ ptf.value.created_at }}</span>
-            <span flex="30">{{ ptf.id | limitTo:8 }}</span>
+            <span flex="30">{{ ptf.value.created_at | limitTo:10 }}</span>
+            <span flex="40">
+                <span ng-repeat="asset in ptf.value.assets">
+                    {{ asset }}
+                </span>
+            </span>
         </div>
 
     </md-card>
@@ -50,18 +58,22 @@
 
 <div ng-show="vm.highProfileReturnPortfolios.length" layout="row">
     <b flex="20">Ret</b>
-    <b flex="50">To Date</b>
-    <b flex="30">High</b>
+    <b flex="30">To Date</b>
+    <b flex="40">High</b>
 </div>
 
 <md-content>
 
-    <md-card ng-repeat="ptf in vm.highProfileReturnPortfolios">
+    <md-card ng-repeat="ptf in vm.highProfileReturnPortfolios" title="{{ ptf.id }}">
 
         <div layout="row">
             <span flex="20">{{ ptf.key * 100 | number:1 }}%</span>
-            <span flex="50">{{ ptf.value.created_at }}</span>
-            <span flex="30">{{ ptf.id | limitTo:8 }}</span>
+            <span flex="30">{{ ptf.value.created_at | limitTo:10 }}</span>
+            <span flex="40">
+                <span ng-repeat="asset in ptf.value.assets">
+                    {{ asset }}
+                </span>
+            </span>
         </div>
 
     </md-card>

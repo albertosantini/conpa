@@ -80,42 +80,42 @@ function configure(app, config) {
         });
     });
     app.get("/api/getBestPerformingPortfolios", jsonParser, function (req, res) {
-        finance.crm.getBestPerformingPortfolios(3, function (err, data) {
+        finance.crm.getBestPerformingPortfolios(100, function (err, data) {
             if (!err) {
                 res.json(data);
             }
         });
     });
     app.get("/api/getWorstPerformingPortfolios", jsonParser, function (req, res) {
-        finance.crm.getWorstPerformingPortfolios(3, function (err, data) {
+        finance.crm.getWorstPerformingPortfolios(100, function (err, data) {
             if (!err) {
                 res.json(data);
             }
         });
     });
     app.get("/api/getHighProfileRiskPortfolios", jsonParser, function (req, res) {
-        finance.crm.getHighProfileRiskPortfolios(3, function (err, data) {
+        finance.crm.getHighProfileRiskPortfolios(100, function (err, data) {
             if (!err) {
                 res.json(data);
             }
         });
     });
     app.get("/api/getLowProfileRiskPortfolios", jsonParser, function (req, res) {
-        finance.crm.getLowProfileRiskPortfolios(3, function (err, data) {
+        finance.crm.getLowProfileRiskPortfolios(100, function (err, data) {
             if (!err) {
                 res.json(data);
             }
         });
     });
     app.get("/api/getHighProfileReturnPortfolios", jsonParser, function (req, res) {
-        finance.crm.getHighProfileReturnPortfolios(3, function (err, data) {
+        finance.crm.getHighProfileReturnPortfolios(100, function (err, data) {
             if (!err) {
                 res.json(data);
             }
         });
     });
     app.get("/api/getLowProfileReturnPortfolios", jsonParser, function (req, res) {
-        finance.crm.getLowProfileReturnPortfolios(3, function (err, data) {
+        finance.crm.getLowProfileReturnPortfolios(100, function (err, data) {
             if (!err) {
                 res.json(data);
             }

@@ -6,8 +6,10 @@
         .module("conpa")
         .controller("Basket", Basket);
 
-    Basket.$inject = ["yahooService", "basketService", "statsService", "infoService"];
-    function Basket(yahooService, basketService, statsService, infoService) {
+    Basket.$inject = ["yahooService", "basketService", "statsService",
+        "infoService", "portfoliosService"];
+    function Basket(yahooService, basketService, statsService,
+            infoService, portfoliosService) {
         var vm = this;
 
         vm.assets = basketService.getAssets();
@@ -19,10 +21,15 @@
 
         vm.chipOnRemove = chipOnRemove;
 
+        vm.mostUsedAssets = [];
+
         activate();
 
         function activate() {
             refreshBasketInfoAndStats(getLastSymbol(), vm.assets);
+            portfoliosService.getMostUsedAssets().then(function (res) {
+                vm.mostUsedAssets = res;
+            });
         }
 
         function querySearch(query) {

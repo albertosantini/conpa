@@ -15,50 +15,51 @@
             getHighProfileRiskPortfolios: getHighProfileRiskPortfolios,
             getHighProfileReturnPortfolios: getHighProfileReturnPortfolios,
             getLowProfileReturnPortfolios: getLowProfileReturnPortfolios,
-            savePortfolio: savePortfolio
+            savePortfolio: savePortfolio,
+            getMostUsedAssets: getMostUsedAssets
         };
 
         return service;
 
-        function getPortfolios(url) {
+        function getCRM(url) {
             var deferred = $q.defer();
 
             $http.get(url).then(function (res) {
-                deferred.resolve(res.data.rows);
+                deferred.resolve(res.data.rows || res.data);
             }).catch(function (err) {
                 deferred.reject(err);
-                toastService.show("Error retrieving portfolios.");
+                toastService.show("Communication error with CRM database.");
             });
 
             return deferred.promise;
         }
 
         function getLastCreatedPortfolios() {
-            return getPortfolios("/api/getLastCreatedPortfolios");
+            return getCRM("/api/getLastCreatedPortfolios");
         }
 
         function getBestPerformingPortfolios() {
-            return getPortfolios("/api/getBestPerformingPortfolios");
+            return getCRM("/api/getBestPerformingPortfolios");
         }
 
         function getLowProfileRiskPortfolios() {
-            return getPortfolios("/api/getLowProfileRiskPortfolios");
+            return getCRM("/api/getLowProfileRiskPortfolios");
         }
 
         function getHighProfileReturnPortfolios() {
-            return getPortfolios("/api/getHighProfileReturnPortfolios");
+            return getCRM("/api/getHighProfileReturnPortfolios");
         }
 
         function getWorstPerformingPortfolios() {
-            return getPortfolios("/api/getWorstPerformingPortfolios");
+            return getCRM("/api/getWorstPerformingPortfolios");
         }
 
         function getHighProfileRiskPortfolios() {
-            return getPortfolios("/api/getHighProfileRiskPortfolios");
+            return getCRM("/api/getHighProfileRiskPortfolios");
         }
 
         function getLowProfileReturnPortfolios() {
-            return getPortfolios("/api/getLowProfileReturnPortfolios");
+            return getCRM("/api/getLowProfileReturnPortfolios");
         }
 
         function savePortfolio(ptf) {
@@ -82,6 +83,10 @@
             });
 
             return deferred.promise;
+        }
+
+        function getMostUsedAssets() {
+            return getCRM("/api/getMostUsedAssets");
         }
     }
 

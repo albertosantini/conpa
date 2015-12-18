@@ -27,3 +27,13 @@
         </span>
     </md-chip-template>
 </md-chips>
+
+<h2>Most Used Assets</h2>
+
+<md-chips ng-model="vm.mostUsedAssets" readonly="true">
+    <md-chip-template>
+        <span>
+            {{$chip[0]}}: {{$chip[1]}}
+        </span>
+    </md-chip-template>
+</md-chips>

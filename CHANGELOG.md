@@ -1,3 +1,9 @@
+3.5.0 / 2015-12-18
+==================
+
+* Use recent best and worst portfolios.
+* Add most used assets.
+
 3.4.0 / 2015-12-17
 ==================
 

@@ -1,0 +1,28 @@
+<div ng-show="ptfs.length" layout="row">
+    <b flex="20">{{ metric }}</b>
+    <b flex="30">To Date</b>
+    <b flex="40">{{ kind }}</b>
+</div>
+
+<md-content>
+
+    <md-card ng-repeat="ptf in ptfs | orderBy:'-value.created_at' | limitTo:3"
+        title="{{ ptf.id }}">
+
+        <div layout="row">
+            <span flex="20">{{ ptf.key * 100 | number:1 }}%</span>
+            <span flex="30">{{ ptf.value.created_at | limitTo:10 }}</span>
+            <span flex="40">
+                <span ng-repeat="asset in ptf.value.assets">
+                    {{ asset }}
+                </span>
+            </span>
+        </div>
+
+    </md-card>
+
+    <md-card ng-show="!ptfs.length">
+        No {{ kind }} portfolios.
+    </md-card>
+
+</md-content>

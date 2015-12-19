@@ -15,6 +15,7 @@
         "node": ">=0.10.x"
     },
     "scripts": {
+        "test": "grunt",
         "start": "node src/server/app.js"
     },
     "dependencies": {

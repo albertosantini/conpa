@@ -2,6 +2,8 @@ CONPA
 =====
 [![NPM version](https://badge.fury.io/js/conpa.png)](http://badge.fury.io/js/conpa)
 [![NGN Dependencies](https://david-dm.org/albertosantini/node-conpa.png)](https://david-dm.org/albertosantini/node-conpa)
+[![Build Status](https://travis-ci.org/albertosantini/node-conpa.png)](https://travis-ci.org/albertosantini/node-conpa)
+
 
 ConPA 3 is a complete frontend stack for an asset allocation application.
 

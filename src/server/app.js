@@ -8,7 +8,13 @@ var os = require("os"),
 var app = express(),
     hostname = os.hostname(),
     port = process.env.CONPA_PORT || 8080,
-    documentRoot = path.join(__dirname, "../client");
+    documentRoot = path.join(__dirname, "../client"),
+    liveUrl = process.env.CONPA_LIVE_URL,
+    testingUrl = process.env.CONPA_TEST_URL;
+
+if (!liveUrl && !testingUrl) {
+    throw new Error("CONPA_LIVE_URL and CONPA_TEST_URL not defined.");
+}
 
 process.on("uncaughtException", function (err) {
     console.log(err.stack);
@@ -24,9 +30,9 @@ routes.configure(app, {
     crm: {
         liveDomain: hostname,
         // liveDomain: "foo.com",
-        liveUrl: process.env.CONPA_LIVE_URL,
+        liveUrl: liveUrl,
         liveDb: "conpa",
-        testingUrl: process.env.CONPA_TEST_URL,
+        testingUrl: testingUrl,
         testingDb: "conpa-staging",
         design: "ConPA"
     }

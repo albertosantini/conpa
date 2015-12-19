@@ -39,14 +39,9 @@
                         controller: "Latest",
                         controllerAs: "vm"
                     },
-                    "best": {
-                        templateUrl: "app/best/best.html",
-                        controller: "Best",
-                        controllerAs: "vm"
-                    },
-                    "worst": {
-                        templateUrl: "app/worst/worst.html",
-                        controller: "Worst",
+                    "other": {
+                        templateUrl: "app/other/other.html",
+                        controller: "Other",
                         controllerAs: "vm"
                     }
                 }

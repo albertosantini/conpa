@@ -1,3 +1,10 @@
+3.6.0 / 2015-12-19
+==================
+
+* Refactor worst and best views.
+* Throw an exception if crm env vars not set.
+* Add Travis CI support.
+
 3.5.0 / 2015-12-18
 ==================
 

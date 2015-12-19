@@ -75,3 +75,8 @@ History
 There are two old videos about ConPA 0:
 [welcome](http://www.youtube.com/watch?v=ia_UVHtuBTM) and
 [tutorial](http://www.youtube.com/watch?v=xIwbc6lQzNk).
+
+Disclaimer
+==========
+
+NOT INVESTMENT ADVICE AND WILL LOSE LOTS OF MONEY SO PROCEED WITH CAUTION.

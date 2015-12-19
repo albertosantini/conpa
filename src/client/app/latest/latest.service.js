@@ -5,8 +5,8 @@
         .module("conpa")
         .factory("latestService", latestService);
 
-    latestService.$inject = ["$http", "$q", "portfoliosService"];
-    function latestService($http, $q, portfoliosService) {
+    latestService.$inject = ["portfoliosService"];
+    function latestService(portfoliosService) {
         var latestPortfolios = [],
             service = {
                 getLatestPortfolios: getLatestPortfolios,

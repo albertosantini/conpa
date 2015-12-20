@@ -19,7 +19,7 @@
         "start": "node src/server/app.js"
     },
     "dependencies": {
-        "finance": "~2.4.3"
+        "finance": "~2.4.4"
     },
     "devDependencies": {
         "body-parser": "~1.14.2",

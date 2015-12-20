@@ -28,7 +28,7 @@
     </md-chip-template>
 </md-chips>
 
-<h2>Most Used Assets</h2>
+<h2>Most Used Assets <span ng-show="vm.portfolioCount">in {{ vm.portfolioCount }} portfolios</span></h2>
 
 <md-chips ng-model="vm.mostUsedAssets" readonly="true">
     <md-chip-template>

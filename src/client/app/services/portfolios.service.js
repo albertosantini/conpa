@@ -16,7 +16,8 @@
             getHighProfileReturnPortfolios: getHighProfileReturnPortfolios,
             getLowProfileReturnPortfolios: getLowProfileReturnPortfolios,
             savePortfolio: savePortfolio,
-            getMostUsedAssets: getMostUsedAssets
+            getMostUsedAssets: getMostUsedAssets,
+            getPortfolioCount: getPortfolioCount
         };
 
         return service;
@@ -87,6 +88,10 @@
 
         function getMostUsedAssets() {
             return getCRM("/api/getMostUsedAssets");
+        }
+
+        function getPortfolioCount() {
+            return getCRM("/api/getPortfolioCount");
         }
     }
 

@@ -22,6 +22,7 @@
         vm.chipOnRemove = chipOnRemove;
 
         vm.mostUsedAssets = [];
+        vm.portfolioCount = "";
 
         activate();
 
@@ -29,6 +30,9 @@
             refreshBasketInfoAndStats(getLastSymbol(), vm.assets);
             portfoliosService.getMostUsedAssets().then(function (res) {
                 vm.mostUsedAssets = res;
+            });
+            portfoliosService.getPortfolioCount().then(function (res) {
+                vm.portfolioCount = res[0].value;
             });
         }
 

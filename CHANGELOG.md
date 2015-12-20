@@ -1,3 +1,10 @@
+3.7.0 / 2015-12-20
+==================
+
+* Add R script to check results.
+* Add portfolio count to the basket view.
+* Update Material 1.0.1.
+
 3.6.0 / 2015-12-19
 ==================
 

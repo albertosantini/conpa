@@ -46,7 +46,8 @@
             var url = "/api/getOptimalPortfolio",
                 deferred = $q.defer(),
                 lows = [],
-                highs = [];
+                highs = [],
+                ptfParams;
 
             symbols = symbols.map(function (asset, i) {
                 lows[i] = 0;
@@ -61,15 +62,18 @@
                 return deferred.promise;
             }
 
-            refDate = refDate || (new Date()).toString();
+            refDate = refDate || (new Date());
+            refDate = (new Date(refDate)).toString();
 
-            $http.post(url, {
+            ptfParams = {
                 prods: symbols,
                 referenceDate: refDate,
                 targetReturn: null,
                 lows: lows,
                 highs: highs
-            }).then(function (res) {
+            };
+
+            $http.post(url, ptfParams).then(function (res) {
                 if (res.data.message) {
                     deferred.reject(res.data.message);
                     toastService.show(res.data.message);
@@ -87,7 +91,14 @@
                         latestService.refresh();
                     });
 
-                    deferred.resolve(res.data);
+                    portfoliosService.getScriptOptimalPortfolio(ptfParams)
+                        .then(function (script) {
+                            res.data.script = script;
+                            deferred.resolve(res.data);
+                        }).catch(function () {
+                            deferred.resolve(res.data);
+                        });
+
                 }
             }).catch(function (err) {
                 deferred.reject(err);

@@ -17,7 +17,8 @@
             getLowProfileReturnPortfolios: getLowProfileReturnPortfolios,
             savePortfolio: savePortfolio,
             getMostUsedAssets: getMostUsedAssets,
-            getPortfolioCount: getPortfolioCount
+            getPortfolioCount: getPortfolioCount,
+            getScriptOptimalPortfolio: getScriptOptimalPortfolio
         };
 
         return service;
@@ -92,6 +93,20 @@
 
         function getPortfolioCount() {
             return getCRM("/api/getPortfolioCount");
+        }
+
+        function getScriptOptimalPortfolio(params) {
+            var deferred = $q.defer(),
+                url = "/api/getScriptOptimalPortfolio";
+
+            $http.post(url, params).then(function (res) {
+                deferred.resolve(res.data);
+            }).catch(function (err) {
+                deferred.reject(err);
+                toastService.show("Error getting R script for the portfolio.");
+            });
+
+            return deferred.promise;
         }
     }
 

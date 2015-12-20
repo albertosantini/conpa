@@ -1,7 +1,7 @@
 <h2>Info</h2>
 
 <strong ng-show="vm.optimalPortfolioToDate.optim.solution.length">Optimal Weights ToDate</strong>
-<md-content>
+<md-content ng-show="vm.optimalPortfolioToDate.optim.solution.length">
     <md-card ng-repeat="weight in vm.optimalPortfolioToDate.optim.solution track by $index">
 
         <div layout="row">
@@ -10,10 +10,15 @@
         </div>
 
     </md-card>
+
+    <md-button class="md-primary md-raised" ng-click="vm.showToDateRScript($event)">
+        R Script for ToDate
+    </md-button>
+
 </md-content>
 
 <strong ng-show="vm.optimalPortfolioYearToDate.optim.solution.length">Optimal Weights YearToDate</strong>
-<md-content>
+<md-content ng-show="vm.optimalPortfolioYearToDate.optim.solution.length">
     <md-card ng-repeat="weight in vm.optimalPortfolioYearToDate.optim.solution track by $index">
 
         <div layout="row">
@@ -22,6 +27,11 @@
         </div>
 
     </md-card>
+
+    <md-button class="md-primary md-raised" ng-click="vm.showYearToDateRScript($event)">
+        R Script for YTD
+    </md-button>
+
 </md-content>
 
 <strong ng-show="vm.optimalPortfolioYearToDate.perf.length">Weekly Performance</strong>

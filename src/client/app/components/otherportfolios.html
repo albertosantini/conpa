@@ -13,7 +13,7 @@
             <span flex="20">{{ ptf.key * 100 | number:1 }}%</span>
             <span flex="30">{{ ptf.value.created_at | limitTo:10 }}</span>
             <span flex="40">
-                <span ng-repeat="asset in ptf.value.assets">
+                <span ng-repeat="asset in ptf.value.assets track by $index">
                     {{ asset }}
                 </span>
             </span>

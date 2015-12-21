@@ -17,7 +17,7 @@
             <span flex="25">{{ ptf.key }}</span>
             <span flex="20">{{ ptf.value.ref }}</span>
             <span flex="25">
-                <span ng-repeat="asset in ptf.value.assets">
+                <span ng-repeat="asset in ptf.value.assets track by $index">
                     {{ asset }}
                 </span>
             </span>

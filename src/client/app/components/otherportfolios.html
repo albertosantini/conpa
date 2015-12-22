@@ -6,8 +6,7 @@
 
 <md-content>
 
-    <md-card ng-repeat="ptf in otherPortfolios.ptfs | orderBy:'-value.created_at' | limitTo:3"
-        title="{{ ptf.id }}">
+    <md-card ng-repeat="ptf in otherPortfolios.ptfs | orderBy:'-value.created_at' | limitTo:3">
 
         <div layout="row">
             <span flex="20">{{ ptf.key * 100 | number:1 }}%</span>
@@ -16,6 +15,11 @@
                 <span ng-repeat="asset in ptf.value.assets track by $index">
                     {{ asset }}
                 </span>
+                <md-tooltip>
+                    <span ng-repeat="weight in ptf.value.weights track by $index">
+                        {{ ptf.value.assets[$index] }}: {{ weight * 100 | number:1 }}%
+                    </span>
+                </md-tooltip>
             </span>
         </div>
 

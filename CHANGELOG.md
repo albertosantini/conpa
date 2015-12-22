@@ -1,3 +1,8 @@
+3.7.1 / 2015-12-22
+==================
+
+* Add asset weights in latest and other portfolios.
+
 3.7.0 / 2015-12-20
 ==================
 

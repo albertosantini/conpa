@@ -2,7 +2,6 @@ root: true
 
 env:
     node: true
-    browser: true
 
 extends: "eslint"
 
@@ -12,7 +11,3 @@ rules:
     require-jsdoc: 0
     space-before-function-paren: [2, {"anonymous": "always", "named": "never"}]
     spaced-comment: [0, "always", { exceptions: ["-"]}]
-
-globals:
-    jQuery: false
-    google: false

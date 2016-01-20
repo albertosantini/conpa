@@ -1,12 +1,12 @@
-<div ng-show="otherPortfolios.ptfs.length" layout="row">
-    <b flex="20">{{ otherPortfolios.metric }}</b>
+<div ng-show="$ctrl.ptfs.length" layout="row">
+    <b flex="20">{{ $ctrl.metric }}</b>
     <b flex="30">To Date</b>
-    <b flex="40">{{ otherPortfolios.kind }}</b>
+    <b flex="40">{{ $ctrl.kind }}</b>
 </div>
 
 <md-content>
 
-    <md-card ng-repeat="ptf in otherPortfolios.ptfs | orderBy:'-value.created_at' | limitTo:3">
+    <md-card ng-repeat="ptf in $ctrl.ptfs | orderBy:'-value.created_at' | limitTo:3">
 
         <div layout="row">
             <span flex="20">{{ ptf.key * 100 | number:1 }}%</span>
@@ -25,8 +25,8 @@
 
     </md-card>
 
-    <md-card ng-show="!otherPortfolios.ptfs.length">
-        No {{ otherPortfolios.kind }} portfolios.
+    <md-card ng-show="!$ctrl.ptfs.length">
+        No {{ $ctrl.kind }} portfolios.
     </md-card>
 
 </md-content>

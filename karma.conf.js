@@ -9,14 +9,14 @@ module.exports = function (config) {
 
         /*eslint-disable max-len */
         files: [
-            "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js",
-            "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular-animate.min.js",
-            "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular-aria.min.js",
+            "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.min.js",
+            "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular-animate.min.js",
+            "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular-aria.min.js",
             "https://cdn.rawgit.com/angular-ui/ui-router/0.2.15/release/angular-ui-router.min.js",
             "https://cdn.rawgit.com/angular/bower-material/v1.0.1/angular-material.min.js",
             "https://cdn.rawgit.com/grevory/angular-local-storage/master/dist/angular-local-storage.min.js",
 
-            "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular-mocks.js",
+            "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular-mocks.js",
 
             "src/client/app/app.module.js",
             "src/client/app/**/*.js",

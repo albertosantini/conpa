@@ -33,9 +33,7 @@
             }
 
             isNew = assets.filter(function (asset) {
-                if (item.symbol === asset.symbol) {
-                    return asset;
-                }
+                return item.symbol === asset.symbol;
             }).length === 0;
 
             if (isNew) {

@@ -1,3 +1,10 @@
+3.8.0 / 2016-02-04
+==================
+
+* Update AngularJS 1.5.0-rc.2.
+* Update Material 1.0.4.
+* Remove grunt from build workflow.
+
 3.7.1 / 2015-12-22
 ==================
 

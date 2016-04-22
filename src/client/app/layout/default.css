@@ -1,7 +1,7 @@
 body {
     background-image: url(../../content/images/grid-18px-masked.png);
     background-repeat: repeat-x;
-    font-family: "Arimo", serif;
+    font-family: "monospace";
 }
 
 .md-whiteframe-glow-z2 {

@@ -8,7 +8,8 @@ var os = require("os"),
 var app = express(),
     hostname = os.hostname(),
     port = process.env.CONPA_PORT || 8080,
-    documentRoot = path.join(__dirname, "../client"),
+    documentRoot = path.resolve(__dirname, "../client"),
+    nodeModules = path.resolve(__dirname, "../../node_modules/"),
     liveUrl = process.env.CONPA_LIVE_URL,
     testingUrl = process.env.CONPA_TEST_URL;
 
@@ -25,6 +26,7 @@ app.get("/status", function (req, res) {
 });
 
 app.use(express.static(documentRoot));
+app.use("/node_modules", express.static(nodeModules));
 
 routes.configure(app, {
     crm: {
@@ -40,5 +42,6 @@ routes.configure(app, {
 
 app.listen(port, function () {
     console.log("ConPA document root is " + documentRoot);
+    console.log("ConPA node_modules root is " + nodeModules);
     console.log("ConPA listening on http://" + hostname + ":" + port);
 });

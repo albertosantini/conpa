@@ -1,3 +1,11 @@
+3.9.0 / 2016-04-22
+==================
+
+* Update AngularJS 1.5.5.
+* Update Material 1.0.7.
+* Use local resources (node_modules) for frontend assets.
+* Use monospace font.
+
 3.8.0 / 2016-02-04
 ==================
 

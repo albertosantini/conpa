@@ -20,7 +20,7 @@
         "lint": "eslint index.js src/**/*.js"
     },
     "dependencies": {
-        "finance": "~2.4.4"
+        "finance": "~2.4.5"
     },
     "devDependencies": {
         "body-parser": "~1.15.0",

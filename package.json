@@ -32,7 +32,7 @@
         "angular-local-storage": "~0.2.7"
     },
     "devDependencies": {
-        "body-parser": "~1.15.0",
+        "body-parser": "~1.15.1",
         "eslint": "^2.9.0",
         "eslint-config-eslint": "~3.0.0",
         "eslint-plugin-angular": "~1.0.1",

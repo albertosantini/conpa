@@ -1,3 +1,11 @@
+3.10.0 / 2016-05-15
+==================
+
+* Use google service for quotes completion.
+* Remove routing.
+* Use angular component api.
+* Update Material 1.0.8
+
 3.9.0 / 2016-04-22
 ==================
 

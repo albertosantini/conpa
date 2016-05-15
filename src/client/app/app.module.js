@@ -4,6 +4,5 @@ angular
     .module("conpa", [
         "ngSanitize",
         "ngMaterial",
-        "ui.router",
         "LocalStorageModule"
     ]);

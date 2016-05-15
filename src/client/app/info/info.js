@@ -3,7 +3,10 @@
 (function () {
     angular
         .module("conpa")
-        .controller("Info", Info);
+        .component("info", {
+            controller: Info,
+            templateUrl: "app/info/info.html"
+        });
 
     Info.$inject = ["$mdDialog", "infoService", "basketService"];
     function Info($mdDialog, infoService, basketService) {

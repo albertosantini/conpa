@@ -2,8 +2,8 @@
 
 <md-content class="asset-stats">
 
-    <strong ng-hide="vm.assetStats.noAssets">{{ vm.assetStats.symbol}}</strong>
-    <md-card ng-hide="vm.assetStats.noAssets" ng-repeat="stats in vm.assetStats.stats">
+    <strong ng-hide="$ctrl.assetStats.noAssets">{{ $ctrl.assetStats.symbol}}</strong>
+    <md-card ng-hide="$ctrl.assetStats.noAssets" ng-repeat="stats in $ctrl.assetStats.stats">
 
         <div layout="row">
             <span flex="75">{{ stats.label }}</span>
@@ -12,7 +12,7 @@
 
     </md-card>
 
-    <md-card ng-show="vm.assetStats.noAssets">
+    <md-card ng-show="$ctrl.assetStats.noAssets">
         No asset stats available.
     </md-card>
 

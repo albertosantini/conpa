@@ -20,29 +20,19 @@
                         templateUrl: "app/header/header.html"
                     },
                     "basket": {
-                        templateUrl: "app/basket/basket.html",
-                        controller: "Basket",
-                        controllerAs: "vm"
+                        template: "<basket></basket>"
                     },
                     "info": {
-                        templateUrl: "app/info/info.html",
-                        controller: "Info",
-                        controllerAs: "vm"
+                        template: "<info></info>"
                     },
                     "stats": {
-                        templateUrl: "app/stats/stats.html",
-                        controller: "Stats",
-                        controllerAs: "vm"
+                        template: "<stats></stats>"
                     },
                     "latest": {
-                        templateUrl: "app/latest/latest.html",
-                        controller: "Latest",
-                        controllerAs: "vm"
+                        template: "<latest></lastest>"
                     },
                     "other": {
-                        templateUrl: "app/other/other.html",
-                        controller: "Other",
-                        controllerAs: "vm"
+                        template: "<other></other>"
                     }
                 }
             });

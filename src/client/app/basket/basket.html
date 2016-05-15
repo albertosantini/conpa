@@ -1,25 +1,25 @@
 <h2>Basket</h2>
 
 <md-autocomplete
-    md-search-text="vm.searchText"
-    md-selected-item-change="vm.selectedItemChange(item)"
-    md-items="item in vm.querySearch(vm.searchText)"
+    md-search-text="$ctrl.searchText"
+    md-selected-item-change="$ctrl.selectedItemChange(item)"
+    md-items="item in $ctrl.querySearch($ctrl.searchText)"
     md-item-text="item.symbol"
     md-min-length="1"
     placeholder="What assets to be added?">
     <md-item-template>
-        <span md-highlight-text="vm.searchText" md-highlight-flags="ig">
+        <span md-highlight-text="$ctrl.searchText" md-highlight-flags="ig">
             {{item.symbol}} {{item.name}} ({{item.type}} - {{item.exchDisp}})
         </span>
     </md-item-template>
     <md-not-found>
-        No asset matching "{{vm.searchText}}" were found.
+        No asset matching "{{$ctrl.searchText}}" were found.
     </md-not-found>
 </md-autocomplete>
 
-<md-chips ng-model="vm.assets"
+<md-chips ng-model="$ctrl.assets"
     md-require-match="true"
-    md-on-remove="vm.chipOnRemove($chip)">
+    md-on-remove="$ctrl.chipOnRemove($chip)">
     <md-chip-template>
         <span>
             <strong>{{$chip.symbol}}</strong> {{$chip.name}}
@@ -28,9 +28,9 @@
     </md-chip-template>
 </md-chips>
 
-<h2>Most Used Assets <span ng-show="vm.portfolioCount">in {{ vm.portfolioCount }} portfolios</span></h2>
+<h2>Most Used Assets <span ng-show="$ctrl.portfolioCount">in {{ $ctrl.portfolioCount }} portfolios</span></h2>
 
-<md-chips ng-model="vm.mostUsedAssets" readonly="true">
+<md-chips ng-model="$ctrl.mostUsedAssets" readonly="true">
     <md-chip-template>
         <span>
             {{$chip[0]}}: {{$chip[1]}}

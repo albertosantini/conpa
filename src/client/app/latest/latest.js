@@ -3,7 +3,10 @@
 (function () {
     angular
         .module("conpa")
-        .controller("Latest", Latest);
+        .component("latest", {
+            controller: Latest,
+            templateUrl: "app/latest/latest.html"
+        });
 
     Latest.$inject = ["latestService"];
     function Latest(latestService) {

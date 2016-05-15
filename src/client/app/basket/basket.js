@@ -4,7 +4,10 @@
 (function () {
     angular
         .module("conpa")
-        .controller("Basket", Basket);
+        .component("basket", {
+            controller: Basket,
+            templateUrl: "app/basket/basket.html"
+        });
 
     Basket.$inject = ["yahooService", "basketService", "statsService",
         "infoService", "portfoliosService"];

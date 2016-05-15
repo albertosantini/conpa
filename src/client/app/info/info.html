@@ -1,42 +1,42 @@
 <h2>Info</h2>
 
-<strong ng-show="vm.optimalPortfolioToDate.optim.solution.length">Optimal Weights ToDate</strong>
-<md-content ng-show="vm.optimalPortfolioToDate.optim.solution.length">
-    <md-card ng-repeat="weight in vm.optimalPortfolioToDate.optim.solution track by $index">
+<strong ng-show="$ctrl.optimalPortfolioToDate.optim.solution.length">Optimal Weights ToDate</strong>
+<md-content ng-show="$ctrl.optimalPortfolioToDate.optim.solution.length">
+    <md-card ng-repeat="weight in $ctrl.optimalPortfolioToDate.optim.solution track by $index">
 
         <div layout="row">
-            <span flex="60">{{ vm.assets[$index].symbol }}</span>
+            <span flex="60">{{ $ctrl.assets[$index].symbol }}</span>
             <span flex="40">{{ weight * 100 | number:1 }}%</span>
         </div>
 
     </md-card>
 
-    <md-button class="md-primary md-raised" ng-click="vm.showToDateRScript($event)">
+    <md-button class="md-primary md-raised" ng-click="$ctrl.showToDateRScript($event)">
         R Script for ToDate
     </md-button>
 
 </md-content>
 
-<strong ng-show="vm.optimalPortfolioYearToDate.optim.solution.length">Optimal Weights YearToDate</strong>
-<md-content ng-show="vm.optimalPortfolioYearToDate.optim.solution.length">
-    <md-card ng-repeat="weight in vm.optimalPortfolioYearToDate.optim.solution track by $index">
+<strong ng-show="$ctrl.optimalPortfolioYearToDate.optim.solution.length">Optimal Weights YearToDate</strong>
+<md-content ng-show="$ctrl.optimalPortfolioYearToDate.optim.solution.length">
+    <md-card ng-repeat="weight in $ctrl.optimalPortfolioYearToDate.optim.solution track by $index">
 
         <div layout="row">
-            <span flex="60">{{ vm.assets[$index].symbol }}</span>
+            <span flex="60">{{ $ctrl.assets[$index].symbol }}</span>
             <span flex="40">{{ weight * 100 | number:1 }}%</span>
         </div>
 
     </md-card>
 
-    <md-button class="md-primary md-raised" ng-click="vm.showYearToDateRScript($event)">
+    <md-button class="md-primary md-raised" ng-click="$ctrl.showYearToDateRScript($event)">
         R Script for YTD
     </md-button>
 
 </md-content>
 
-<strong ng-show="vm.optimalPortfolioYearToDate.perf.length">Weekly Performance</strong>
+<strong ng-show="$ctrl.optimalPortfolioYearToDate.perf.length">Weekly Performance</strong>
 <md-content layout-margin class="performances">
-    <md-card ng-repeat="perf in vm.optimalPortfolioYearToDate.perf track by $index">
+    <md-card ng-repeat="perf in $ctrl.optimalPortfolioYearToDate.perf track by $index">
 
         <div layout="row">
             <span flex="60">{{ $index }}</span>
@@ -47,7 +47,7 @@
 </md-content>
 
 <md-content>
-    <md-card ng-show="!vm.optimalPortfolioToDate.optim.solution.length">
+    <md-card ng-show="!$ctrl.optimalPortfolioToDate.optim.solution.length">
         <p>No basket info available.
         <p>Add three or more assets: all with historical prices available.</p>
     </md-card>

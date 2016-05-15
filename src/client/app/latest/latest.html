@@ -1,6 +1,6 @@
 <h2>Latest Portfolios</h2>
 
-<div ng-show="vm.latestPortfolios.length" layout="row">
+<div ng-show="$ctrl.latestPortfolios.length" layout="row">
     <b flex="25">To Date</b>
     <b flex="20">Reference Date</b>
     <b flex="25">Assets</b>
@@ -11,7 +11,7 @@
 
 <md-content>
 
-    <md-card ng-repeat="ptf in vm.latestPortfolios | limitTo:20">
+    <md-card ng-repeat="ptf in $ctrl.latestPortfolios | limitTo:20">
 
         <div layout="row">
             <span flex="25">{{ ptf.key }}</span>
@@ -33,7 +33,7 @@
 
     </md-card>
 
-    <md-card ng-show="!vm.latestPortfolios.length">
+    <md-card ng-show="!$ctrl.latestPortfolios.length">
         No latest portfolios.
     </md-card>
 

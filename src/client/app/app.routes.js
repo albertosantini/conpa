@@ -12,12 +12,12 @@
             .state("default", {
                 abstract: true,
                 url: "/",
-                templateUrl: "app/layout/default.html"
+                template: "<default></default>"
             })
             .state("default.subs", {
                 views: {
                     "header": {
-                        templateUrl: "app/header/header.html"
+                        template: "<header></header>"
                     },
                     "basket": {
                         template: "<basket></basket>"

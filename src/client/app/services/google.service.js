@@ -1,7 +1,5 @@
 "use strict";
 
-// http://www.google.com/finance/match?matchtype=matchall&q=msft
-// http://www.google.com/finance/match?&q=?matchtype=matchall&q=msft
 (function () {
     angular
         .module("conpa")

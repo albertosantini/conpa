@@ -32,9 +32,10 @@ Installation
 [![NPM](https://nodei.co/npm/conpa.png?downloads=true)](https://nodei.co/npm/conpa/)
 [![NPM](https://nodei.co/npm-dl/conpa.png)](https://nodei.co/npm/conpa/)
 
-To install with [npm](http://github.com/isaacs/npm):
+Clone the project and install the dependencies with
+[npm](http://github.com/isaacs/npm):
 
-    npm install conpa
+    npm install
 
 Start PouchDB instance and backend:
 

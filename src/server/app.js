@@ -7,7 +7,7 @@ var os = require("os"),
 
 var app = express(),
     hostname = os.hostname(),
-    port = process.env.CONPA_PORT || 8080,
+    port = process.env.CONPA_PORT || 80,
     documentRoot = path.resolve(__dirname, "../client"),
     nodeModules = path.resolve(__dirname, "../../node_modules/"),
     liveUrl = process.env.CONPA_LIVE_URL || "http://localhost:5984",

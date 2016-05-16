@@ -31,7 +31,7 @@ routes.configure(app, {
         liveUrl: liveUrl,
         liveDb: "conpa",
         testingUrl: testingUrl,
-        testingDb: "conpa-staging",
+        testingDb: "conpa",
         design: "ConPA"
     }
 });

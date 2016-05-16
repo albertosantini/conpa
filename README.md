@@ -5,9 +5,9 @@ CONPA
 [![Build Status](https://travis-ci.org/albertosantini/node-conpa.png)](https://travis-ci.org/albertosantini/node-conpa)
 
 
-ConPA 3 is a complete frontend stack for an asset allocation application.
+ConPA 4 is a complete stack for an asset allocation application.
 
-ConPA 3 is a single page app with the following components: the asset search,
+ConPA 4 is a single page app with the following components: the asset search,
 the list of assets, the basket info, the assets stats and the dashboard of
 portfolios.
 
@@ -36,28 +36,27 @@ To install with [npm](http://github.com/isaacs/npm):
 
     npm install conpa
 
-You may start the app, creating a `server.js` file:
+Start PouchDB instance and backend:
 
-    process.env.CONPA_LIVE_URL = "... live url for crm ...";
-    process.env.CONPA_TEST_URL = "... test url for crm ...";
-
-    require("conpa");
-
-Then
-
-    node server.js
+    npm run pouchdb
+    npm start
 
 And browse, for instance, `http://localhost:8080`.
 
-Tested locally with Node.js 5.x.
+Tested locally with Node.js 6.x.
 
 Notes
 =====
 
-Before running ConPA, you need to configure the details of the persistence
-system. The portfolios are saved on a CouchDB instance. The configuration allows
-a live and testing system, you don't need to change the source code when the app
-is delivered to a live system.
+The first time you land on the page the rendering is very slow, because the db,
+behind the scenes, is creating the views.
+
+If you have a remote db instance you may use the environment variables:
+`CONPA_LIVE_URL` and `CONPA_TEST_URL`.
+
+The portfolios are saved on a PouchDB instance. The configuration allows a live
+and testing system, you don't need to change the source code when the app is
+delivered to a live system.
 
 Optionally, you may add a Rserve configuration (local or remote). If Rserve is
 not configured, ConPA uses a javascript implementation for the optimization.
@@ -68,9 +67,10 @@ History
 =======
 
 - ConPA rel. 0 (2008 - 2011): Jaxer + YUI.
-- ConPA rel. 1 (2011 - 2012): Node.js + YUI.
-- ConPA rel. 2 (2012 - 2015): Node.js + jQuery MVC.
-- ConPA rel. 3 (2015 - present): Node.js + AngularJS 1.
+- ConPA rel. 1 (2011 - 2012): Node.js + YUI + Cloudant.
+- ConPA rel. 2 (2012 - 2015): Node.js + jQuery MVC + Cloudant.
+- ConPA rel. 3 (2015 - 2016): Node.js + AngularJS 1 + Cloudant.
+- ConPA rel. 4 (2016 - present): Node.js + AngularJS 1 + PouchDB.
 
 There are two old videos about ConPA 0:
 [welcome](http://www.youtube.com/watch?v=ia_UVHtuBTM) and

@@ -1,7 +1,7 @@
 {
     "name": "conpa",
     "description": "Asset allocation application",
-    "version": "3.10.0",
+    "version": "4.0.0",
     "main": "index",
     "repository": "http://github.com/albertosantini/node-conpa",
     "keywords": [
@@ -15,12 +15,18 @@
         "node": ">=0.10.x"
     },
     "scripts": {
+        "start": "npm-run-all --parallel backend pouchdb",
+        "backend": "node src/server/app.js",
+        "pouchdb": "cd ./db && pouchdb-server --sqlite",
         "test": "npm run lint",
-        "start": "node src/server/app.js",
         "lint": "eslint index.js src/**/*.js",
-        "pouchdb": "cd ./db && pouchdb-server --sqlite"
+        "import": "cd ./db && node load.js"
     },
     "dependencies": {
+        "npm-run-all": "~2.1.0",
+
+        "body-parser": "~1.15.1",
+        "express": "~4.13.4",
         "finance": "~2.4.5",
 
         "angular": "~1.5.5",
@@ -36,10 +42,8 @@
         "pouchdb-load": "~1.4.5"
     },
     "devDependencies": {
-        "body-parser": "~1.15.1",
         "eslint": "^2.10.1",
         "eslint-config-eslint": "~3.0.0",
-        "eslint-plugin-angular": "~1.0.1",
-        "express": "~4.13.4"
+        "eslint-plugin-angular": "~1.0.1"
     }
 }

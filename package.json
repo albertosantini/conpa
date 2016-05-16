@@ -20,6 +20,7 @@
         "pouchdb": "cd ./db && pouchdb-server --sqlite",
         "test": "npm run lint",
         "lint": "eslint index.js src/**/*.js",
+        "dump": "cd ./db && pouchdb-dump http://localhost:5984/conpa -o dump.txt",
         "import": "cd ./db && node load.js"
     },
     "dependencies": {

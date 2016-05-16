@@ -39,7 +39,6 @@ Clone the project and install the dependencies with
 
 Start PouchDB instance and backend:
 
-    npm run pouchdb
     npm start
 
 And browse, for instance, `http://localhost:8080`.

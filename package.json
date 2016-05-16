@@ -17,7 +17,8 @@
     "scripts": {
         "test": "npm run lint",
         "start": "node src/server/app.js",
-        "lint": "eslint index.js src/**/*.js"
+        "lint": "eslint index.js src/**/*.js",
+        "pouchdb": "cd ./db && pouchdb-server --sqlite"
     },
     "dependencies": {
         "finance": "~2.4.5",
@@ -28,7 +29,11 @@
         "angular-messages": "~1.5.5",
         "angular-sanitize": "~1.5.5",
         "angular-material": "~1.0.8",
-        "angular-local-storage": "~0.2.7"
+        "angular-local-storage": "~0.2.7",
+
+        "pouchdb-server": "~1.1.1",
+        "pouchdb-dump-cli": "~2.0.3",
+        "pouchdb-load": "~1.4.5"
     },
     "devDependencies": {
         "body-parser": "~1.15.1",

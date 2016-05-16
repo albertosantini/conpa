@@ -10,12 +10,8 @@ var app = express(),
     port = process.env.CONPA_PORT || 8080,
     documentRoot = path.resolve(__dirname, "../client"),
     nodeModules = path.resolve(__dirname, "../../node_modules/"),
-    liveUrl = process.env.CONPA_LIVE_URL,
-    testingUrl = process.env.CONPA_TEST_URL;
-
-if (!liveUrl && !testingUrl) {
-    throw new Error("CONPA_LIVE_URL and CONPA_TEST_URL not defined.");
-}
+    liveUrl = process.env.CONPA_LIVE_URL || "http://localhost:5984",
+    testingUrl = process.env.CONPA_TEST_URL || "http://localhost:5984";
 
 process.on("uncaughtException", function (err) {
     console.log(err.stack);

@@ -41,7 +41,7 @@ Start PouchDB instance and backend:
 
     npm start
 
-And browse, for instance, `http://localhost:8080`.
+And browse, for instance, `http://localhost`.
 
 Tested locally with Node.js 6.x.
 

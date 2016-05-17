@@ -16,6 +16,7 @@
     },
     "scripts": {
         "start": "npm-run-all --parallel backend pouchdb",
+        "now-start": "npm run backend & npm run pouchdb",
         "backend": "node src/server/app.js",
         "pouchdb": "cd ./db && pouchdb-server --sqlite",
         "test": "npm run lint",

@@ -31,11 +31,11 @@
         "express": "~4.13.4",
         "finance": "~2.4.7",
 
-        "angular": "~1.5.5",
-        "angular-animate": "~1.5.5",
-        "angular-aria": "~1.5.5",
-        "angular-messages": "~1.5.5",
-        "angular-sanitize": "~1.5.5",
+        "angular": "~1.5.6",
+        "angular-animate": "~1.5.6",
+        "angular-aria": "~1.5.6",
+        "angular-messages": "~1.5.6",
+        "angular-sanitize": "~1.5.6",
         "angular-material": "~1.0.8",
         "angular-local-storage": "~0.2.7",
 
@@ -44,7 +44,7 @@
         "pouchdb-load": "~1.4.5"
     },
     "devDependencies": {
-        "eslint": "^2.10.2",
+        "eslint": "^2.11.1",
         "eslint-config-eslint": "~3.0.0",
         "eslint-plugin-angular": "~1.0.1",
 

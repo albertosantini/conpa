@@ -25,7 +25,7 @@
         "import": "cd ./db && node load.js"
     },
     "dependencies": {
-        "npm-run-all": "~2.1.1",
+        "npm-run-all": "~2.1.2",
 
         "body-parser": "~1.15.1",
         "express": "~4.13.4",
@@ -40,13 +40,13 @@
         "angular-local-storage": "~0.2.7",
 
         "pouchdb-server": "~1.1.1",
-        "pouchdb-dump-cli": "~2.0.3",
+        "pouchdb-dump-cli": "~2.0.4",
         "pouchdb-load": "~1.4.5"
     },
     "devDependencies": {
-        "eslint": "^2.11.1",
+        "eslint": "^2.12.0",
         "eslint-config-eslint": "~3.0.0",
-        "eslint-plugin-angular": "~1.0.1",
+        "eslint-plugin-angular": "~1.1.1",
 
         "core-util-is": "~1.0.2",
         "brace-expansion": "~1.1.4",

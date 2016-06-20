@@ -32,10 +32,14 @@ Installation
 [![NPM](https://nodei.co/npm/conpa.png?downloads=true)](https://nodei.co/npm/conpa/)
 [![NPM](https://nodei.co/npm-dl/conpa.png)](https://nodei.co/npm/conpa/)
 
-Clone the project and install the dependencies with
+After cloning the project, install the dependencies with
 [npm](http://github.com/isaacs/npm):
 
-    npm install
+    npm install sqlite3
+    npm install --ignore-scripts
+
+Note: the double npm command is to avoid `leveldown` dep installation error on 
+Windows box.
 
 Start PouchDB instance and backend:
 

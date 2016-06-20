@@ -39,6 +39,7 @@
         "angular-material": "~1.0.8",
         "angular-local-storage": "~0.2.7",
 
+        "sqlite3": "~3.1.4",
         "pouchdb-server": "~1.2.0",
         "pouchdb-dump-cli": "~2.0.4",
         "pouchdb-load": "~1.4.5"
@@ -46,11 +47,6 @@
     "devDependencies": {
         "eslint": "^2.13.0",
         "eslint-config-eslint": "~3.0.0",
-        "eslint-plugin-angular": "~1.1.1",
-
-        "core-util-is": "~1.0.2",
-        "brace-expansion": "~1.1.5",
-        "process-nextick-args": "~1.0.7",
-        "util-deprecate": "~1.0.2"
+        "eslint-plugin-angular": "~1.1.1"
     }
 }

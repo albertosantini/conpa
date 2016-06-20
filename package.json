@@ -1,7 +1,7 @@
 {
     "name": "conpa",
     "description": "Asset allocation application",
-    "version": "4.0.1",
+    "version": "4.1.0",
     "main": "index",
     "repository": "http://github.com/albertosantini/node-conpa",
     "keywords": [

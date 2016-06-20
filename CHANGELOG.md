@@ -1,3 +1,10 @@
+4.1.0 / 2016-06-20
+==================
+
+* Update pouchdb-server 1.2.0 (PouchDB 5.4.4).
+* Update angular 1.5.7.
+* Update other deps.
+
 4.0.1 / 2016-05-17
 ==================
 

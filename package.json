@@ -25,7 +25,7 @@
         "import": "cd ./db && node load.js"
     },
     "dependencies": {
-        "npm-run-all": "~2.2.2",
+        "npm-run-all": "~2.3.0",
 
         "body-parser": "~1.15.1",
         "express": "~4.14.0",

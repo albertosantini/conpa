@@ -1,3 +1,11 @@
+4.2.0 / 2016-10-08
+==================
+
+* Use yahoo service for quotes completion.
+* Update angular 1.5.8.
+* Update sqlite 3.1.6.
+* Update deps.
+
 4.1.0 / 2016-06-20
 ==================
 

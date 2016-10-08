@@ -9,9 +9,9 @@
             templateUrl: "app/basket/basket.html"
         });
 
-    Basket.$inject = ["googleService", "basketService", "statsService",
+    Basket.$inject = ["yahooService", "basketService", "statsService",
         "infoService", "portfoliosService"];
-    function Basket(googleService, basketService, statsService,
+    function Basket(yahooService, basketService, statsService,
             infoService, portfoliosService) {
         var vm = this;
 
@@ -40,7 +40,7 @@
         }
 
         function querySearch(query) {
-            return googleService.quoteLookup(query);
+            return yahooService.quoteLookup(query);
         }
 
         function selectedItemChange(item) {

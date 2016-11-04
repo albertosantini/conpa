@@ -6,7 +6,7 @@
         .config(config);
 
     config.$inject = ["$httpProvider", "$locationProvider",
-                    "$mdThemingProvider", "localStorageServiceProvider"];
+        "$mdThemingProvider", "localStorageServiceProvider"];
     /*eslint-disable max-len */
     function config($httpProvider, $locationProvider, $mdThemingProvider, localStorageServiceProvider) {
    /*eslint-enable */

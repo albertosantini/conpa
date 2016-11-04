@@ -41,7 +41,7 @@
 
         "sqlite3": "~3.1.8",
         "pouchdb-server": "~1.2.1",
-        "pouchdb-dump-cli": "~2.0.",
+        "pouchdb-dump-cli": "~2.0.6",
         "pouchdb-load": "~1.4.6"
     },
     "devDependencies": {

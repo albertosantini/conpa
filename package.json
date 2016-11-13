@@ -45,7 +45,7 @@
         "pouchdb-load": "~1.4.6"
     },
     "devDependencies": {
-        "eslint": "^3.9.1 ",
+        "eslint": "^3.10.0",
         "eslint-config-eslint": "~3.0.0",
         "eslint-plugin-angular": "~1.4.1"
     }

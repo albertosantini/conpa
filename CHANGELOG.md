@@ -1,3 +1,11 @@
+4.3.0 / 2017-01-15
+==================
+
+* Update angularjs 1.6.1.
+* Fix jsonp call for quote autocomplete.
+* Fix key statistics due to finance dep 3.x.
+* Update other deps.
+
 4.2.0 / 2016-10-08
 ==================
 

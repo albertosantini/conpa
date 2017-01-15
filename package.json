@@ -25,28 +25,28 @@
         "import": "cd ./db && node load.js"
     },
     "dependencies": {
-        "npm-run-all": "~3.1.1",
+        "npm-run-all": "~4.0.0",
 
-        "body-parser": "~1.15.1",
+        "body-parser": "~1.15.2",
         "express": "~4.14.0",
-        "finance": "~2.5.0",
+        "finance": "~3.0.0",
 
-        "angular": "~1.5.8",
-        "angular-animate": "~1.5.8",
-        "angular-aria": "~1.5.8",
-        "angular-messages": "~1.5.8",
-        "angular-sanitize": "~1.5.8",
+        "angular": "~1.6.1",
+        "angular-animate": "~1.6.1",
+        "angular-aria": "~1.6.1",
+        "angular-messages": "~1.6.1",
+        "angular-sanitize": "~1.6.1",
         "angular-material": "~1.1.1",
         "angular-local-storage": "~0.5.0",
 
         "sqlite3": "~3.1.8",
-        "pouchdb-server": "~1.2.1",
+        "pouchdb-server": "~2.0.1",
         "pouchdb-dump-cli": "~2.0.6",
         "pouchdb-load": "~1.4.6"
     },
     "devDependencies": {
-        "eslint": "^3.10.0",
+        "eslint": "^3.13.1",
         "eslint-config-eslint": "~3.0.0",
-        "eslint-plugin-angular": "~1.4.1"
+        "eslint-plugin-angular": "~1.6.1"
     }
 }

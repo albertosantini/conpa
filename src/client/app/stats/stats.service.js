@@ -9,7 +9,7 @@
     function statsService($http, $q, basketService) {
         var latestStats = {
                 symbol: "",
-                stats: [],
+                stats: {},
                 noAssets: true
             },
             service = {

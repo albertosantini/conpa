@@ -9,8 +9,8 @@ YAHOO.Finance.SymbolSuggest = {};
         .module("conpa")
         .factory("yahooService", yahooService);
 
-    yahooService.$inject = ["$http", "$q"];
-    function yahooService($http, $q) {
+    yahooService.$inject = ["$http", "$q", "$sce"];
+    function yahooService($http, $q, $sce) {
         var service = {
             quoteLookup: quoteLookup
         };
@@ -20,17 +20,18 @@ YAHOO.Finance.SymbolSuggest = {};
         function quoteLookup(query) {
             var deferred = $q.defer(),
                 url = "http://autoc.finance.yahoo.com/autoc?" +
-                    "region=US&lang=en-US&" +
-                    "callback=YAHOO.Finance.SymbolSuggest.ssCallback";
+                    "region=US&lang=en-US&";
 
             YAHOO.Finance.SymbolSuggest.ssCallback = function (data) {
                 deferred.resolve(data.ResultSet.Result);
             };
 
-            $http.jsonp(url, {
+            $http.jsonp($sce.trustAsResourceUrl(url), {
                 params: {
                     query: query
                 }
+            }).catch(function () {
+                // ignore error
             });
 
             return deferred.promise;

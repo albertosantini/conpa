@@ -2,7 +2,6 @@ CONPA
 =====
 [![NPM version](https://badge.fury.io/js/conpa.png)](http://badge.fury.io/js/conpa)
 [![NGN Dependencies](https://david-dm.org/albertosantini/node-conpa.png)](https://david-dm.org/albertosantini/node-conpa)
-[![Build Status](https://travis-ci.org/albertosantini/node-conpa.png)](https://travis-ci.org/albertosantini/node-conpa)
 
 
 ConPA 4 is a complete stack for an asset allocation application.
@@ -38,7 +37,7 @@ After cloning the project, install the dependencies with
     npm install sqlite3
     npm install --ignore-scripts
 
-Note: the double npm command is to avoid `leveldown` dep installation error on 
+Note: the double npm command is to avoid `leveldown` dep installation error on
 Windows box.
 
 Start PouchDB instance and backend:

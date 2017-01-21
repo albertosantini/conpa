@@ -25,9 +25,9 @@
         "import": "cd ./db && node load.js"
     },
     "dependencies": {
-        "npm-run-all": "~4.0.0",
+        "npm-run-all": "~4.0.1",
 
-        "body-parser": "~1.15.2",
+        "body-parser": "~1.16.0",
         "express": "~4.14.0",
         "finance": "~3.0.0",
 
@@ -45,7 +45,7 @@
         "pouchdb-load": "~1.4.6"
     },
     "devDependencies": {
-        "eslint": "^3.13.1",
+        "eslint": "^3.14.0",
         "eslint-config-eslint": "~3.0.0",
         "eslint-plugin-angular": "~1.6.1"
     }

@@ -25,28 +25,25 @@
         "import": "cd ./db && node load.js"
     },
     "dependencies": {
-        "npm-run-all": "~4.0.1",
-
-        "body-parser": "~1.16.0",
-        "express": "~4.14.0",
-        "finance": "~3.0.0",
-
-        "angular": "~1.6.1",
-        "angular-animate": "~1.6.1",
-        "angular-aria": "~1.6.1",
-        "angular-messages": "~1.6.1",
-        "angular-sanitize": "~1.6.1",
-        "angular-material": "~1.1.1",
-        "angular-local-storage": "~0.5.0",
-
-        "sqlite3": "~3.1.8",
-        "pouchdb-server": "~2.0.1",
+        "angular": "^1.6.4",
+        "angular-animate": "^1.6.4",
+        "angular-aria": "^1.6.4",
+        "angular-local-storage": "^0.6.0",
+        "angular-material": "^1.1.4",
+        "angular-messages": "^1.6.4",
+        "angular-sanitize": "^1.6.4",
+        "body-parser": "^1.17.2",
+        "express": "^4.15.3",
+        "finance": "^3.1.0",
+        "npm-run-all": "^4.0.2",
         "pouchdb-dump-cli": "~2.0.6",
-        "pouchdb-load": "~1.4.6"
+        "pouchdb-load": "~1.4.6",
+        "pouchdb-server": "^2.3.7",
+        "sqlite3": "^3.1.8"
     },
     "devDependencies": {
-        "eslint": "^3.14.0",
+        "eslint": "^3.19.0",
         "eslint-config-eslint": "~3.0.0",
-        "eslint-plugin-angular": "~1.6.1"
+        "eslint-plugin-angular": "~2.4.2"
     }
 }

@@ -1,3 +1,9 @@
+4.4.0 / 2017-06-05
+==================
+
+* Update angularjs 1.6.4 and many other deps.
+* Update finance dep due to Yahoo Finance endpoint change.
+
 4.3.0 / 2017-01-15
 ==================
 

@@ -73,7 +73,7 @@ History
 - ConPA rel. 1 (2011 - 2012): Node.js + YUI + Cloudant.
 - ConPA rel. 2 (2012 - 2015): Node.js + jQuery MVC + Cloudant.
 - ConPA rel. 3 (2015 - 2016): Node.js + AngularJS 1 + Cloudant.
-- ConPA rel. 4 (2016 - present): Node.js + AngularJS 1 + PouchDB.
+- ConPA rel. 4 (2016 - present): Node.js + AngularJS 1 + PouchDB / Cloudant.
 
 There are two old videos about ConPA 0:
 [welcome](http://www.youtube.com/watch?v=ia_UVHtuBTM) and

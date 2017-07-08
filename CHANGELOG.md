@@ -1,3 +1,9 @@
+4.5.0 / 2017-07-08
+==================
+
+* Configure package.json for now hosting.
+* Update angularjs 1.6.5 and manby other deps.
+
 4.4.0 / 2017-06-05
 ==================
 

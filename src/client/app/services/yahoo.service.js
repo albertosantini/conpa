@@ -19,8 +19,8 @@ YAHOO.Finance.SymbolSuggest = {};
 
         function quoteLookup(query) {
             var deferred = $q.defer(),
-                url = "http://autoc.finance.yahoo.com/autoc?" +
-                    "region=US&lang=en-US&";
+                url = "https://autoc.finance.yahoo.com/autoc?" +
+                    "region=US&lang=en-US";
 
             YAHOO.Finance.SymbolSuggest.ssCallback = function (data) {
                 deferred.resolve(data.ResultSet.Result);

@@ -1,3 +1,10 @@
+4.5.2 / 2017-10-07
+==================
+
+* Update angularjs 1.6.6 and many other deps.
+* Add deploy script to package.json.
+* Fix linter errors due to major upgrade of the linter.
+
 4.5.1 / 2017-07-08
 ==================
 
@@ -7,7 +14,7 @@
 ==================
 
 * Configure package.json for now hosting.
-* Update angularjs 1.6.5 and manby other deps.
+* Update angularjs 1.6.5 and many other deps.
 
 4.4.0 / 2017-06-05
 ==================

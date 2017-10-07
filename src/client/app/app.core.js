@@ -24,7 +24,7 @@
                     return request;
                 },
 
-                "response": function (response) {
+                response: function (response) {
                     nLoadings -= 1;
                     if (nLoadings === 0) {
                         $rootScope.isLoadingView = false;
@@ -33,7 +33,7 @@
                     return response;
                 },
 
-                "responseError": function (response) {
+                responseError: function (response) {
                     nLoadings -= 1;
                     if (!nLoadings) {
                         $rootScope.isLoadingView = false;
@@ -69,10 +69,13 @@
                 return {
                     createCallback: function () {
                         var callbackId = "_" + (callbacks.$$counter++).toString(36);
+
                         // var callbackPath = "angular.callbacks." + callbackId;
                         var callbackPath = "YAHOO.Finance.SymbolSuggest.ssCallback";
                         var callback = createCallback(callbackId);
+
                         callbackMap[callbackPath] = callbacks[callbackId] = callback;
+
                         return callbackPath;
                     },
                     wasCalled: function (callbackPath) {
@@ -84,6 +87,7 @@
                     },
                     removeCallback: function (callbackPath) {
                         var callback = callbackMap[callbackPath];
+
                         if (callback) {
                             delete callbacks[callback.id];
                         }

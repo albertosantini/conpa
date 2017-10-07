@@ -1,6 +1,7 @@
 "use strict";
 
 var YAHOO = {};
+
 YAHOO.Finance = {};
 YAHOO.Finance.SymbolSuggest = {};
 
@@ -31,6 +32,7 @@ YAHOO.Finance.SymbolSuggest = {};
                     query: query
                 }
             }).catch(function () {
+
                 // ignore error
             });
 

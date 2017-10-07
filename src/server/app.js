@@ -27,6 +27,7 @@ app.use("/node_modules", express.static(nodeModules));
 routes.configure(app, {
     crm: {
         liveDomain: hostname,
+
         // liveDomain: "foo.com",
         liveUrl: liveUrl,
         liveDb: "conpa",

@@ -69,14 +69,14 @@
                 url = "/api/putPortfolioOnCRM";
 
             $http.post(url, {
-                "symbols": ptf.symbols,
-                "weights": ptf.weights,
-                "ref": ptf.ref,
-                "ret": ptf.ret,
-                "risk": ptf.risk,
-                "perf": ptf.perf,
-                "highs": ptf.highs,
-                "lows": ptf.lows
+                symbols: ptf.symbols,
+                weights: ptf.weights,
+                ref: ptf.ref,
+                ret: ptf.ret,
+                risk: ptf.risk,
+                perf: ptf.perf,
+                highs: ptf.highs,
+                lows: ptf.lows
             }).then(function (res) {
                 deferred.resolve(res.data);
             }).catch(function (err) {

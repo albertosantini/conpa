@@ -78,14 +78,14 @@
                     toastService.show(res.data.message);
                 } else {
                     portfoliosService.savePortfolio({
-                        "symbols": symbols,
-                        "weights": res.data.optim.solution,
-                        "ref": refDate,
-                        "ret": res.data.optim.pm,
-                        "risk": res.data.optim.ps,
-                        "perf": res.data.perf,
-                        "highs": highs,
-                        "lows": lows
+                        symbols: symbols,
+                        weights: res.data.optim.solution,
+                        ref: refDate,
+                        ret: res.data.optim.pm,
+                        risk: res.data.optim.ps,
+                        perf: res.data.perf,
+                        highs: highs,
+                        lows: lows
                     }).then(function () {
                         latestService.refresh();
                     });

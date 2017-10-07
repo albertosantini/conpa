@@ -9,7 +9,7 @@
         "$mdThemingProvider", "localStorageServiceProvider"];
     /*eslint-disable max-len */
     function config($httpProvider, $locationProvider, $provide, $mdThemingProvider, localStorageServiceProvider) {
-   /*eslint-enable */
+    /*eslint-enable */
         var interceptors = $httpProvider.interceptors;
 
         interceptors.push(["$q", "$rootScope", function ($q, $rootScope) {

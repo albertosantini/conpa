@@ -11,8 +11,7 @@
 
     Basket.$inject = ["yahooService", "basketService", "statsService",
         "infoService", "portfoliosService"];
-    function Basket(yahooService, basketService, statsService,
-            infoService, portfoliosService) {
+    function Basket(yahooService, basketService, statsService, infoService, portfoliosService) {
         var vm = this;
 
         vm.assets = basketService.getAssets();

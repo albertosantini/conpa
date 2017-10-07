@@ -7,8 +7,7 @@
 
     infoService.$inject = ["$http", "$q", "toastService",
         "portfoliosService", "latestService"];
-    function infoService($http, $q, toastService,
-            portfoliosService, latestService) {
+    function infoService($http, $q, toastService, portfoliosService, latestService) {
         var optimalPortfolioToDate = {},
             optimalPortfolioYearToDate = {},
             service = {

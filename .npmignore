@@ -1,5 +1,1 @@
-.git*
-dist/
-examples/
-Gruntfile.js
-test/
+db/

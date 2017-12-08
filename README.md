@@ -28,9 +28,6 @@ high/low risk profile portfolios and high/low return profile portfolios.
 Installation
 ============
 
-[![NPM](https://nodei.co/npm/conpa.png?downloads=true)](https://nodei.co/npm/conpa/)
-[![NPM](https://nodei.co/npm-dl/conpa.png)](https://nodei.co/npm/conpa/)
-
 After cloning the project, install the dependencies with
 [npm](http://github.com/isaacs/npm):
 

@@ -3,7 +3,15 @@
 var os = require("os"),
     path = require("path"),
     express = require("express"),
+    RateLimit = require("express-rate-limit"),
     routes = require("./routes");
+
+var apiLimiter = new RateLimit({
+    windowMs: 1000,
+    max: 0,
+    delayAfter: 2,
+    delayMs: 500
+});
 
 var app = express(),
     hostname = os.hostname(),
@@ -21,6 +29,7 @@ app.get("/status", function (req, res) {
     res.send("ConPA is running on " + hostname + " on " + process.version);
 });
 
+app.use("/api/", apiLimiter);
 app.use(express.static(documentRoot));
 app.use("/node_modules", express.static(nodeModules));
 

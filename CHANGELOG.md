@@ -1,6 +1,12 @@
 4.6.0 / 2017-12-08
 ==================
 
+* Move pouchdb deps to devDependencies.
+* Ignore db folder when deploying and publishing.
+
+4.6.0 / 2017-12-08
+==================
+
 * Add api rate limiter.
 * Migrate to IBM Cloudant.
 

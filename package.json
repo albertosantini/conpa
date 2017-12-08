@@ -33,25 +33,25 @@
         }
     },
     "dependencies": {
-        "ajv": "^5.2.3",
-        "angular": "^1.6.6",
-        "angular-animate": "^1.6.6",
-        "angular-aria": "^1.6.6",
+        "ajv": "^5.5.1",
+        "angular": "^1.6.7",
+        "angular-animate": "^1.6.7",
+        "angular-aria": "^1.6.7",
         "angular-local-storage": "^0.7.1",
         "angular-material": "^1.1.5",
-        "angular-messages": "^1.6.6",
-        "angular-sanitize": "^1.6.6",
+        "angular-messages": "^1.6.7",
+        "angular-sanitize": "^1.6.7",
         "body-parser": "^1.18.2",
         "express": "^4.16.2",
         "finance": "^3.3.0",
-        "npm-run-all": "^4.1.1",
+        "npm-run-all": "^4.1.2",
         "pouchdb-dump-cli": "~2.0.6",
         "pouchdb-load": "~1.4.6",
         "pouchdb-server": "^2.3.7",
         "sqlite3": "^3.1.13"
     },
     "devDependencies": {
-        "eslint": "^4.8.0",
-        "now": "^8.3.10"
+        "eslint": "^4.12.1",
+        "now": "^8.5.4"
     }
 }

@@ -43,11 +43,11 @@
         "body-parser": "^1.18.2",
         "express": "^4.16.2",
         "express-rate-limit": "^2.9.0",
-        "finance": "^3.3.0"
+        "finance": "^3.3.1"
     },
     "devDependencies": {
         "ajv": "^5.5.1",
-        "eslint": "^4.12.1",
+        "eslint": "^4.13.0",
         "npm-run-all": "^4.1.2",
         "pouchdb-dump-cli": "~2.0.6",
         "pouchdb-load": "~1.4.6",

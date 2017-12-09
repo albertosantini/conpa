@@ -31,19 +31,18 @@ Installation
 After cloning the project, install the dependencies with
 [npm](http://github.com/isaacs/npm):
 
-    npm install sqlite3
     npm install --ignore-scripts
 
-Note: the double npm command is to avoid `leveldown` dep installation error on
-Windows box.
-
-Start PouchDB instance and backend:
+Start the app with the command:
 
     npm start
 
-And browse, for instance, `http://localhost`.
+It starts the web backend, the PouchDB in-memory instance, creates a new empty
+database and imports the latest dump available.
 
-Tested locally with Node.js 8.x.
+Eventually browse `http://localhost`.
+
+Tested locally with PouchDB 2.3.7 and Node.js 9.x.
 
 Notes
 =====
@@ -54,9 +53,9 @@ behind the scenes, is creating the views.
 If you have a remote db instance you may use the environment variables:
 `CONPA_LIVE_URL` and `CONPA_TEST_URL`.
 
-The portfolios are saved on a PouchDB instance. The configuration allows a live
-and testing system, you don't need to change the source code when the app is
-delivered to a live system.
+The portfolios are saved on a PouchDB in-memory instance. The configuration
+allows a live and testing system, you don't need to change the source code when
+the app is delivered to a live system.
 
 Optionally, you may add a Rserve configuration (local or remote). If Rserve is
 not configured, ConPA uses a javascript implementation for the optimization.

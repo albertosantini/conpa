@@ -1,8 +1,0 @@
-{
-  "couchdb": {
-    "uuid": "c8d22fa4-fcdd-459b-8be0-0382989a9822"
-  },
-  "httpd": {
-    "enable_cors": false
-  }
-}

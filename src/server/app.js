@@ -26,7 +26,7 @@ process.on("uncaughtException", function (err) {
 });
 
 app.get("/status", function (req, res) {
-    res.send("ConPA is running on " + hostname + " on " + process.version);
+    res.send(`ConPA is running on ${hostname} on ${process.version}`);
 });
 
 app.use("/api/", apiLimiter);
@@ -47,7 +47,7 @@ routes.configure(app, {
 });
 
 app.listen(port, function () {
-    console.log("ConPA document root is " + documentRoot);
-    console.log("ConPA node_modules root is " + nodeModules);
-    console.log("ConPA listening on http://" + hostname + ":" + port);
+    console.log(`ConPA document root is ${documentRoot}`);
+    console.log(`ConPA node_modules root is ${nodeModules}`);
+    console.log(`ConPA listening on http://${hostname}:${port}`);
 });

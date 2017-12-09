@@ -1,5 +1,8 @@
 root: true
 
+parserOptions:
+    ecmaVersion: 8
+
 env:
     node: true
 
@@ -32,7 +35,9 @@ rules:
     for-direction: "error"
     func-call-spacing: "error"
     func-style: ["error", "declaration"]
+    function-paren-newline: ["error", "consistent"]
     generator-star-spacing: "error"
+    getter-return: "error"
     guard-for-in: "error"
     handle-callback-err: ["error", "err"]
     key-spacing: ["error", { beforeColon: false, afterColon: true }]
@@ -43,8 +48,15 @@ rules:
         beforeLineComment: true,
         afterLineComment: false
     }]
+    max-len: ["error", 160, {
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+    }]
     max-statements-per-line: "error"
-    new-cap: ["error", {capIsNew: false}]
+    new-cap: "error"
     new-parens: "error"
     no-alert: "error"
     no-array-constructor: "error"
@@ -54,6 +66,7 @@ rules:
     no-confusing-arrow: "error"
     no-console: "off"
     no-delete-var: "error"
+    no-else-return: ["error", { allowElseIf: false }]
     no-eval: "error"
     no-extend-native: "error"
     no-extra-bind: "error"
@@ -87,7 +100,11 @@ rules:
     no-restricted-properties: [
         "error",
         { property: "substring", message: "Use .slice instead of .substring." },
-        { property: "substr", message: "Use .slice instead of .substr." }
+        { property: "substr", message: "Use .slice instead of .substr." },
+        { object: "assert", property: "equal", message: "Use assert.strictEqual instead of assert.equal." },
+        { object: "assert", property: "notEqual", message: "Use assert.notStrictEqual instead of assert.notEqual." },
+        { object: "assert", property: "deepEqual", message: "Use assert.deepStrictEqual instead of assert.deepStrictEqual." },
+        { object: "assert", property: "notDeepEqual", message: "Use assert.notDeepStrictEqual instead of assert.notDeepEqual." }
     ]
     no-return-assign: "error"
     no-script-url: "error"
@@ -142,7 +159,7 @@ rules:
     prefer-const: "error"
     prefer-numeric-literals: "error"
     prefer-promise-reject-errors: "error"
-    prefer-template: "off"
+    prefer-template: "error"
     quotes: ["error", "double"]
     quote-props: ["error", "as-needed"]
     radix: "error"
@@ -151,11 +168,11 @@ rules:
     semi-spacing: ["error", {before: false, after: true}]
     semi-style: "error"
     space-before-blocks: "error"
-    space-before-function-paren: [2, {"anonymous": "always", "named": "never"}]
+    space-before-function-paren: ["error", {"anonymous": "always", "named": "never"}]
     space-in-parens: "error"
     space-infix-ops: "error"
     space-unary-ops: ["error", {words: true, nonwords: false}]
-    spaced-comment: ["off", "always", { exceptions: ["-"]}]
+    spaced-comment: ["error", "always", { exceptions: ["-"]}]
     strict: ["error", "global"]
     switch-colon-spacing: "error"
     symbol-description: "error"

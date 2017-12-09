@@ -32,7 +32,7 @@
                 $mdDialog.alert()
                     .clickOutsideToClose(true)
                     .title("Script to check results (copy&paste in R console)")
-                    .htmlContent("<pre>" + script + "</pre>")
+                    .htmlContent(`<pre>${script}</pre>`)
                     .ok("Got it!")
                     .targetEvent(ev)
             );

@@ -7,9 +7,7 @@
 
     config.$inject = ["$httpProvider", "$locationProvider", "$provide",
         "$mdThemingProvider", "localStorageServiceProvider"];
-    /*eslint-disable max-len */
     function config($httpProvider, $locationProvider, $provide, $mdThemingProvider, localStorageServiceProvider) {
-    /*eslint-enable */
         var interceptors = $httpProvider.interceptors;
 
         interceptors.push(["$q", "$rootScope", function ($q, $rootScope) {
@@ -68,7 +66,7 @@
 
                 return {
                     createCallback: function () {
-                        var callbackId = "_" + (callbacks.$$counter++).toString(36);
+                        var callbackId = `_${(callbacks.$$counter++).toString(36)}`;
 
                         // var callbackPath = "angular.callbacks." + callbackId;
                         var callbackPath = "YAHOO.Finance.SymbolSuggest.ssCallback";

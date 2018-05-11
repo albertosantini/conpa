@@ -42,7 +42,7 @@ database and imports the latest dump available.
 
 Eventually browse `http://localhost`.
 
-Tested locally with PouchDB 2.3.7 and Node.js 9.x.
+Tested locally with PouchDB 4.x and Node.js 10.x.
 
 Notes
 =====

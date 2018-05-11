@@ -22,8 +22,8 @@
         "test": "npm run lint",
         "lint": "eslint index.js src/**/*.js",
         "dump": "cd ./db && couchbackup --url http://localhost:5984 --db conpa -o dump.txt",
-        "create-empty-db": "sleep 1 && curl -X PUT http://localhost:5984/conpa",
-        "import": "cd ./db && sleep 2 && cat dump.txt | couchrestore --url http://localhost:5984 --db conpa",
+        "create-empty-db": "sleep 5 && curl -X PUT http://localhost:5984/conpa",
+        "import": "cd ./db && sleep 10 && cat dump.txt | couchrestore --url http://localhost:5984 --db conpa",
         "deploy": "now deploy --public && now alias"
     },
     "now": {
@@ -34,22 +34,22 @@
         }
     },
     "dependencies": {
-        "angular": "^1.6.7",
-        "angular-animate": "^1.6.7",
-        "angular-aria": "^1.6.7",
+        "angular": "^1.7.0",
+        "angular-animate": "^1.7.0",
+        "angular-aria": "^1.7.0",
         "angular-local-storage": "^0.7.1",
-        "angular-material": "^1.1.5",
-        "angular-messages": "^1.6.7",
-        "angular-sanitize": "^1.6.7",
+        "angular-material": "^1.1.9",
+        "angular-messages": "^1.7.0",
+        "angular-sanitize": "^1.7.0",
         "body-parser": "^1.18.2",
-        "express": "^4.16.2",
-        "express-rate-limit": "^2.9.0",
+        "express": "^4.16.3",
+        "express-rate-limit": "^2.11.0",
         "finance": "^3.3.1"
     },
     "devDependencies": {
-        "@cloudant/couchbackup": "^2.0.0",
-        "eslint": "^4.13.0",
-        "npm-run-all": "^4.1.2",
-        "pouchdb-server": "^2.3.7"
+        "@cloudant/couchbackup": "^2.2.0",
+        "eslint": "^4.19.1",
+        "npm-run-all": "^4.1.3",
+        "pouchdb-server": "^4.0.0"
     }
 }

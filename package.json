@@ -44,7 +44,7 @@
         "body-parser": "^1.18.2",
         "express": "^4.16.3",
         "express-rate-limit": "^2.11.0",
-        "finance": "^3.3.1"
+        "finance": "^4.0.0"
     },
     "devDependencies": {
         "@cloudant/couchbackup": "^2.2.0",

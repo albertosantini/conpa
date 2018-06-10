@@ -4,9 +4,9 @@ CONPA
 [![Build Status](https://travis-ci.org/albertosantini/node-conpa.png)](https://travis-ci.org/albertosantini/node-conpa)
 
 
-ConPA 4 is a complete stack for an asset allocation application.
+ConPA is a complete stack for an asset allocation application.
 
-ConPA 4 is a single page app with the following components: the asset search,
+ConPA is a single page app with the following components: the asset search,
 the list of assets, the basket info, the assets stats and the dashboard of
 portfolios.
 
@@ -68,8 +68,9 @@ History
 - ConPA rel. 0 (2008 - 2011): Jaxer + YUI.
 - ConPA rel. 1 (2011 - 2012): Node.js + YUI + Cloudant.
 - ConPA rel. 2 (2012 - 2015): Node.js + jQuery MVC + Cloudant.
-- ConPA rel. 3 (2015 - 2016): Node.js + AngularJS 1 + Cloudant.
-- ConPA rel. 4 (2016 - present): Node.js + AngularJS 1 + PouchDB / Cloudant.
+- ConPA rel. 3 (2015 - 2016): Node.js + AngularJS + Cloudant.
+- ConPA rel. 4 (2016 - 2018): Node.js + AngularJS + PouchDB / Cloudant.
+- ConPA rel. 5 (2018 - present): Node.js + hyperHTML / workway + PouchDB / Cloudant.
 
 There are two old videos about ConPA 0:
 [welcome](http://www.youtube.com/watch?v=ia_UVHtuBTM) and

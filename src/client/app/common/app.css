@@ -1,0 +1,25 @@
+body {
+    background-image: url(../../img/grid-18px-masked.png);
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.logo { height: 64px; }
+
+basket > ul {
+    list-style: none;
+    padding: 0;
+}
+
+basket li::before {
+    content: "+ "
+}
+
+.min-w-30 { min-width: 30%; }
+.min-w-70 { min-width: 70%; }
+
+.absolute-center { top: 50%; left: 50%; transform: translateY(-50%) translateX(-50%); }
+
+@media screen and (max-width: 30em) {
+    .dn-s { display: none; }
+    .flex-wrap-s { flex-wrap: wrap; }
+}

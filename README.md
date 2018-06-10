@@ -47,20 +47,23 @@ Tested locally with PouchDB 4.x and Node.js 10.x.
 Notes
 =====
 
-The first time you land on the page the rendering is very slow, because the db,
-behind the scenes, is creating the views.
+- Sometimes the weights of the optimal portfolio (To Date or Year To Date) are zeroes:
+this is due to a problem retrieving the historical prices.
 
-If you have a remote db instance you may use the environment variables:
-`CONPA_LIVE_URL` and `CONPA_TEST_URL`.
+- If a local db instance is configured, the first time you land on the page the 
+rendering is very slow, because the db, behind the scenes, is creating the views.
 
-The portfolios are saved on a PouchDB in-memory instance. The configuration
+- Locally the portfolios are saved on a PouchDB in-memory instance. The configuration
 allows a live and testing system, you don't need to change the source code when
 the app is delivered to a live system.
 
-Optionally, you may add a Rserve configuration (local or remote). If Rserve is
+- Setting a remote db instance, you may use the environment variables:
+`CONPA_LIVE_URL` and `CONPA_TEST_URL`.
+
+- Optionally, you may add a Rserve configuration (local or remote). If Rserve is
 not configured, ConPA uses a javascript implementation for the optimization.
 
-ConPA [Sequence Diagram](http://www.websequencediagrams.com/cgi-bin/cdraw?lz=Q29uUEEtPk5vZGVKUzogbmF2aWdhdGlvbgphbHQgABkFIGJhY2tlbmQgd2l0aCBqcyBjYWxjCiAgICBub3RlIG92ZXIgADoGABAFABMGZGUtY29ucGEgAAYOZmluYW5jZQAbDnF1YWRwcm9nAE8FZW5kAFMFCmVsc2UAbRRSIGNsb3VkAF4jcmlvIChSc2VydmUgYWRhcHRlcikAVg4gICAAgTQHLT4AUQVudW1iZXJzLmNvbTogZ2V0IG9wdGltYWwgcG9ydGZvbGlvABEjcGVyZm9ybWFuY2VzAEAjaW1wbGllZCB2b2xhdGlsaXR5AIJODwCBChAAgl4JAIFWBgCCbQl0c2VyaQBsBwAaBUpTT05JTwCBYRIAgVsQLQCDdgsAgXwFIGNydW5jaGluZyByZXNwb25zZQplbmQKAIIlBy0-AIQyBToAEwoKCgoKCgo&s=napkin).
+- ConPA [Sequence Diagram](http://www.websequencediagrams.com/cgi-bin/cdraw?lz=Q29uUEEtPk5vZGVKUzogbmF2aWdhdGlvbgphbHQgABkFIGJhY2tlbmQgd2l0aCBqcyBjYWxjCiAgICBub3RlIG92ZXIgADoGABAFABMGZGUtY29ucGEgAAYOZmluYW5jZQAbDnF1YWRwcm9nAE8FZW5kAFMFCmVsc2UAbRRSIGNsb3VkAF4jcmlvIChSc2VydmUgYWRhcHRlcikAVg4gICAAgTQHLT4AUQVudW1iZXJzLmNvbTogZ2V0IG9wdGltYWwgcG9ydGZvbGlvABEjcGVyZm9ybWFuY2VzAEAjaW1wbGllZCB2b2xhdGlsaXR5AIJODwCBChAAgl4JAIFWBgCCbQl0c2VyaQBsBwAaBUpTT05JTwCBYRIAgVsQLQCDdgsAgXwFIGNydW5jaGluZyByZXNwb25zZQplbmQKAIIlBy0-AIQyBToAEwoKCgoKCgo&s=napkin).
 
 History
 =======

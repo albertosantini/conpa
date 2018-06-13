@@ -8,11 +8,12 @@ const finance = require("finance");
 
 const log = require("../util").log;
 
-const limiter = new RateLimiter(2, "second");
+const limiter = new RateLimiter(1, 500);
 
 log("Finance worker engaged");
 
 finance.crm.configure({
+
     liveDomain: os.hostname(),
 
     // liveDomain: "foo.com",
@@ -23,40 +24,57 @@ finance.crm.configure({
     design: "ConPA"
 });
 
-function throttleRequest(cb, ...args) {
+function throttleRequest(callback, args) {
     return new Promise((resolve, reject) => {
         limiter.removeTokens(1, () => {
-            cb(args, (err, res) => {
+            function cb(err, res) {
                 if (err) {
                     reject(err);
                 }
                 resolve(res);
-            });
+            }
+
+            if (args) {
+                return callback(args, cb);
+            }
+            return callback(cb);
         });
     });
 }
 
-finance.crm.getLastCreatedPortfolios[util.promisify.custom] = function(...args) {
+finance.crm.getPortfolioCount[util.promisify.custom] = function() {
+    return throttleRequest(finance.crm.getPortfolioCount);
+};
+
+finance.crm.getMostUsedAssets[util.promisify.custom] = function() {
+    return throttleRequest(finance.crm.getMostUsedAssets);
+};
+
+finance.crm.getLastCreatedPortfolios[util.promisify.custom] = function(args) {
     return throttleRequest(finance.crm.getLastCreatedPortfolios, args);
 };
 
-finance.crm.getBestPerformingPortfolios[util.promisify.custom] = function(...args) {
+finance.crm.getBestPerformingPortfolios[util.promisify.custom] = function(args) {
     return throttleRequest(finance.crm.getBestPerformingPortfolios, args);
 };
-finance.crm.getWorstPerformingPortfolios[util.promisify.custom] = function(...args) {
+finance.crm.getWorstPerformingPortfolios[util.promisify.custom] = function(args) {
     return throttleRequest(finance.crm.getWorstPerformingPortfolios, args);
 };
-finance.crm.getHighProfileRiskPortfolios[util.promisify.custom] = function(...args) {
+finance.crm.getHighProfileRiskPortfolios[util.promisify.custom] = function(args) {
     return throttleRequest(finance.crm.getHighProfileRiskPortfolios, args);
 };
-finance.crm.getLowProfileRiskPortfolios[util.promisify.custom] = function(...args) {
+finance.crm.getLowProfileRiskPortfolios[util.promisify.custom] = function(args) {
     return throttleRequest(finance.crm.getLowProfileRiskPortfolios, args);
 };
-finance.crm.getHighProfileReturnPortfolios[util.promisify.custom] = function(...args) {
+finance.crm.getHighProfileReturnPortfolios[util.promisify.custom] = function(args) {
     return throttleRequest(finance.crm.getHighProfileReturnPortfolios, args);
 };
-finance.crm.getLowProfileReturnPortfolios[util.promisify.custom] = function(...args) {
+finance.crm.getLowProfileReturnPortfolios[util.promisify.custom] = function(args) {
     return throttleRequest(finance.crm.getLowProfileReturnPortfolios, args);
+};
+
+finance.crm.putPortfolioOnCRM[util.promisify.custom] = function(args) {
+    return throttleRequest(finance.crm.putPortfolioOnCRM, args);
 };
 
 workway({

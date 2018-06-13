@@ -1,3 +1,8 @@
+5.0.1 / 2018-06-13
+==================
+
+* Add the rest of crm methods to the rate limiter.
+
 5.0.0 / 2018-06-10
 ==================
 

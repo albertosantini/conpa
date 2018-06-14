@@ -42,53 +42,36 @@ function throttleRequest(callback, args) {
     });
 }
 
-finance.crm.getPortfolioCount[util.promisify.custom] = function() {
-    return throttleRequest(finance.crm.getPortfolioCount);
-};
+const apis = [
+    { name: "getOptimalPortfolio", domain: "portfolio", limit: false },
+    { name: "getScriptOptimalPortfolio", domain: "portfolio", limit: false },
+    { name: "getKeyStatistics", domain: "keystatistics", limit: false },
+    { name: "savePortfolio", domain: "crm", key: "putPortfolioOnCRM", limit: true },
+    { name: "getPortfolioCount", domain: "crm", limit: true },
+    { name: "getMostUsedAssets", domain: "crm", limit: true },
+    { name: "getLastCreatedPortfolios", domain: "crm", limit: true },
+    { name: "getBestPerformingPortfolios", domain: "crm", limit: true },
+    { name: "getWorstPerformingPortfolios", domain: "crm", limit: true },
+    { name: "getHighProfileRiskPortfolios", domain: "crm", limit: true },
+    { name: "getLowProfileRiskPortfolios", domain: "crm", limit: true },
+    { name: "getHighProfileReturnPortfolios", domain: "crm", limit: true },
+    { name: "getLowProfileReturnPortfolios", domain: "crm", limit: true }
+];
 
-finance.crm.getMostUsedAssets[util.promisify.custom] = function() {
-    return throttleRequest(finance.crm.getMostUsedAssets);
-};
+const workwayApis = {};
 
-finance.crm.getLastCreatedPortfolios[util.promisify.custom] = function(args) {
-    return throttleRequest(finance.crm.getLastCreatedPortfolios, args);
-};
+apis.forEach(api => {
+    const name = api.name;
+    const domain = api.domain;
+    const key = api.key || api.name;
 
-finance.crm.getBestPerformingPortfolios[util.promisify.custom] = function(args) {
-    return throttleRequest(finance.crm.getBestPerformingPortfolios, args);
-};
-finance.crm.getWorstPerformingPortfolios[util.promisify.custom] = function(args) {
-    return throttleRequest(finance.crm.getWorstPerformingPortfolios, args);
-};
-finance.crm.getHighProfileRiskPortfolios[util.promisify.custom] = function(args) {
-    return throttleRequest(finance.crm.getHighProfileRiskPortfolios, args);
-};
-finance.crm.getLowProfileRiskPortfolios[util.promisify.custom] = function(args) {
-    return throttleRequest(finance.crm.getLowProfileRiskPortfolios, args);
-};
-finance.crm.getHighProfileReturnPortfolios[util.promisify.custom] = function(args) {
-    return throttleRequest(finance.crm.getHighProfileReturnPortfolios, args);
-};
-finance.crm.getLowProfileReturnPortfolios[util.promisify.custom] = function(args) {
-    return throttleRequest(finance.crm.getLowProfileReturnPortfolios, args);
-};
+    if (api.limit) {
+        finance[domain][key][util.promisify.custom] = function(arg) {
+            return throttleRequest(finance[domain][key], arg);
+        };
+    }
 
-finance.crm.putPortfolioOnCRM[util.promisify.custom] = function(args) {
-    return throttleRequest(finance.crm.putPortfolioOnCRM, args);
-};
-
-workway({
-    getOptimalPortfolio: util.promisify(finance.portfolio.getOptimalPortfolio),
-    getScriptOptimalPortfolio: util.promisify(finance.portfolio.getScriptOptimalPortfolio),
-    getKeyStatistics: util.promisify(finance.keystatistics.getKeyStatistics),
-    savePortfolio: util.promisify(finance.crm.putPortfolioOnCRM),
-    getPortfolioCount: util.promisify(finance.crm.getPortfolioCount),
-    getMostUsedAssets: util.promisify(finance.crm.getMostUsedAssets),
-    getLastCreatedPortfolios: util.promisify(finance.crm.getLastCreatedPortfolios),
-    getBestPerformingPortfolios: util.promisify(finance.crm.getBestPerformingPortfolios),
-    getWorstPerformingPortfolios: util.promisify(finance.crm.getWorstPerformingPortfolios),
-    getHighProfileRiskPortfolios: util.promisify(finance.crm.getHighProfileRiskPortfolios),
-    getLowProfileRiskPortfolios: util.promisify(finance.crm.getLowProfileRiskPortfolios),
-    getHighProfileReturnPortfolios: util.promisify(finance.crm.getHighProfileReturnPortfolios),
-    getLowProfileReturnPortfolios: util.promisify(finance.crm.getLowProfileReturnPortfolios)
+    workwayApis[name] = util.promisify(finance[domain][key]);
 });
+
+workway(workwayApis);

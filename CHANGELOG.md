@@ -1,3 +1,10 @@
+5.0.2 / 2018-06-14
+==================
+
+* Escape assets name or description containing single or double quotes.
+* Refactor rate limiter apis.
+* Check optimization before saving the portfolio.
+
 5.0.1 / 2018-06-13
 ==================
 

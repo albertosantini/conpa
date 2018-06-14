@@ -74,8 +74,14 @@ export class AssetsService {
             return finance.getOptimalPortfolio(ptfParams).then(res => {
                 if (res.message) {
                     ToastsComponent.update({ message: res.message });
-                } else {
-                    ToastsComponent.update({ message: "Optimization done" });
+                    return res;
+                }
+
+                ToastsComponent.update({ message: "Optimization done" });
+
+                if (!res.optim.solution[0]) {
+                    ToastsComponent.update({ message: "Optimization failed" });
+                    return res;
                 }
 
                 finance.savePortfolio({

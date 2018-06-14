@@ -33,7 +33,7 @@ export class AssetsTemplate {
                     `<tr>
                         <td id="asset-${asset.symbol}"
                             class="${trClasses} pointer dim"
-                            data-value='${JSON.stringify(asset)}'
+                            data-value='${escape(JSON.stringify(asset))}'
                             title="Click to remove the asset">${asset.symbol}</td>
                         <td class="${trClasses}">${Util.formatNumber(state.weightsTD[index] * 100, 1)}%</td>
                         <td class="${trClasses}">${Util.formatNumber(state.weightsYTD[index] * 100, 1)}%</td>

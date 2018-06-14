@@ -40,7 +40,7 @@ export class BasketController {
     }
 
     onAssetSearchClick(e) {
-        const item = JSON.parse(e.target.dataset.value);
+        const item = JSON.parse(unescape(e.target.dataset.value));
         const isNew = AssetsService.addAsset(item);
 
         if (isNew) {

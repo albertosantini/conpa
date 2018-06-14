@@ -38,7 +38,7 @@ export class AssetsController {
     }
 
     onAssetClick(e) {
-        const item = JSON.parse(e.target.dataset.value);
+        const item = JSON.parse(unescape(e.target.dataset.value));
         const isRemoved = AssetsService.removeAsset(item);
 
         if (isRemoved) {

@@ -1,4 +1,5 @@
 import { Util } from "../../util.js";
+import { ToastsComponent } from "../toasts/toasts.component.js";
 
 export class OtherTemplate {
     static update(render) {
@@ -66,6 +67,6 @@ export class OtherTemplate {
                 </table>
             `;
             /* eslint-enable indent */
-        });
+        }).catch(err => ToastsComponent.update({ message: err.message || err }));
     }
 }

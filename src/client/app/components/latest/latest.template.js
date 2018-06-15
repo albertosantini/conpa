@@ -1,4 +1,5 @@
 import { Util } from "../../util.js";
+import { ToastsComponent } from "../toasts/toasts.component.js";
 
 export class LatestTemplate {
     static update(render) {
@@ -7,7 +8,8 @@ export class LatestTemplate {
             render`
                 <h2>Latest Portfolios ${{
                     any: finance.getPortfolioCount().then(data => hyperHTML.wire()`
-                        <span>(total ${data.rows[0].value})</span>`),
+                        <span>(total ${data.rows[0].value})</span>
+                    `).catch(err => ToastsComponent.update({ message: err.message || err })),
                     placeholder: "Loading count..."
                 }}</h2>
 
@@ -43,7 +45,7 @@ export class LatestTemplate {
                                 }</tbody>
                             </table>
                         `;
-                    }),
+                    }).catch(err => ToastsComponent.update({ message: err.message || err })),
                     placeholder: "Loading..."
                 }}
             `;

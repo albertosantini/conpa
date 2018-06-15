@@ -1,3 +1,5 @@
+import { ToastsComponent } from "../toasts/toasts.component.js";
+
 export class StatsTemplate {
     static update(render, { symbol = "" } = {}) {
         if (!symbol) {
@@ -41,7 +43,7 @@ export class StatsTemplate {
                             }</tbody>
                             </table>
                         `;
-                    }),
+                    }).catch(err => ToastsComponent.update({ message: err.message || err })),
                     placeholder: "Loading..."
                 }}
             `;

@@ -1,3 +1,5 @@
+import { ToastsComponent } from "../toasts/toasts.component.js";
+
 export class MostUsedTemplate {
     static update(render) {
         workway("node://finance.js").then(async({ namespace: finance }) => {
@@ -13,7 +15,7 @@ export class MostUsedTemplate {
                         return hyperHTML.wire()`
                             ${data.map(asset => `<span class="${classes}"><b>${asset[0]}</b> ${asset[1]}</span>`)}
                         `;
-                    }),
+                    }).catch(err => ToastsComponent.update({ message: err.message || err })),
                     placeholder: "Loading..."
                 }}
             `;

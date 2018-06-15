@@ -1,3 +1,10 @@
+5.0.3 / 2018-06-15
+==================
+
+* Catch backend errors in the templates.
+* Improve toasts.
+* Improve deploying installing deps only (vs. devDeps).
+
 5.0.2 / 2018-06-14
 ==================
 

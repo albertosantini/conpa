@@ -5,10 +5,14 @@ export class ToastsTemplate {
         const now = Util.formatDate(new Date());
 
         if (message) {
-            render`<span class="bg-yellow">${now} ${message}.</span>`;
-        }
-        setTimeout(() => {
+            setTimeout(() => {
+                render`<span class="bg-yellow">${now} ${message}.</span>`;
+                setTimeout(() => {
+                    render`<span>${now} Ready.</span>`;
+                }, 10000);
+            }, 1000);
+        } else {
             render`<span>${now} Ready.</span>`;
-        }, 10000);
+        }
     }
 }

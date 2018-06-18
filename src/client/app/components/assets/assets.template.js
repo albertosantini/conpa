@@ -22,9 +22,10 @@ export class AssetsTemplate {
         render`
             <h2>Assets</h2>
 
-            <table class="f7 mw8 center pa2" cellpsacing="0">
+            <table class="f7 mw8 pa2" cellpsacing="0">
                 <thead>
                     <th class="${headerClasses}">Symbol</th>
+                    <th class="${headerClasses}">Description</th>
                     <th class="${headerClasses}">Weight To Date</th>
                     <th class="${headerClasses}">Weight YTD</th>
                 </thead>
@@ -35,6 +36,7 @@ export class AssetsTemplate {
                             class="${trClasses} pointer dim"
                             data-value='${escape(JSON.stringify(asset))}'
                             title="Click to remove the asset">${asset.symbol}</td>
+                        <td class="${trClasses}">${asset.name}</td>
                         <td class="${trClasses}">${Util.formatNumber(state.weightsTD[index] * 100, 1)}%</td>
                         <td class="${trClasses}">${Util.formatNumber(state.weightsYTD[index] * 100, 1)}%</td>
                     </tr>`)

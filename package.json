@@ -38,7 +38,7 @@
     "dependencies": {
         "express": "^4.16.3",
         "finance": "^4.1.3",
-        "hyperhtml": "^2.10.8",
+        "hyperhtml": "^2.10.13",
         "limiter": "^1.1.3",
         "tachyons": "^4.10.0",
         "workway": "^0.4.1"

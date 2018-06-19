@@ -1,4 +1,3 @@
-import { ToastsComponent } from "../toasts/toasts.component.js";
 import { LatestComponent } from "../latest/latest.component.js";
 
 const CONPA_ASSETS = "conpa.assets";
@@ -72,16 +71,16 @@ export class AssetsService {
             };
 
             return finance.getOptimalPortfolio(ptfParams).then(res => {
-                if (res.message) {
-                    ToastsComponent.update({ message: res.message });
-                    return res;
+                if (!res) {
+                    throw new Error("Optimization failed");
                 }
 
-                ToastsComponent.update({ message: "Optimization done" });
+                if (res.message) {
+                    throw new Error(res.message);
+                }
 
                 if (!res.optim.solution[0]) {
-                    ToastsComponent.update({ message: "Optimization failed" });
-                    return res;
+                    throw new Error("Optimization failed - no solution");
                 }
 
                 finance.savePortfolio({

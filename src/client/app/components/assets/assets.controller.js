@@ -2,6 +2,7 @@ import { Util } from "../../util.js";
 import { AssetsService } from "./assets.service.js";
 import { BasketComponent } from "../basket/basket.component.js";
 import { StatsComponent } from "../stats/stats.component.js";
+import { ToastsComponent } from "../toasts/toasts.component.js";
 
 export class AssetsController {
     constructor(render, template) {
@@ -25,12 +26,15 @@ export class AssetsController {
                 this.state.weightsTD = res.optim.solution;
                 this.template.update(this.render, this.state, this.events);
                 AssetsService.saveAssets();
-            });
+                ToastsComponent.update({ message: "Optimization TD done" });
+            }).catch(err => ToastsComponent.update({ message: err.message || err }));
+
             AssetsService.calcOptimalPortfolioYearToDate().then(res => {
                 this.state.weightsYTD = res.optim.solution;
                 this.template.update(this.render, this.state, this.events);
                 AssetsService.saveAssets();
-            });
+                ToastsComponent.update({ message: "Optimization YTD done" });
+            }).catch(err => ToastsComponent.update({ message: err.message || err }));
         }
 
         this.template.update(this.render, this.state, this.events);

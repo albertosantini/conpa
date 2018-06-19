@@ -15,8 +15,8 @@ export class AssetsTemplate {
             return;
         }
 
-        const headerClasses = "fw6 bb b--black-20 tl pb1 pr1 bg-white tr";
-        const trClasses = "pv1 pr1 bb b--black-20 tr";
+        const headerClasses = "fw6 bb b--black-20 tl pb1 pr1 bg-white";
+        const trClasses = "pv1 pr1 bb b--black-20";
 
         /* eslint-disable indent */
         render`
@@ -37,8 +37,8 @@ export class AssetsTemplate {
                             data-value='${escape(JSON.stringify(asset))}'
                             title="Click to remove the asset">${asset.symbol}</td>
                         <td class="${trClasses}">${asset.name}</td>
-                        <td class="${trClasses}">${Util.formatNumber(state.weightsTD[index] * 100, 1)}%</td>
-                        <td class="${trClasses}">${Util.formatNumber(state.weightsYTD[index] * 100, 1)}%</td>
+                        <td class="${trClasses} tr">${Util.formatNumber(state.weightsTD[index] * 100, 1)}%</td>
+                        <td class="${trClasses} tr">${Util.formatNumber(state.weightsYTD[index] * 100, 1)}%</td>
                     </tr>`)
                 }</tbody>
             </table>

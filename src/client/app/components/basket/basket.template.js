@@ -1,7 +1,7 @@
 export class BasketTemplate {
     static update(render, state, events) {
-        const headerClasses = "fw6 bb b--black-20 tl pb1 pr1 bg-white tr";
-        const trClasses = "pv1 pr1 bb b--black-20 tr";
+        const headerClasses = "fw6 bb b--black-20 tl pb1 pr1 bg-white";
+        const trClasses = "pv1 pr1 bb b--black-20";
 
         /* eslint-disable indent */
         render`

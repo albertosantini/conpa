@@ -71,15 +71,11 @@ export class AssetsService {
             };
 
             return finance.getOptimalPortfolio(ptfParams).then(res => {
-                if (!res) {
-                    throw new Error("Optimization failed");
-                }
-
                 if (res.message) {
                     throw new Error(res.message);
                 }
 
-                if (!res.optim.solution[0]) {
+                if (res.optim.solution[0] === null) {
                     throw new Error("Optimization failed - no solution");
                 }
 
@@ -97,6 +93,8 @@ export class AssetsService {
                 });
 
                 return res;
+            }).catch(err => {
+                throw new Error(err);
             });
         });
     }

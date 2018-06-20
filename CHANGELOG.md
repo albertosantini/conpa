@@ -1,3 +1,14 @@
+5.1.0 / 2018-06-20
+==================
+
+* Improve error handling in the optimization.
+* Update workway 0.5.1, finance 4.2.0.
+* Hide basket table if there are not search assets.
+* Justify left basket and asstes tables.
+* Add a table for the basket.
+* Add description of the symbol in the assets table.
+* Update hyperhtml 2.10.13.
+
 5.0.4 / 2018-06-17
 ==================
 

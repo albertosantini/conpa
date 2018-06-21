@@ -1,3 +1,11 @@
+5.1.1 / 2018-06-21
+==================
+
+* Add console.warn to toasts.
+* Improve toasts display alignment.
+* Add queue to the toasts.
+* Update workway 0.5.2, finance 4.2.1.
+
 5.1.0 / 2018-06-20
 ==================
 

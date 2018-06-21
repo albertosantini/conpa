@@ -6,7 +6,7 @@ export class HeaderTemplate {
 
         /* eslint-disable indent */
         render`
-            <nav class="flex flex-row bt bb tc mw9 center shadow-2">
+            <nav class="flex flex-row bt bb mw9 center shadow-2">
 
                 <div class="flex flex-wrap flex-row justify-around items-center min-w-70 logo">
                     <span class="b">

@@ -19,10 +19,6 @@ export class StatsTemplate {
 
                 ${{
                     any: finance.getKeyStatistics({ symbol }).then(data => {
-                        if (!data) {
-                            return "Fundamental data not available for the asset.";
-                        }
-
                         const labels = Object.keys(data);
 
                         return hyperHTML.wire()`
@@ -43,7 +39,11 @@ export class StatsTemplate {
                             }</tbody>
                             </table>
                         `;
-                    }).catch(err => ToastsComponent.update({ message: err.message || err })),
+                    }).catch(err => {
+                        ToastsComponent.update({ message: `${symbol} Stats ${err.message || err}` });
+
+                        return "Fundamental data not available for the asset.";
+                    }),
                     placeholder: "Loading..."
                 }}
             `;

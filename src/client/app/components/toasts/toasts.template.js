@@ -39,15 +39,15 @@ export class ToastsTemplate {
     static renderReady(render) {
         const now = Util.formatDate(new Date());
 
-        console.warn("Ready");
+        console.warn(now, "Ready");
         render`<span>${now} Ready.</span>`;
     }
 
     static renderToast(render, message) {
         const now = Util.formatDate(new Date());
 
-        console.warn(message);
-        render`<span class="bg-yellow">${now} ${message}.</span>`;
+        console.warn(now, message);
+        render`<span class="bg-yellow">${message}.</span>`;
 
     }
 }

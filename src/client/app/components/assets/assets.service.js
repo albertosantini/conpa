@@ -75,10 +75,6 @@ export class AssetsService {
                     throw new Error(res.message);
                 }
 
-                if (res.optim.solution[0] === null) {
-                    throw new Error("Optimization failed - no solution");
-                }
-
                 finance.savePortfolio({
                     symbols: prods,
                     weights: res.optim.solution,

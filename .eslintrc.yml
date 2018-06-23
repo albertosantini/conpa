@@ -55,7 +55,7 @@ rules:
         "ignoreRegExpLiterals": true
     }]
     max-statements-per-line: "error"
-    new-cap: ["error", {capIsNew: false}]
+    new-cap: "error"
     new-parens: "error"
     no-alert: "error"
     no-array-constructor: "error"

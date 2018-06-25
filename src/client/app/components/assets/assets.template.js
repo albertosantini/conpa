@@ -17,6 +17,8 @@ export class AssetsTemplate {
 
         const headerClasses = "fw6 bb b--black-20 tl pb1 pr1 bg-white";
         const trClasses = "pv1 pr1 bb b--black-20";
+        const trClassesLink = `${trClasses} pointer dim`;
+        const trClassesNumber = `${trClasses} tr`;
 
         /* eslint-disable indent */
         render`
@@ -30,15 +32,14 @@ export class AssetsTemplate {
                     <th class="${headerClasses}">Weight YTD</th>
                 </thead>
 
-                <tbody onclick="${events}" >${state.assets.map((asset, index) =>
-                    `<tr>
-                        <td id="asset-${asset.symbol}"
-                            class="${trClasses} pointer dim"
-                            data-value='${escape(JSON.stringify(asset))}'
+                <tbody>${state.assets.map((asset, index) =>
+                    hyperHTML.wire()`<tr>
+                        <td id="${`asset-${asset.symbol}`}" onclick="${e => events(e, asset)}"
+                            class="${trClassesLink}"
                             title="Click to remove the asset">${asset.symbol}</td>
                         <td class="${trClasses}">${asset.name}</td>
-                        <td class="${trClasses} tr">${Util.formatNumber(state.weightsTD[index] * 100, 1)}%</td>
-                        <td class="${trClasses} tr">${Util.formatNumber(state.weightsYTD[index] * 100, 1)}%</td>
+                        <td class="${trClassesNumber}">${Util.formatNumber(state.weightsTD[index] * 100, 1)}%</td>
+                        <td class="${trClassesNumber}">${Util.formatNumber(state.weightsYTD[index] * 100, 1)}%</td>
                     </tr>`)
                 }</tbody>
             </table>

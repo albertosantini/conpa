@@ -28,7 +28,6 @@ export class BasketController {
             this.state.assetsSearch = data.ResultSet.Result;
 
             this.update();
-            this.state.assetsSearch.length = 0;
         };
 
         const callbackName = "YAHOO.Finance.SymbolSuggest.ssCallback";
@@ -39,11 +38,11 @@ export class BasketController {
         Util.jsonp(url);
     }
 
-    onAssetSearchClick(e) {
-        const item = JSON.parse(unescape(e.target.dataset.value));
+    onAssetSearchClick(e, item) {
         const isNew = AssetsService.addAsset(item);
 
         if (isNew) {
+            this.state.assetsSearch.length = 0;
             this.update();
             StatsComponent.update();
             AssetsComponent.update();

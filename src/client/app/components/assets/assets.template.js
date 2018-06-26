@@ -28,8 +28,8 @@ export class AssetsTemplate {
                 <thead>
                     <th class="${headerClasses}">Symbol</th>
                     <th class="${headerClasses}">Description</th>
-                    <th class="${headerClasses}">Weight To Date</th>
-                    <th class="${headerClasses}">Weight YTD</th>
+                    <th class="${headerClasses}">Weight TD</th>
+                    <th class="${headerClasses}">Weight YOY</th>
                 </thead>
 
                 <tbody>${state.assets.map((asset, index) =>
@@ -39,7 +39,7 @@ export class AssetsTemplate {
                             title="Click to remove the asset">${asset.symbol}</td>
                         <td class="${trClasses}">${asset.name}</td>
                         <td class="${trClassesNumber}">${Util.formatNumber(state.weightsTD[index] * 100, 1)}%</td>
-                        <td class="${trClassesNumber}">${Util.formatNumber(state.weightsYTD[index] * 100, 1)}%</td>
+                        <td class="${trClassesNumber}">${Util.formatNumber(state.weightsYOY[index] * 100, 1)}%</td>
                     </tr>`)
                 }</tbody>
             </table>

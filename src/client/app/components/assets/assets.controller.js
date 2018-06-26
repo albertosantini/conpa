@@ -12,7 +12,7 @@ export class AssetsController {
         this.state = {
             assets: AssetsService.getAssets(),
             weightsTD: [],
-            weightsYTD: []
+            weightsYOY: []
         };
 
         this.update();
@@ -30,10 +30,10 @@ export class AssetsController {
             }).catch(err => ToastsComponent.update({ message: err.message || err }));
 
             AssetsService.calcOptimalPortfolioYearToDate().then(res => {
-                this.state.weightsYTD = res.optim.solution;
+                this.state.weightsYOY = res.optim.solution;
                 this.template.update(this.render, this.state, this.events);
                 AssetsService.saveAssets();
-                ToastsComponent.update({ message: "Optimization YTD done" });
+                ToastsComponent.update({ message: "Optimization YOY done" });
             }).catch(err => ToastsComponent.update({ message: err.message || err }));
         }
 
@@ -54,7 +54,7 @@ export class AssetsController {
     resetWeights() {
         this.state.assets.forEach((asset, index) => {
             this.state.weightsTD[index] = 0;
-            this.state.weightsYTD[index] = 0;
+            this.state.weightsYOY[index] = 0;
         });
     }
 }

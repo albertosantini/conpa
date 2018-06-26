@@ -37,15 +37,15 @@
     },
     "dependencies": {
         "express": "^4.16.3",
-        "finance": "^4.2.3",
-        "hyperhtml": "^2.10.13",
+        "finance": "^4.2.4",
+        "hyperhtml": "^2.11.0",
         "limiter": "^1.1.3",
         "tachyons": "^4.10.0",
         "workway": "^0.5.2"
     },
     "devDependencies": {
         "@cloudant/couchbackup": "^2.3.1",
-        "eslint": "^5.0.0",
+        "eslint": "^5.0.1",
         "npm-run-all": "^4.1.3",
         "pouchdb-server": "^4.0.1"
     }

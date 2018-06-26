@@ -6,11 +6,7 @@ const RateLimiter = require("limiter").RateLimiter;
 const workway = require("workway");
 const finance = require("finance");
 
-const log = require("../util").log;
-
 const limiter = new RateLimiter(1, 500);
-
-log("Finance worker engaged");
 
 finance.crm.configure({
 

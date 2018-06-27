@@ -29,7 +29,7 @@ export class AssetsController {
                 ToastsComponent.update({ message: "Optimization TD done" });
             }).catch(err => ToastsComponent.update({ message: err.message || err }));
 
-            AssetsService.calcOptimalPortfolioYearToDate().then(res => {
+            AssetsService.calcOptimalPortfolioYOY().then(res => {
                 this.state.weightsYOY = res.optim.solution;
                 this.template.update(this.render, this.state, this.events);
                 AssetsService.saveAssets();

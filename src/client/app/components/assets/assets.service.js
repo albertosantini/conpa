@@ -42,7 +42,7 @@ export class AssetsService {
         localStorage.setItem(CONPA_ASSETS, JSON.stringify(AssetsService.assets));
     }
 
-    static calcOptimalPortfolioYearToDate() {
+    static calcOptimalPortfolioYOY() {
         const refDate = new Date(new Date().getTime() - (1000 * 60 * 60 * 24 * 365));
 
         return AssetsService.calcOptimalPortfolio({

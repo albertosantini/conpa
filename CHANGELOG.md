@@ -1,3 +1,9 @@
+5.2.0 / 2018-06-27
+==================
+
+* Update finance 4.3.0.
+* Rename YearToDate methods to Year-Over-Year.
+
 5.1.3 / 2018-06-26
 ==================
 

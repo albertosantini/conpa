@@ -46,6 +46,7 @@ const apis = [
     { name: "getPortfolioCount", domain: "crm", limit: true },
     { name: "getMostUsedAssets", domain: "crm", limit: true },
     { name: "getLastCreatedPortfolios", domain: "crm", limit: true },
+    { name: "queryByDate", domain: "crm", limit: true },
     { name: "getBestPerformingPortfolios", domain: "crm", limit: true },
     { name: "getWorstPerformingPortfolios", domain: "crm", limit: true },
     { name: "getHighProfileRiskPortfolios", domain: "crm", limit: true },

@@ -4,33 +4,33 @@ import { ToastsComponent } from "../toasts/toasts.component.js";
 export class OtherTemplate {
     static update(render) {
         const otherBestPtfs = [
-            { method: "getBestPerformingPortfolios", metric: "Perf", kind: "Best" },
-            { method: "getLowProfileRiskPortfolios", metric: "Risk", kind: "Low" },
-            { method: "getHighProfileReturnPortfolios", metric: "Ret", kind: "High" }
+            { name: "Perf", metric: "perf", kind: "Best", sort: "desc" },
+            { name: "Risk", metric: "risk", kind: "Low", sort: "asc" },
+            { name: "Ret", metric: "ret", kind: "High", sort: "desc" }
         ];
         const otherWorstPtfs = [
-            { method: "getWorstPerformingPortfolios", metric: "Perf", kind: "Worst" },
-            { method: "getHighProfileRiskPortfolios", metric: "Risk", kind: "High" },
-            { method: "getLowProfileReturnPortfolios", metric: "Ret", kind: "Low" }
+            { name: "Perf", metric: "perf", kind: "Worst", sort: "asc" },
+            { name: "Risk", metric: "risk", kind: "High", sort: "desc" },
+            { name: "Ret", metric: "ret", kind: "Low", sort: "asc" }
         ];
 
         workway("node://finance.js").then(async({ namespace: finance }) => {
             /* eslint-disable indent */
             render`
-                <h2>Other Portfolios</h2>
+                <h2>Other Portfolios Year-Over-Year</h2>
 
                 <div class="flex">
                     <div class="flex flex-wrap">${{
                         any: otherBestPtfs.map(other =>
                             OtherTemplate.otherPortfolios(finance,
-                                other.method, other.metric, other.kind)),
+                                other.name, other.metric, other.kind, other.sort)),
                         placeholder: "Loading Best Portfolios..."
                     }}</div>
 
                     <div class="flex flex-wrap">${{
                         any: otherWorstPtfs.map(other =>
                             OtherTemplate.otherPortfolios(finance,
-                                other.method, other.metric, other.kind)),
+                                other.name, other.metric, other.kind, other.sort)),
                         placeholder: "Loading Worst Portfolios..."
                     }}</div>
                 </div>
@@ -39,27 +39,36 @@ export class OtherTemplate {
         });
     }
 
-    static otherPortfolios(finance, method, metric, kind) {
-        return finance[method](3).then(data => {
+    static otherPortfolios(finance, name, metric, kind, sort) {
+        const now = new Date();
+        const oneYearAgo = (new Date(now.getTime() - (1000 * 86400 * 1 * 365)));
+
+        return finance.queryByDate({
+            metric,
+            beginRefDate: Util.getYYYYMMDDfromDate(oneYearAgo),
+            endRefDate: Util.getYYYYMMDDfromDate(now),
+            limit: 3,
+            sort
+        }).then(data => {
             const headerClasses = "fw6 bb b--black-20 tl pb1 pr1 bg-white tr";
 
             /* eslint-disable indent */
             return hyperHTML.wire()`
-                <table class="f7 mw8 center pa2" cellpsacing="0">
+                <table class="f7 mw8 pa2" cellpsacing="0">
                     <thead>
-                        <th class="${headerClasses}">${metric}</th>
+                        <th class="${headerClasses}">${name}</th>
                         <th class="${headerClasses}">To Date</th>
                         <th class="${headerClasses}">${kind}</th>
                     </thead>
 
-                    <tbody>${data.rows.map(ptf => {
+                    <tbody>${data.docs.map(ptf => {
                             const trClasses = "pv1 pr1 bb b--black-20 tr";
 
                             return hyperHTML.wire(ptf, ":tr")`<tr>
-                                <td class="${trClasses}">${Util.formatNumber(ptf.key * 100, 1)}%</td>
-                                <td class="${trClasses}">${ptf.value.created_at}</td>
-                                <td class="${trClasses}">${ptf.value.assets.map((asset, index) => `<b>${asset}</b>
-                                    <span>(${Util.formatNumber(ptf.value.weights[index] * 100, 1)}%)</span>
+                                <td class="${trClasses}">${Util.formatNumber(ptf[metric] * 100, 1)}%</td>
+                                <td class="${trClasses}">${ptf.ref}</td>
+                                <td class="${trClasses}">${ptf.assets.map((asset, index) => `<b>${asset}</b>
+                                    <span>(${Util.formatNumber(ptf.weights[index] * 100, 1)}%)</span>
                                 `)}</td>
                             </tr>`;
                         })

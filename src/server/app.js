@@ -4,7 +4,7 @@ const express = require("express");
 const path = require("path");
 const workway = require("workway/node");
 
-const log = require("./util").log;
+const { log } = require("./util");
 
 workway.authorize(path.join(__dirname, "workers"));
 

@@ -1,3 +1,9 @@
+5.3.0 / 2018-06-28
+==================
+
+* Use queryByDate in other portfolios.
+* Update finance 4.4.1.
+
 5.2.0 / 2018-06-27
 ==================
 

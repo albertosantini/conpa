@@ -7,9 +7,13 @@ export class LatestTemplate {
             /* eslint-disable indent */
             render`
                 <h2>Latest Portfolios ${{
-                    any: finance.getPortfolioCount().then(data => hyperHTML.wire()`
-                        <span>(total ${data.rows[0].value})</span>
-                    `).catch(err => ToastsComponent.update({ message: err.message || err })),
+                    any: finance.getPortfolioCount().then(data => {
+                        if (!data.rows.length) {
+                            hyperHTML.wire()`<span>(total 0)</span>`;
+                        }
+
+                        return hyperHTML.wire()`<span>(total ${data.rows[0].value})</span>`;
+                    }).catch(err => ToastsComponent.update({ message: err.message || err })),
                     placeholder: "Loading count..."
                 }}</h2>
 

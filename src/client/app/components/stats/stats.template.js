@@ -20,11 +20,11 @@ export class StatsTemplate {
                 ${{
                     any: finance.getKeyStatistics({ symbol }).then(data => {
                         const labels = Object.keys(data);
+                        const trClasses = "pv1 pr1 bb b--black-20 tr";
 
                         return hyperHTML.wire()`
-                            <table class="f7 mw8 center pa2" cellpsacing="0">
+                            <table class="f7 mw8 center pa2">
                                 <tbody>${labels.map(label => {
-                                    const trClasses = "pv1 pr1 bb b--black-20 tr";
                                     const value = data[label] && data[label].fmt;
 
                                     if (!value) {

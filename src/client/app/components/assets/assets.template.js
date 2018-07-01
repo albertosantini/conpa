@@ -15,7 +15,7 @@ export class AssetsTemplate {
             return;
         }
 
-        const headerClasses = "fw6 bb b--black-20 tl pb1 pr1 bg-white";
+        const headerClasses = "fw6 bb b--black-20 tl pb1 pr1 bg-black-10";
         const trClasses = "pv1 pr1 bb b--black-20";
         const trClassesLink = `${trClasses} pointer dim`;
         const trClassesNumber = `${trClasses} tr`;
@@ -24,7 +24,7 @@ export class AssetsTemplate {
         render`
             <h2>Assets</h2>
 
-            <table class="f7 mw8 pa2" cellpsacing="0">
+            <table class="f7 mw8 pa2">
                 <thead>
                     <th class="${headerClasses}">Symbol</th>
                     <th class="${headerClasses}">Description</th>

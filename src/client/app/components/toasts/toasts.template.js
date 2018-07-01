@@ -2,13 +2,11 @@ import { Util } from "../../util.js";
 
 export class ToastsTemplate {
     static update(render, { message = "" } = {}) {
-        if (!message) {
-            return;
-        }
-
         const toasts = ToastsTemplate.toasts;
 
-        toasts.push(message);
+        if (message) {
+            toasts.push(message);
+        }
 
         if (ToastsTemplate.isRunnning) {
             return;

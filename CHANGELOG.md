@@ -1,3 +1,9 @@
+5.3.1 / 2018-07-01
+==================
+
+* Update finance 4.4.2.
+* Handle zero ptfs in portfolio count.
+
 5.3.0 / 2018-06-28
 ==================
 

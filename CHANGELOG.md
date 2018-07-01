@@ -1,3 +1,10 @@
+5.3.2 / 2018-07-01
+==================
+
+* Check data for other portfolios.
+* Fix Ready toast.
+* Improve styles in the tables.
+
 5.3.1 / 2018-07-01
 ==================
 

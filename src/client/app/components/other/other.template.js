@@ -61,8 +61,8 @@ export class OtherTemplate {
                         hyperHTML.wire(ptf, ":tr")`<tr>
                             <td class="${trClasses}">${Util.formatNumber(ptf[metric] * 100, 1)}%</td>
                             <td class="${trClasses}">${ptf.ref}</td>
-                            <td class="${trClasses}">${ptf.assets.map((asset, index) => `<b>${asset}</b>
-                                <span>(${Util.formatNumber(ptf.weights[index] * 100, 1)}%)</span>
+                            <td class="${trClasses}">${ptf.assets.map((asset, index) => `
+                                <b>${asset}</b><span>(${Util.formatNumber(ptf.weights[index] * 100, 1)}%)</span>
                             `)}</td>
                         </tr>`)
                     }</tbody>

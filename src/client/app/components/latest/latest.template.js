@@ -37,8 +37,8 @@ export class LatestTemplate {
                                     hyperHTML.wire(ptf, ":tr")`<tr>
                                         <td class="${trClasses}">${ptf.key}</td>
                                         <td class="${trClasses}">${ptf.value.ref}</td>
-                                        <td class="${trClasses}">${ptf.value.assets.map((asset, index) => `<b>${asset}</b>
-                                            <span>(${Util.formatNumber(ptf.value.weights[index] * 100, 1)}%)</span>
+                                        <td class="${trClasses}">${ptf.value.assets.map((asset, index) => `
+                                            <b>${asset}</b><span>(${Util.formatNumber(ptf.value.weights[index] * 100, 1)}%)</span>
                                         `)}</td>
                                         <td class="${trClasses}"><b>${Util.formatNumber(ptf.value.perf * 100, 1)}%</b></td>
                                         <td class="${trClasses}">${Util.formatNumber(ptf.value.risk * 100, 1)}%</td>

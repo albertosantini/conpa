@@ -1,3 +1,9 @@
+5.3.3 / 2018-07-02
+==================
+
+* Add event target polyfill for Safari.
+* Remove space between asset symbol and its weight in the tables.
+
 5.3.2 / 2018-07-01
 ==================
 

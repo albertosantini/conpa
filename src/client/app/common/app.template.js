@@ -4,7 +4,7 @@ export class AppTemplate {
         return render`
             <header></header>
 
-            <div class="flex flex-wrap-s flex-wrap-m ma2 pa2">
+            <div class="flex flex-wrap-s flex-wrap-m mh5">
                 <div class="flex flex-wrap flex-column min-w-70">
                     <basket></basket>
                     <assets></assets>

@@ -1,3 +1,10 @@
+5.3.4 / 2018-07-03
+==================
+
+* Add header to stats table.
+* Add horizontal margin to the app.
+* Remove center style from the latest table.
+
 5.3.3 / 2018-07-02
 ==================
 

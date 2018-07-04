@@ -10,7 +10,9 @@ export class BasketTemplate {
         render`
             <h2>Basket</h2>
 
-            <input id="assetsSearch" size="32" oninput="${events}" placeholder="What assets to be added?">
+            <div class="pa2">
+                <input id="assetsSearch" class="pa2" size="32" oninput="${events}" placeholder="What assets to be added?">
+            </div>
             <table style="${Util.show(state.assetsSearch.length)}" class="f7 mw8 pa2">
                 <thead>
                     <th class="${headerClasses}">Symbol</th>

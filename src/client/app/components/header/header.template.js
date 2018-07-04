@@ -6,7 +6,7 @@ export class HeaderTemplate {
 
         /* eslint-disable indent */
         render`
-            <nav class="flex flex-row bt bb mw9 center shadow-2">
+            <nav class="flex flex-row bt bb mh5 center shadow-2">
 
                 <div class="flex flex-wrap flex-row justify-around items-center min-w-70 logo">
                     <span class="b">
@@ -15,8 +15,8 @@ export class HeaderTemplate {
                     </span>
                 </div>
 
-                <div class="flex flex-wrap flex-row items-center min-w-30>
-                    <span class="f7">
+                <div class="flex flex-wrap flex-row items-center min-w-30 f7">
+                    <div>
                         <toasts></toasts>
                         <div>${{
                             any: HeaderService.getStatus().then(({ namespace: status }) => {
@@ -26,7 +26,7 @@ export class HeaderTemplate {
                             }),
                             placeholder: "Loading..."
                         }}</div>
-                    </span>
+                    </div>
                 </div>
 
             </nav>

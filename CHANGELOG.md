@@ -1,3 +1,9 @@
+5.3.5 / 2018-07-04
+==================
+
+* Improve styles in header and stats table.
+* Update finance 4.4.3, hyperhtml 2.11.1.
+
 5.3.4 / 2018-07-03
 ==================
 

@@ -37,7 +37,7 @@
     },
     "dependencies": {
         "express": "^4.16.3",
-        "finance": "^4.4.2",
+        "finance": "^4.4.3",
         "hyperhtml": "^2.11.1",
         "limiter": "^1.1.3",
         "tachyons": "^4.10.0",

@@ -24,7 +24,7 @@ export class StatsTemplate {
                         const trClasses = "pv1 pr1 bb b--black-20 tr";
 
                         return hyperHTML.wire()`
-                            <table class="f7 mw8 center pa2">
+                            <table class="f7 mw8 pa2">
                                 <thead>
                                     <th class="${headerClasses}">Label</th>
                                     <th class="${headerClasses}">Value</th>

@@ -15,7 +15,7 @@ export class OtherTemplate {
         workway("node://finance.js").then(async({ namespace: finance }) => {
             /* eslint-disable indent */
             render`
-                <h2>Other Portfolios Year-Over-Year</h2>
+                <h2>Other Portfolios YOY</h2>
 
                 <div class="flex">
                     <div class="flex flex-wrap">${{

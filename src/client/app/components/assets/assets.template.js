@@ -32,16 +32,18 @@ export class AssetsTemplate {
                     <th class="${headerClasses}">Weight YOY</th>
                 </thead>
 
-                <tbody>${state.assets.map((asset, index) =>
-                    hyperHTML.wire()`<tr>
-                        <td id="${`asset-${asset.symbol}`}" onclick="${e => events(e, asset)}"
+                <tbody>${state.assets.map((asset, index) => {
+                    const id = `asset-${asset.symbol}`;
+
+                    return hyperHTML.wire()`<tr>
+                        <td id="${id}" onclick="${e => events(e, asset)}"
                             class="${trClassesLink}"
                             title="Click to remove the asset">${asset.symbol}</td>
                         <td class="${trClasses}">${asset.name}</td>
                         <td class="${trClassesNumber}">${Util.formatNumber(state.weightsTD[index] * 100, 1)}%</td>
                         <td class="${trClassesNumber}">${Util.formatNumber(state.weightsYOY[index] * 100, 1)}%</td>
-                    </tr>`)
-                }</tbody>
+                    </tr>`;
+                })}</tbody>
             </table>
         `;
         /* eslint-enable indent */

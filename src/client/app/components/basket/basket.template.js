@@ -10,7 +10,7 @@ export class BasketTemplate {
         render`
             <h2>Basket</h2>
 
-            <div class="pa2">
+            <div class="pa2 w5">
                 <input id="assetsSearch" class="pa2" size="32" oninput="${events}" placeholder="What assets to be added?">
             </div>
             <table style="${Util.show(state.assetsSearch.length)}" class="f7 mw8 pa2">
@@ -21,16 +21,18 @@ export class BasketTemplate {
                     <th class="${headerClasses}">Market</th>
                 </thead>
 
-                <tbody>${state.assetsSearch.map(asset =>
-                    hyperHTML.wire()`<tr>
-                        <td id="${`assetSearch-${asset.symbol}`}" onclick=${e => events(e, asset)}
+                <tbody>${state.assetsSearch.map(asset => {
+                    const id = `assetSearch-${asset.symbol}`;
+
+                    return hyperHTML.wire()`<tr>
+                        <td id="${id}" onclick=${e => events(e, asset)}
                             class="${trClassesLink}"
                             title="Click to add the asset">${asset.symbol}</td>
                         <td class="${trClasses}">${asset.name}</td>
                         <td class="${trClasses}">${asset.type}</td>
                         <td class="${trClasses}">${asset.exchDisp}</td>
-                    </tr>`)
-                }</tbody>
+                    </tr>`;
+                })}</tbody>
             </table>
         `;
         /* eslint-enable indent */

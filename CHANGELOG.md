@@ -1,3 +1,12 @@
+5.3.6 / 2018-07-05
+==================
+
+* Rename Year-Over-Year to YOY.
+* Refactor header alignment.
+* Extract id from basket and asset tables.
+* Align stats at the end of the template.
+* Add padding to the basket input.
+
 5.3.5 / 2018-07-04
 ==================
 

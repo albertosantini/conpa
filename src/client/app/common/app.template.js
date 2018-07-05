@@ -12,7 +12,7 @@ export class AppTemplate {
                     <latest></latest>
                     <other></other>
                 </div>
-                <div class="flex flex-wrap flex-column min-w-30">
+                <div class="flex flex-wrap flex-column items-end min-w-30">
                     <stats></stats>
                 </div>
             </div>

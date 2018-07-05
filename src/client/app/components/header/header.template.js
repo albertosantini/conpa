@@ -6,16 +6,14 @@ export class HeaderTemplate {
 
         /* eslint-disable indent */
         render`
-            <nav class="flex flex-row bt bb mh5 center shadow-2">
+            <nav class="flex flex-row bt bb mh5 shadow-2">
 
-                <div class="flex flex-wrap flex-row justify-around items-center min-w-70 logo">
-                    <span class="b">
-                        <a href="https://github.com/albertosantini/node-conpa">ConPA 5</a>
-                        Asset Allocation App
-                    </span>
+                <div class="flex flex-wrap flex-row justify-around items-center min-w-70 b logo">
+                    <a href="https://github.com/albertosantini/node-conpa">ConPA 5</a>
+                    <span>Asset Allocation App</span>
                 </div>
 
-                <div class="flex flex-wrap flex-row items-center min-w-30 f7">
+                <div class="flex flex-wrap flex-row justify-end items-center min-w-30 f7">
                     <div>
                         <toasts></toasts>
                         <div>${{

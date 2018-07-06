@@ -51,7 +51,7 @@ export class Util {
     }
 
     static show(condition) {
-        return condition ? "display: block;" : "display: none;";
+        return condition ? "db" : "dn";
     }
 
     static hide(condition) {

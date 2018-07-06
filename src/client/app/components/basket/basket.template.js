@@ -2,6 +2,8 @@ import { Util } from "../../util.js";
 
 export class BasketTemplate {
     static update(render, state, events) {
+        const showBasketTable = Util.show(state.assetsSearch.length);
+        const tableClasses = `${showBasketTable} f7 mw8 pa2`;
         const headerClasses = "fw6 bb b--black-20 tl pb1 pr1 bg-black-10";
         const trClasses = "pv1 pr1 bb b--black-20";
         const trClassesLink = `${trClasses} pointer dim`;
@@ -11,9 +13,11 @@ export class BasketTemplate {
             <h2>Basket</h2>
 
             <div class="pa2 w5">
-                <input id="assetsSearch" class="pa2" size="32" oninput="${events}" placeholder="What assets to be added?">
+                <input id="assetsSearch" oninput="${events}"
+                    class="pa2 w5"
+                    placeholder="What assets to be added?">
             </div>
-            <table style="${Util.show(state.assetsSearch.length)}" class="f7 mw8 pa2">
+            <table class="${tableClasses}">
                 <thead>
                     <th class="${headerClasses}">Symbol</th>
                     <th class="${headerClasses}">Description</th>
@@ -25,7 +29,7 @@ export class BasketTemplate {
                     const id = `assetSearch-${asset.symbol}`;
 
                     return hyperHTML.wire()`<tr>
-                        <td id="${id}" onclick=${e => events(e, asset)}
+                        <td id="${id}" onclick="${e => events(e, asset)}"
                             class="${trClassesLink}"
                             title="Click to add the asset">${asset.symbol}</td>
                         <td class="${trClasses}">${asset.name}</td>

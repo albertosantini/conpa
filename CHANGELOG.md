@@ -1,3 +1,9 @@
+5.3.8 / 2018-07-20
+==================
+
+* Fix date range for other portfolio query.
+* Update hyperhtml 2.11.3
+
 5.3.7 / 2018-07-06
 ==================
 

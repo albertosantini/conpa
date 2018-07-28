@@ -8,11 +8,11 @@ export class LatestTemplate {
             render`
                 <h2>Latest Portfolios ${{
                     any: finance.getPortfolioCount().then(data => {
-                        if (!data.rows.length) {
+                        if (data.rows && !data.rows.length) {
                             hyperHTML.wire()`<span>(total 0)</span>`;
                         }
 
-                        return hyperHTML.wire()`<span>(total ${data.rows[0].value})</span>`;
+                        return hyperHTML.wire()`<span>(total ${data.rows && data.rows[0].value})</span>`;
                     }).catch(err => ToastsComponent.update({ message: err.message || err })),
                     placeholder: "Loading count..."
                 }}</h2>

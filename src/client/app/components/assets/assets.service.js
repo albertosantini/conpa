@@ -51,26 +51,32 @@ export class AssetsService {
     }
 
     static calcOptimalPortfolio({ referenceDate = new Date().toString() } = {}) {
-        return workway("node://finance.js").then(async({ namespace: finance }) => {
-            const lows = [];
-            const highs = [];
+        const assets = AssetsService.assets;
 
-            const prods = AssetsService.assets.map((asset, index) => {
-                lows[index] = 0;
-                highs[index] = -1;
+        const lows = [];
+        const highs = [];
 
-                return asset.symbol;
-            });
+        const prods = assets.map((asset, index) => {
+            lows[index] = 0;
+            highs[index] = -1;
 
-            const ptfParams = {
-                prods,
-                referenceDate,
-                targetReturn: null,
-                lows,
-                highs
-            };
+            return asset.symbol;
+        });
 
-            return finance.getOptimalPortfolio(ptfParams).then(res => {
+        const ptfParams = {
+            prods,
+            referenceDate,
+            targetReturn: null,
+            lows,
+            highs
+        };
+
+        return workway("node://finance.js").then(async({ namespace: finance }) =>
+            finance.getOptimalPortfolio(ptfParams).then(res => {
+                if (assets.length !== res.optim.solution.length) {
+                    throw new Error("Don't change the basket during the optimization");
+                }
+
                 if (res.message) {
                     throw new Error(res.message);
                 }
@@ -91,8 +97,7 @@ export class AssetsService {
                 return res;
             }).catch(err => {
                 throw new Error(err);
-            });
-        });
+            }));
     }
 }
 

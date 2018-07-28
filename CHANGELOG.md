@@ -1,3 +1,10 @@
+5.3.9 / 2018-07-28
+==================
+
+* Fix portfolios count in latest portfolios.
+* Fix optimization if basket is changed.
+* Update hyperhtml 2.12.0
+
 5.3.8 / 2018-07-20
 ==================
 

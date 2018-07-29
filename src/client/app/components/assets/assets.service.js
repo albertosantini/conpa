@@ -52,17 +52,10 @@ export class AssetsService {
 
     static calcOptimalPortfolio({ referenceDate = new Date().toString() } = {}) {
         const assets = AssetsService.assets;
-
-        const lows = [];
-        const highs = [];
-
-        const prods = assets.map((asset, index) => {
-            lows[index] = 0;
-            highs[index] = -1;
-
-            return asset.symbol;
-        });
-
+        const assetsLength = assets.length;
+        const lows = Array(assetsLength).fill(0);
+        const highs = Array(assetsLength).fill(-1);
+        const prods = assets.map(asset => asset.symbol);
         const ptfParams = {
             prods,
             referenceDate,

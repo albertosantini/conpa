@@ -71,7 +71,7 @@ export class AssetsService {
                 }
 
                 if (assets.length !== res.optim.solution.length) {
-                    throw new Error("Don't change the basket during the optimization");
+                    throw new Error("Basket changed during optimization");
                 }
 
                 finance.savePortfolio({

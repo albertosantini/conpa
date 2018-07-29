@@ -66,12 +66,12 @@ export class AssetsService {
 
         return workway("node://finance.js").then(async({ namespace: finance }) =>
             finance.getOptimalPortfolio(ptfParams).then(res => {
-                if (assets.length !== res.optim.solution.length) {
-                    throw new Error("Don't change the basket during the optimization");
-                }
-
                 if (res.message) {
                     throw new Error(res.message);
+                }
+
+                if (assets.length !== res.optim.solution.length) {
+                    throw new Error("Don't change the basket during the optimization");
                 }
 
                 finance.savePortfolio({

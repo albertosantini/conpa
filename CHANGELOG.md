@@ -1,3 +1,9 @@
+5.3.10 / 2018-07-29
+==================
+
+* Check optimization result before basket coherence.
+* Refactor portfolio params.
+
 5.3.9 / 2018-07-28
 ==================
 

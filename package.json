@@ -25,7 +25,7 @@
         "dump": "cd ./db && couchbackup --url http://localhost:5984 --db conpa -o dump.txt",
         "create-empty-db": "sleep 10 && curl --noproxy localhost -X PUT http://localhost:5984/conpa",
         "import": "cd ./db && sleep 15 && cat dump.txt | couchrestore --url http://localhost:5984 --db conpa",
-        "deploy": "now deploy --public && now alias"
+        "deploy": "now -V 1 deploy --public && now alias"
     },
     "now": {
         "alias": "conpa",

@@ -21,7 +21,7 @@
         "backend": "node src/server/app.js",
         "pouchdb": "cd ./db && pouchdb-server --in-memory",
         "test": "npm run lint",
-        "lint": "eslint 'src/**/*.js'",
+        "lint": "eslint src/**/*.js",
         "dump": "cd ./db && couchbackup --url http://localhost:5984 --db conpa -o dump.txt",
         "create-empty-db": "sleep 10 && curl --noproxy localhost -X PUT http://localhost:5984/conpa",
         "import": "cd ./db && sleep 15 && cat dump.txt | couchrestore --url http://localhost:5984 --db conpa",

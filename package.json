@@ -45,7 +45,7 @@
     },
     "devDependencies": {
         "@cloudant/couchbackup": "^2.4.1",
-        "eslint": "^5.16.0",
+        "eslint": "^6.0.1",
         "npm-run-all": "^4.1.5",
         "pouchdb-server": "^4.1.0"
     }

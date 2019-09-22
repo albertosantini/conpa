@@ -1,7 +1,7 @@
 CONPA
 =====
 [![NPM version](https://badge.fury.io/js/conpa.svg)](http://badge.fury.io/js/conpa)
-[![Build Status](https://travis-ci.org/albertosantini/node-conpa.svg)](https://travis-ci.org/albertosantini/node-conpa)
+![](https://github.com/albertosantini/node-conpa/workflows/CI/badge.svg)
 
 
 ConPA is a complete stack for an asset allocation application.

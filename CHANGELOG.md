@@ -1,3 +1,9 @@
+5.3.13 / 2018-11-23
+==================
+
+* Update pouchdb-server 4.2.0 and other deps to zeroing vulnerabilities.
+* Use GitHub Actions for CI instead of Travis CI.
+
 5.3.12 / 2018-11-23
 ==================
 

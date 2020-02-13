@@ -1,11 +1,7 @@
 {
-    "name": "conpa",
-    "version": 1,
-    "alias": "conpa.now.sh",
+    "version": 2,
     "env": {
-        "NODE_ENV": "production",
         "CONPA_LIVE_URL": "@conpa_live_url",
         "CONPA_TEST_URL": "@conpa_test_url"
-    },
-    "regions": ["bru"]
+    }
 }

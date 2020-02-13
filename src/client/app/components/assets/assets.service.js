@@ -64,17 +64,29 @@ export class AssetsService {
             highs
         };
 
-        return workway("node://finance.js").then(async({ namespace: finance }) =>
-            finance.getOptimalPortfolio(ptfParams).then(res => {
-                if (res.message) {
-                    throw new Error(res.message);
-                }
+        return fetch("/api/post-optimalportfolio", {
+            method: "POST",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(ptfParams)
+        }).then(res => res.json()).then(res => {
+            if (res.message) {
+                throw new Error(res.message);
+            }
 
-                if (assets.length !== res.optim.solution.length) {
-                    throw new Error("Basket changed during optimization");
-                }
+            if (assets.length !== res.optim.solution.length) {
+                throw new Error("Basket changed during optimization");
+            }
 
-                finance.savePortfolio({
+            fetch("/api/post-saveportfolio", {
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
                     symbols: prods,
                     weights: res.optim.solution,
                     ref: referenceDate,
@@ -83,14 +95,15 @@ export class AssetsService {
                     perf: res.perf,
                     highs,
                     lows
-                }).then(() => {
-                    LatestComponent.update();
-                });
+                })
+            }).then(() => {
+                LatestComponent.update();
+            });
 
-                return res;
-            }).catch(err => {
-                throw new Error(err);
-            }));
+            return res;
+        }).catch(err => {
+            throw new Error(err);
+        });
     }
 }
 

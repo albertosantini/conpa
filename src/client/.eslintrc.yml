@@ -6,5 +6,4 @@ env:
 
 globals:
     hyperHTML: false
-    workway: false
     YAHOO: true

@@ -12,35 +12,44 @@ export class OtherTemplate {
             { name: "Ret", metric: "ret", kind: "Low Return Profile", sort: "asc" }
         ];
 
-        workway("node://finance.js").then(async({ namespace: finance }) => {
-            /* eslint-disable indent */
-            render`
-                <h2>Other Portfolios YOY</h2>
+        /* eslint-disable indent */
+        render`
+            <h2>Other Portfolios YOY</h2>
 
-                <div class="flex">
-                    <div class="flex flex-wrap">${{
-                        any: otherPtfs.map(other =>
-                            OtherTemplate.otherPortfolios(finance,
-                                other.name, other.metric, other.kind, other.sort)),
-                        placeholder: "Loading Other Portfolios..."
-                    }}</div>
-                </div>
-            `;
-            /* eslint-enable indent */
-        });
+            <div class="flex">
+                <div class="flex flex-wrap">${{
+                    any: otherPtfs.map(async other => {
+                        await Util.sleep(Math.random() * 5000); // due to rate limiting
+
+                        return OtherTemplate.otherPortfolios(
+                            other.name, other.metric, other.kind, other.sort
+                        );
+                    }),
+                    placeholder: "Loading Other Portfolios..."
+                }}</div>
+            </div>
+        `;
+        /* eslint-enable indent */
     }
 
-    static otherPortfolios(finance, name, metric, kind, sort) {
+    static otherPortfolios(name, metric, kind, sort) {
         const now = new Date();
         const oneYearAgo = (new Date(now.getTime() - (1000 * 86400 * 1 * 365)));
 
-        return finance.queryByDate({
-            metric,
-            beginRefDate: Util.getYYYYMMDDfromDate(oneYearAgo),
-            endRefDate: Util.getYYYYMMDDfromDate(now),
-            limit: 3,
-            sort
-        }).then(data => {
+        return fetch("/api/post-querybydate", {
+            method: "POST",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                metric,
+                beginRefDate: Util.getYYYYMMDDfromDate(oneYearAgo),
+                endRefDate: Util.getYYYYMMDDfromDate(now),
+                limit: 3,
+                sort
+            })
+        }).then(res => res.json()).then(data => {
             if (!data.docs) {
                 return hyperHTML.wire()`No data for ${kind}.`;
             }

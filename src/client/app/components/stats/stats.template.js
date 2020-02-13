@@ -12,48 +12,55 @@ export class StatsTemplate {
             return;
         }
 
-        workway("node://finance.js").then(async({ namespace: finance }) => {
-            /* eslint-disable indent */
-            render`
-                <h2>Last Asset Stats ${symbol}</h2>
+        /* eslint-disable indent */
+        render`
+            <h2>Last Asset Stats ${symbol}</h2>
 
-                ${{
-                    any: finance.getKeyStatistics({ symbol }).then(data => {
-                        const labels = Object.keys(data);
-                        const headerClasses = "fw6 bb b--black-20 tl pb1 pr1 bg-black-10 tr";
-                        const trClasses = "pv1 pr1 bb b--black-20 tr";
+            ${{
+                any: fetch("/api/post-keystatistics", {
+                    method: "POST",
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        symbol
+                    })
+                }).then(res => res.json()).then(data => {
+                    const labels = Object.keys(data);
+                    const headerClasses = "fw6 bb b--black-20 tl pb1 pr1 bg-black-10 tr";
+                    const trClasses = "pv1 pr1 bb b--black-20 tr";
 
-                        return hyperHTML.wire()`
-                            <table class="f7 mw8 pa2">
-                                <thead>
-                                    <th class="${headerClasses}">Label</th>
-                                    <th class="${headerClasses}">Value</th>
-                                </thead>
+                    return hyperHTML.wire()`
+                        <table class="f7 mw8 pa2">
+                            <thead>
+                                <th class="${headerClasses}">Label</th>
+                                <th class="${headerClasses}">Value</th>
+                            </thead>
 
-                                <tbody>${labels.map(label => {
-                                    const value = data[label] && data[label].fmt;
+                            <tbody>${labels.map(label => {
+                                const value = data[label] && data[label].fmt;
 
-                                    if (!value) {
-                                        return hyperHTML.wire()`<tr></tr>`;
-                                    }
+                                if (!value) {
+                                    return hyperHTML.wire()`<tr></tr>`;
+                                }
 
-                                    return hyperHTML.wire()`<tr>
-                                        <td class="${trClasses}">${label}</td>
-                                        <td class="${trClasses}">${value}</td>
-                                    </tr>`;
-                                })
-                            }</tbody>
-                            </table>
-                        `;
-                    }).catch(err => {
-                        ToastsComponent.update({ message: `${symbol} Stats ${err.message || err}` });
+                                return hyperHTML.wire()`<tr>
+                                    <td class="${trClasses}">${label}</td>
+                                    <td class="${trClasses}">${value}</td>
+                                </tr>`;
+                            })
+                        }</tbody>
+                        </table>
+                    `;
+                }).catch(err => {
+                    ToastsComponent.update({ message: `${symbol} Stats ${err.message || err}` });
 
-                        return "Fundamental data not available for the asset.";
-                    }),
-                    placeholder: "Loading..."
-                }}
-            `;
-            /* eslint-enable indent */
-        });
+                    return "Fundamental data not available for the asset.";
+                }),
+                placeholder: "Loading..."
+            }}
+        `;
+        /* eslint-enable indent */
     }
 }

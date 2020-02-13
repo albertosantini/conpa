@@ -1,1 +1,9 @@
 db/
+
+.github
+.vscode
+
+.now
+.env
+/public
+/api

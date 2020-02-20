@@ -29,7 +29,7 @@
     },
     "dependencies": {
         "finance": "^4.4.4",
-        "hyperhtml": "^2.31.6",
+        "hyperhtml": "^2.32.0",
         "tachyons": "^4.11.1"
     },
     "devDependencies": {

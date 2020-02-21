@@ -4,4 +4,3 @@ db/log.txt
 .now
 .env
 /public
-/api

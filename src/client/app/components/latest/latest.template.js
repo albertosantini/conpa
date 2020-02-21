@@ -13,7 +13,7 @@ export class LatestTemplate {
 
                     return hyperHTML.wire()`<span>(total ${data.rows && data.rows[0].value})</span>`;
                 }).catch(err => ToastsComponent.update({ message: err.message || err })),
-                placeholder: "Loading count..."
+                placeholder: hyperHTML.wire()`<font size="-2">Loading count...</font>`
             }}</h2>
 
             ${{

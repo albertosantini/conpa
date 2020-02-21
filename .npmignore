@@ -6,4 +6,3 @@ db/
 .now
 .env
 /public
-/api

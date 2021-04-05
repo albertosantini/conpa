@@ -13,9 +13,10 @@ export class BasketTemplate {
             <h2>Basket</h2>
 
             <div class="pa2 w5">
+                <label for="assetsSearch">What assets to be added?</label>
                 <input id="assetsSearch" oninput="${events}"
                     class="pa2 w5"
-                    placeholder="What assets to be added?">
+                    placeholder="asset">
             </div>
             <table class="${tableClasses}">
                 <thead>

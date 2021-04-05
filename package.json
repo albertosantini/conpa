@@ -20,7 +20,7 @@
     },
     "dependencies": {
         "@supabase/supabase-js": "^1.7.7",
-        "finance": "^4.4.4",
+        "finance": "^5.0.0",
         "hyperhtml": "^2.32.1",
         "tachyons": "^4.11.1"
     },

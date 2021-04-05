@@ -28,21 +28,11 @@ high/low risk profile portfolios and high/low return profile portfolios.
 Installation
 ============
 
-After cloning the project, install the dependencies with
-[npm](http://github.com/isaacs/npm):
+After cloning the project, install the dependencies and execute sql in `db`
+folder on Supabase instance.
 
-    npm install --ignore-scripts
-
-Start the app with the command:
-
-    npm start
-
-It starts the web backend, the PouchDB in-memory instance, creates a new empty
-database and imports the latest dump available.
-
-Eventually browse `http://localhost`.
-
-Tested locally with PouchDB 4.x and Node.js 12.x.
+- `npm run watch` to automatically build the app in `public` folder
+- `npm run dev` to locally run the web server
 
 Notes
 =====
@@ -50,15 +40,8 @@ Notes
 - Sometimes the weights of the optimal portfolio (To Date or Year To Date) are zeroes:
 this is due to a problem retrieving the historical prices.
 
-- If a local db instance is configured, the first time you land on the page the 
-rendering is very slow, because the db, behind the scenes, is creating the views.
-
-- Locally the portfolios are saved on a PouchDB in-memory instance. The configuration
-allows a live and testing system, you don't need to change the source code when
-the app is delivered to a live system.
-
-- Setting a remote db instance, you may use the environment variables:
-`CONPA_LIVE_URL` and `CONPA_TEST_URL`.
+- Setting a Supabase instance, you need to use the environment variables:
+`SUPABASE_URL` and `SUPABASE_KEY`.
 
 - Optionally, you may add a Rserve configuration (local or remote). If Rserve is
 not configured, ConPA uses a javascript implementation for the optimization.
@@ -74,7 +57,8 @@ History
 - ConPA rel. 3 (2015 - 2016): Node.js + AngularJS + Cloudant.
 - ConPA rel. 4 (2016 - 2018): Node.js + AngularJS + PouchDB / Cloudant.
 - ConPA rel. 5 (2018 - 2020): Node.js + hyperHTML / workway + PouchDB / Cloudant.
-- ConPA rel. 6 (2020 - present): Zeit Now + hyperHTML + PouchDB / Cloudant.
+- ConPA rel. 6 (2020 - 2021): Zeit Now + hyperHTML + PouchDB / Cloudant.
+- ConPA rel. 7 (2021 - present): Netlify (functions) + hyperHTML + Supabase.
 
 There are two old videos about ConPA 0:
 [welcome](http://www.youtube.com/watch?v=ia_UVHtuBTM) and

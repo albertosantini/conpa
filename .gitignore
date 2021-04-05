@@ -5,3 +5,4 @@ db/log.txt
 /public
 
 .vercel
+.netlify

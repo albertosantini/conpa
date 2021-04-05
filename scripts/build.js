@@ -1,10 +1,9 @@
 "use strict";
 
-function build() {
-    const fs = require("fs");
-    const path = require("path");
-    const shell = require("shelljs");
+const path = require("path");
+const shell = require("shelljs");
 
+function build() {
     const outputFolder = path.join(__dirname, "../public/");
     const outputNodeModulesFolder = path.join(__dirname, "../public/node_modules");
     const sourceFolder = path.join(__dirname, "../src/client/*");
@@ -12,15 +11,9 @@ function build() {
     const hyperhtmlDep = path.join(nodeModulesFolder, "hyperhtml/");
     const tachyonslDep = path.join(nodeModulesFolder, "tachyons/");
 
-
-    if (!fs.existsSync(outputFolder)) {
-        fs.mkdirSync(outputFolder);
-    }
-
-    if (!fs.existsSync(outputNodeModulesFolder)) {
-        fs.mkdirSync(outputNodeModulesFolder);
-    }
-
+    shell.rm("-rf", outputFolder);
+    shell.mkdir("-p", outputFolder);
+    shell.mkdir("-p", outputNodeModulesFolder);
     shell.cp("-R", sourceFolder, outputFolder);
     shell.cp("-R", hyperhtmlDep, `${outputNodeModulesFolder}/hyperhtml/`);
     shell.cp("-R", tachyonslDep, `${outputNodeModulesFolder}/tachyons/`);

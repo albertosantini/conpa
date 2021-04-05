@@ -22,7 +22,6 @@ CREATE OR REPLACE FUNCTION getmostusedassets()
     )
     LANGUAGE sql
 AS $$
-
     select count(*) as frequency, unnest(assets) as name
     from portfolios
     group by(name)

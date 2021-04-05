@@ -1,4 +1,4 @@
-// Migarate portfolios from couchdb (Cloudant) to PostgreSQL (Supabase)
+// Migrate portfolios from couchdb (Cloudant) to PostgreSQL (Supabase)
 
 "use strict";
 

@@ -4,5 +4,4 @@ db/log.txt
 .env
 /public
 
-.vercel
 .netlify

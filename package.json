@@ -10,33 +10,23 @@
     ],
     "author": "Alberto Santini",
     "license": "MIT",
-    "engines": {
-        "node": "12.x"
-    },
     "scripts": {
-        "start": "npm-run-all --parallel backend db",
-        "db": "npm-run-all --parallel pouchdb create-empty-db import",
-        "backend": "now dev",
-        "pouchdb": "cd ./db && pouchdb-server --in-memory",
+        "dev": "netlify dev",
         "test": "npm run lint",
         "lint": "eslint src/**/*.js scripts/*.js",
-        "dump": "cd ./db && couchbackup --url http://localhost:5984 --db conpa -o dump.txt",
-        "create-empty-db": "sleep 10 && curl --noproxy localhost -X PUT http://localhost:5984/conpa",
-        "import": "cd ./db && sleep 15 && cat dump.txt | couchrestore --url http://localhost:5984 --db conpa",
-        "deploy-setup": "now deploy",
-        "deploy": "now --prod",
-        "build": "node scripts/build.js"
+        "deploy": "netlify deploy",
+        "build": "node scripts/build.js",
+        "watch": "node scripts/watch.js"
     },
     "dependencies": {
+        "@supabase/supabase-js": "^1.7.7",
         "finance": "^4.4.4",
         "hyperhtml": "^2.32.1",
         "tachyons": "^4.11.1"
     },
     "devDependencies": {
-        "@cloudant/couchbackup": "^2.5.2",
-        "eslint": "^6.8.0",
-        "npm-run-all": "^4.1.5",
-        "pouchdb-server": "^4.2.0",
+        "chokidar": "^3.5.1",
+        "eslint": "^7.23.0",
         "shelljs": "^0.8.3"
     }
 }

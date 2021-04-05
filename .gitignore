@@ -1,6 +1,7 @@
 node_modules/
 db/log.txt
 
-.now
 .env
 /public
+
+.vercel

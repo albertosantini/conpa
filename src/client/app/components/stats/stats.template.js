@@ -17,16 +17,7 @@ export class StatsTemplate {
             <h2>Last Asset Stats ${symbol}</h2>
 
             ${{
-                any: fetch("/api/post-keystatistics", {
-                    method: "POST",
-                    headers: {
-                        Accept: "application/json",
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        symbol
-                    })
-                }).then(res => res.json()).then(data => {
+                any: fetch(`/.netlify/functions/get-keystatistics?symbol=${symbol}`).then(res => res.json()).then(data => {
                     const labels = Object.keys(data);
                     const headerClasses = "fw6 bb b--black-20 tl pb1 pr1 bg-black-10 tr";
                     const trClasses = "pv1 pr1 bb b--black-20 tr";

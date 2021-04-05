@@ -64,7 +64,7 @@ export class AssetsService {
             highs
         };
 
-        return fetch("/api/post-optimalportfolio", {
+        return fetch("/.netlify/functions/post-optimalportfolio", {
             method: "POST",
             headers: {
                 Accept: "application/json",
@@ -80,7 +80,7 @@ export class AssetsService {
                 throw new Error("Basket changed during optimization");
             }
 
-            fetch("/api/post-saveportfolio", {
+            fetch("/.netlify/functions/post-saveportfolio", {
                 method: "POST",
                 headers: {
                     Accept: "application/json",

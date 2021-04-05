@@ -1,7 +1,0 @@
-{
-    "version": 2,
-    "env": {
-        "CONPA_LIVE_URL": "@conpa_live_url",
-        "CONPA_TEST_URL": "@conpa_test_url"
-    }
-}

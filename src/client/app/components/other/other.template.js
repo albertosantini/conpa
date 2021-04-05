@@ -4,12 +4,12 @@ import { ToastsComponent } from "../toasts/toasts.component.js";
 export class OtherTemplate {
     static update(render) {
         const otherPtfs = [
-            { name: "Perf", metric: "perf", kind: "Best Performance", sort: "desc" },
-            { name: "Perf", metric: "perf", kind: "Worst Performance", sort: "asc" },
-            { name: "Risk", metric: "risk", kind: "Low Risk Profile", sort: "asc" },
-            { name: "Risk", metric: "risk", kind: "High Risk Profile", sort: "desc" },
-            { name: "Ret", metric: "ret", kind: "High Return Profile", sort: "desc" },
-            { name: "Ret", metric: "ret", kind: "Low Return Profile", sort: "asc" }
+            { name: "Perf", metric: "perf", kind: "Best Performance", ascending: false },
+            { name: "Perf", metric: "perf", kind: "Worst Performance", ascending: true },
+            { name: "Risk", metric: "risk", kind: "Low Risk Profile", ascending: true },
+            { name: "Risk", metric: "risk", kind: "High Risk Profile", ascending: false },
+            { name: "Ret", metric: "ret", kind: "High Return Profile", ascending: false },
+            { name: "Ret", metric: "ret", kind: "Low Return Profile", ascending: true }
         ];
 
         /* eslint-disable indent */
@@ -22,7 +22,7 @@ export class OtherTemplate {
                         await Util.sleep(Math.random() * 5000); // due to rate limiting
 
                         return OtherTemplate.otherPortfolios(
-                            other.name, other.metric, other.kind, other.sort
+                            other.name, other.metric, other.kind, other.ascending
                         );
                     }),
                     placeholder: "Loading Other Portfolios..."
@@ -32,25 +32,15 @@ export class OtherTemplate {
         /* eslint-enable indent */
     }
 
-    static otherPortfolios(name, metric, kind, sort) {
+    static otherPortfolios(name, metric, kind, ascending) {
         const now = new Date();
+        const endDate = Util.getYYYYMMDDfromDate(now);
         const oneYearAgo = (new Date(now.getTime() - (1000 * 86400 * 1 * 365)));
+        const startDate = Util.getYYYYMMDDfromDate(oneYearAgo);
+        const query = `metric=${metric}&ascending=${ascending}&startDate="${startDate}"&endDate="${endDate}"`;
 
-        return fetch("/api/post-querybydate", {
-            method: "POST",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                metric,
-                beginRefDate: Util.getYYYYMMDDfromDate(oneYearAgo),
-                endRefDate: Util.getYYYYMMDDfromDate(now),
-                limit: 3,
-                sort
-            })
-        }).then(res => res.json()).then(data => {
-            if (!data.docs) {
+        return fetch(`/.netlify/functions/get-otherportfolios?${query}`).then(res => res.json()).then(data => {
+            if (!data) {
                 return hyperHTML.wire()`No data for ${kind}.`;
             }
 
@@ -66,7 +56,7 @@ export class OtherTemplate {
                         <th class="${headerClasses}">${kind}</th>
                     </thead>
 
-                    <tbody>${data.docs.map(ptf =>
+                    <tbody>${data.map(ptf =>
                         hyperHTML.wire(ptf, ":tr")`<tr>
                             <td class="${trClasses}">${Util.formatNumber(ptf[metric] * 100, 1)}%</td>
                             <td class="${trClasses}">${ptf.ref}</td>

@@ -8,13 +8,10 @@ export class MostUsedTemplate {
         render`
             <h2>Most Used Assets</h2>
             ${{
-                any: fetch("/api/get-mostusedassets").then(res => res.json()).then(data => {
-                    data.splice(10);
-
-                    return hyperHTML.wire()`
-                        ${data.map(asset => `<span class="${classes}"><b>${asset[0]}</b> ${asset[1]}</span>`)}
-                    `;
-                }).catch(err => ToastsComponent.update({ message: err.message || err })),
+                any: fetch("/.netlify/functions/get-mostusedassets").then(res => res.json()).then(assets =>
+                    hyperHTML.wire()`
+                        ${assets.map(asset => `<span class="${classes}"><b>${asset.name}</b> ${asset.frequency}</span>`)}
+                    `).catch(err => ToastsComponent.update({ message: err.message || err })),
                 placeholder: "Loading..."
             }}
         `;

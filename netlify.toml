@@ -4,8 +4,3 @@
 
 [functions]
   directory = "functions"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Content-Type-Options = "no-sniff"

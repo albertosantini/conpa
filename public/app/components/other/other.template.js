@@ -32,10 +32,9 @@ export class OtherTemplate {
 
     static otherPortfolios(name, metric, kind, ascending) {
         const now = new Date();
-        const endDate = Util.getYYYYMMDDfromDate(now);
         const oneYearAgo = (new Date(now.getTime() - (1000 * 86400 * 1 * 365)));
         const startDate = Util.getYYYYMMDDfromDate(oneYearAgo);
-        const query = `metric=${metric}&ascending=${ascending}&startDate="${startDate}"&endDate="${endDate}"`;
+        const query = `metric=${metric}&ascending=${ascending}&startDate="${startDate}"`;
 
         return fetch(`/.netlify/functions/get-otherportfolios?${query}`).then(res => res.json()).then(data => {
             if (!data) {

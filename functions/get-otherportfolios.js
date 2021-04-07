@@ -8,13 +8,11 @@ exports.handler = async event => {
     const metric = event.queryStringParameters.metric;
     const ascending = event.queryStringParameters.ascending;
     const startDate = event.queryStringParameters.startDate;
-    const endDate = event.queryStringParameters.endDate;
 
     const { data, error } = await supabase
         .from("portfolios")
         .select("*")
         .gte("created_at", startDate)
-        .lte("created_at", endDate)
         .order(metric, { ascending: ascending === "true" })
         .limit(3);
 

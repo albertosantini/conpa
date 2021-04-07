@@ -1,3 +1,5 @@
+import hyperHTML from "https://cdn.skypack.dev/hyperhtml?min";
+
 import { Util } from "../../util.js";
 import { ToastsTemplate } from "./toasts.template.js";
 import { ToastsController } from "./toasts.controller.js";

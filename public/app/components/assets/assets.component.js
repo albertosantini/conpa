@@ -1,3 +1,5 @@
+import hyperHTML from "https://cdn.skypack.dev/hyperhtml?min";
+
 import { Util } from "../../util.js";
 import { AssetsTemplate } from "./assets.template.js";
 import { AssetsController } from "./assets.controller.js";

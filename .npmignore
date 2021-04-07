@@ -4,6 +4,5 @@ db/
 .vscode
 
 .env
-/public
 
 .netlify

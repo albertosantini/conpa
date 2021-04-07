@@ -1,3 +1,5 @@
+import hyperHTML from "https://cdn.skypack.dev/hyperhtml?min";
+
 import { ToastsComponent } from "../toasts/toasts.component.js";
 
 export class StatsTemplate {

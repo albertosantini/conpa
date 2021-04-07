@@ -1,3 +1,5 @@
+import hyperHTML from "https://cdn.skypack.dev/hyperhtml?min";
+
 import { Util } from "../../util.js";
 import { StatsTemplate } from "./stats.template.js";
 import { StatsController } from "./stats.controller.js";

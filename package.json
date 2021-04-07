@@ -13,20 +13,14 @@
     "scripts": {
         "dev": "netlify dev",
         "test": "npm run lint",
-        "lint": "eslint src/**/*.js scripts/*.js",
-        "deploy": "netlify deploy",
-        "build": "node scripts/build.js",
-        "watch": "node scripts/watch.js"
+        "lint": "eslint public/**/*.js",
+        "deploy": "netlify deploy"
     },
     "dependencies": {
         "@supabase/supabase-js": "^1.7.7",
-        "finance": "^5.0.0",
-        "hyperhtml": "^2.32.1",
-        "tachyons": "^4.11.1"
+        "finance": "^5.0.0"
     },
     "devDependencies": {
-        "chokidar": "^3.5.1",
-        "eslint": "^7.23.0",
-        "shelljs": "^0.8.3"
+        "eslint": "^7.23.0"
     }
 }

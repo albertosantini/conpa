@@ -1,3 +1,5 @@
+import hyperHTML from "https://cdn.skypack.dev/hyperhtml?min";
+
 import { Util } from "../../util.js";
 import { BasketTemplate } from "./basket.template.js";
 import { BasketController } from "./basket.controller.js";

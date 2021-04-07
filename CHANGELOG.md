@@ -1,3 +1,10 @@
+7.1.0 / 2021-04-07
+==================
+
+* Use Skypack CDN for browser libs.
+* Remove build and watch workflows.
+* Remove sleep in other portfolios.
+
 7.0.0 / 2021-04-05
 ==================
 

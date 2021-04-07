@@ -69,8 +69,4 @@ export class Util {
             document.head.removeChild(script);
         }, 5000);
     }
-
-    static sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
 }

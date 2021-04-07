@@ -20,13 +20,9 @@ export class OtherTemplate {
 
             <div class="flex">
                 <div class="flex flex-wrap">${{
-                    any: otherPtfs.map(async other => {
-                        await Util.sleep(Math.random() * 5000); // due to rate limiting
-
-                        return OtherTemplate.otherPortfolios(
-                            other.name, other.metric, other.kind, other.ascending
-                        );
-                    }),
+                    any: otherPtfs.map(async other => OtherTemplate.otherPortfolios(
+                        other.name, other.metric, other.kind, other.ascending
+                    )),
                     placeholder: "Loading Other Portfolios..."
                 }}</div>
             </div>

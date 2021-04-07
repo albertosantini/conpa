@@ -31,7 +31,6 @@ Installation
 After cloning the project, install the dependencies and execute sql in `db`
 folder on Supabase instance.
 
-- `npm run watch` to automatically build the app in `public` folder
 - `npm run dev` to locally run the web server
 
 Notes

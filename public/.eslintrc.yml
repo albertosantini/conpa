@@ -3,7 +3,3 @@ parserOptions:
 
 env:
     browser: true
-
-globals:
-    hyperHTML: false
-    YAHOO: true

@@ -36,8 +36,8 @@ export class LatestTemplate {
 
                             <tbody>${data.map(ptf =>
                                 hyperHTML.wire(ptf, ":tr")`<tr>
-                                    <td class="${trClasses}">${ptf.created_at}</td>
-                                    <td class="${trClasses}">${ptf.ref}</td>
+                                    <td class="${trClasses}">${ptf.created_at.replace("T", " ")}</td>
+                                    <td class="${trClasses} w-10">${ptf.ref}</td>
                                     <td class="${trClasses}">${ptf.assets.map((asset, index) => `
                                         <b>${asset}</b><span>(${Util.formatNumber(ptf.weights[index] * 100, 1)}%)</span>
                                     `)}</td>

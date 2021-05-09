@@ -39,7 +39,7 @@ export class LatestTemplate {
                                     <td class="${trClasses}">${ptf.created_at.replace("T", " ")}</td>
                                     <td class="${trClasses} w-10">${ptf.ref}</td>
                                     <td class="${trClasses}">${ptf.assets.map((asset, index) => `
-                                        <b>${asset}</b><span>(${Util.formatNumber(ptf.weights[index] * 100, 1)}%)</span>
+                                        <b class="nowrap">${asset}</b><span>(${Util.formatNumber(ptf.weights[index] * 100, 1)}%)</span>
                                     `)}</td>
                                     <td class="${trClasses}"><b>${Util.formatNumber(ptf.perf * 100, 1)}%</b></td>
                                     <td class="${trClasses}">${Util.formatNumber(ptf.risk * 100, 1)}%</td>

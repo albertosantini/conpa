@@ -50,14 +50,6 @@ export class Util {
         return parseFloat(num).toFixed(decimals);
     }
 
-    static show(condition) {
-        return condition ? "db" : "dn";
-    }
-
-    static hide(condition) {
-        return Util.show(!condition);
-    }
-
     static jsonp(src) {
         const script = document.createElement("script");
 

@@ -16,7 +16,7 @@ export class OtherTemplate {
 
         /* eslint-disable indent */
         render`
-            <h2>Other Portfolios YOY</h2>
+            <h2 class="text-2xl font-semibold my-4">Other Portfolios YOY</h2>
 
             <div class="flex">
                 <div class="flex flex-wrap">${{
@@ -41,15 +41,15 @@ export class OtherTemplate {
                 return hyperHTML.wire()`No data for ${kind}.`;
             }
 
-            const headerClasses = "fw6 bb b--black-20 tl pb1 pr1 bg-black-10 tr";
-            const trClasses = "pv1 pr1 bb b--black-20 tr";
+            const headerClasses = "text-sm text-right pr-2 pb-1 border-b-2 bg-gray-200";
+            const trClasses = "text-xs text-right pr-2 pb-1 pt-1 border-b-2";
 
             /* eslint-disable indent */
             return hyperHTML.wire()`
-                <table class="f7 mw8 pa2 w-100">
+                <table class="max-w-5xl pt-4 w-full my-2 border-separate">
                     <thead>
-                        <th class=${`${headerClasses} w-10`}>${name}</th>
-                        <th class=${`${headerClasses} w-10`}>To Date</th>
+                        <th class=${`${headerClasses} w-2/12`}>${name}</th>
+                        <th class=${`${headerClasses} w-2/12`}>To Date</th>
                         <th class="${headerClasses}">${kind}</th>
                     </thead>
 

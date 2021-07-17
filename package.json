@@ -14,13 +14,16 @@
         "dev": "netlify dev",
         "test": "npm run lint",
         "lint": "eslint public functions",
-        "deploy": "netlify deploy"
+        "deploy": "netlify deploy",
+        "css": "NODE_ENV=production tailwindcss -o ./public/app/common/tailwind.css --minify",
+        "css-watch": "NODE_ENV=production tailwindcss -o ./public/app/common/tailwind.css --minify --watch"
     },
     "dependencies": {
         "@supabase/supabase-js": "^1.7.7",
         "finance": "^5.0.0"
     },
     "devDependencies": {
-        "eslint": "^7.23.0"
+        "eslint": "^7.23.0",
+        "tailwindcss": "^2.2.4"
     }
 }

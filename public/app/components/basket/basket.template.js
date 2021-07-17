@@ -1,46 +1,47 @@
 import hyperHTML from "https://cdn.skypack.dev/hyperhtml?min";
 
-import { Util } from "../../util.js";
-
 export class BasketTemplate {
     static update(render, state, events) {
-        const showBasketTable = Util.show(state.assetsSearch.length);
-        const tableClasses = `${showBasketTable} f7 mw8 pa2`;
-        const headerClasses = "fw6 bb b--black-20 tl pb1 pr1 bg-black-10";
-        const trClasses = "pv1 pr1 bb b--black-20";
-        const trClassesLink = `${trClasses} pointer dim`;
+        const tableClasses = "text-xs max-w-5xl p-2 border-separate";
+        const headerClasses = "font-semibold border-b border-black text-left pb-1 pr-2 bg-gray-200";
+        const trClasses = "pt-1 pb-1 pr-2 border-b border-black";
+        const trClassesLink = `${trClasses} cursor-pointer hover:bg-gray-100`;
 
         /* eslint-disable indent */
         render`
-            <h2>Basket</h2>
+            <h2 class="text-2xl font-semibold my-4">Basket</h2>
 
-            <div class="pa2 w5">
+            <div class="p-2 w-64">
                 <label for="assetsSearch">What assets to be added?</label>
                 <input id="assetsSearch" oninput="${events}"
-                    class="pa2 w5"
+                    class="border-2 border-solid p-2 w-64"
                     placeholder="asset">
             </div>
-            <table class="${tableClasses}">
-                <thead>
-                    <th class="${headerClasses}">Symbol</th>
-                    <th class="${headerClasses}">Description</th>
-                    <th class="${headerClasses}">Type</th>
-                    <th class="${headerClasses}">Market</th>
-                </thead>
 
-                <tbody>${state.assetsSearch.map(asset => {
-                    const id = `assetSearch-${asset.symbol}`;
+            ${state.assetsSearch.length ? () => hyperHTML.wire()`
+                    <table class="${tableClasses}">
+                        <thead>
+                            <th class="${headerClasses}">Symbol</th>
+                            <th class="${headerClasses}">Description</th>
+                            <th class="${headerClasses}">Type</th>
+                            <th class="${headerClasses}">Market</th>
+                        </thead>
 
-                    return hyperHTML.wire()`<tr>
-                        <td id="${id}" onclick="${e => events(e, asset)}"
-                            class="${trClassesLink}"
-                            title="Click to add the asset">${asset.symbol}</td>
-                        <td class="${trClasses}">${asset.name}</td>
-                        <td class="${trClasses}">${asset.type}</td>
-                        <td class="${trClasses}">${asset.exchDisp}</td>
-                    </tr>`;
-                })}</tbody>
-            </table>
+                        <tbody>${state.assetsSearch.map(asset => {
+                            const id = `assetSearch-${asset.symbol}`;
+
+                            return hyperHTML.wire()`<tr>
+                                <td id="${id}" onclick="${e => events(e, asset)}"
+                                    class="${trClassesLink}"
+                                    title="Click to add the asset">${asset.symbol}</td>
+                                <td class="${trClasses}">${asset.name}</td>
+                                <td class="${trClasses}">${asset.type}</td>
+                                <td class="${trClasses}">${asset.exchDisp}</td>
+                            </tr>`;
+                        })}</tbody>
+                    </table>
+                ` : ""
+            }
         `;
         /* eslint-enable indent */
     }

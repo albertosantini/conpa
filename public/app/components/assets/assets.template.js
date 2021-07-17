@@ -5,28 +5,27 @@ import { Util } from "../../util.js";
 export class AssetsTemplate {
     static update(render, state, events) {
         if (!state.assets.length) {
-            /* eslint-disable indent */
             render`
-                <h2>Assets</h2>
+                <h2 class="text-2xl font-semibold my-4">Assets</h2>
 
                 <p>No assets.</p>
                 <p>Add, at least, three or more assets from Basket to get an optimal portfolio.</p>
             `;
-            /* eslint-enable indent */
 
             return;
         }
 
-        const headerClasses = "fw6 bb b--black-20 tl pb1 pr1 bg-black-10";
-        const trClasses = "pv1 pr1 bb b--black-20";
-        const trClassesLink = `${trClasses} pointer dim`;
-        const trClassesNumber = `${trClasses} tr`;
+        const headerClasses = "text-sm text-left pr-2 pb-1 border-b-2 bg-gray-200";
+        const trClasses = "text-xs pr-2 pb-1 pt-1 border-b-2";
+
+        const trClassesLink = `${trClasses} cursor-pointer hover:bg-gray-100`;
+        const trClassesNumber = `${trClasses} text-right`;
 
         /* eslint-disable indent */
         render`
-            <h2>Assets</h2>
+            <h2 class="text-2xl font-semibold my-4">Assets</h2>
 
-            <table class="f7 mw8 pa2">
+            <table class="text-xs max-w-5xl p-2 border-separate">
                 <thead>
                     <th class="${headerClasses}">Symbol</th>
                     <th class="${headerClasses}">Description</th>

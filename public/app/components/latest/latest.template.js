@@ -7,7 +7,7 @@ export class LatestTemplate {
     static update(render) {
         /* eslint-disable indent */
         render`
-            <h2>Latest Portfolios ${{
+            <h2 class="text-2xl font-semibold my-4">Latest Portfolios ${{
                 any: fetch("/.netlify/functions/get-portfoliocount").then(res => res.json()).then(data => {
                     if (!data) {
                         hyperHTML.wire()`<span>(total 0)</span>`;
@@ -20,11 +20,11 @@ export class LatestTemplate {
 
             ${{
                 any: fetch("/.netlify/functions/get-lastcreatedportfolios").then(res => res.json()).then(data => {
-                    const headerClasses = "fw6 bb b--black-20 tl pb1 pr1 bg-black-10 tr";
-                    const trClasses = "pv1 pr1 bb b--black-20 tr";
+                    const headerClasses = "text-sm text-right pr-2 pb-1 border-b-2 bg-gray-200";
+                    const trClasses = "text-xs text-right pr-2 pb-1 pt-1 border-b-2";
 
                     return hyperHTML.wire()`
-                        <table class="f7 w-100 mw8 pa2">
+                        <table class="text-xs w-full p-2 border-separate">
                             <thead>
                                 <th class="${headerClasses}">To Date</th>
                                 <th class="${headerClasses}">Reference Date</th>

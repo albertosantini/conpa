@@ -1,3 +1,8 @@
+7.2.0 / 2021-07-17
+==================
+
+* Use Tailwind as css library instead of Tachyons.
+
 7.1.3 / 2021-05-09
 ==================
 

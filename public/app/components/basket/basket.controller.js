@@ -3,8 +3,6 @@ import { StatsComponent } from "../stats/stats.component.js";
 import { AssetsComponent } from "../assets/assets.component.js";
 import { AssetsService } from "../assets/assets.service.js";
 
-window.YAHOO = { Finance: { SymbolSuggest: {} } };
-
 export class BasketController {
     constructor(render, template) {
         this.render = render;
@@ -23,19 +21,14 @@ export class BasketController {
 
     onAssetsSearchInput(e) {
         const query = e.target.value;
+        const urlLang = "lang=en-US&region=US";
+        const urlParams = `q=${query}&${urlLang}`;
 
-        window.YAHOO.Finance.SymbolSuggest.ssCallback = data => {
-            this.state.assetsSearch = data.ResultSet.Result;
+        fetch(`/.netlify/functions/get-yahoo?${urlParams}`).then(res => res.json()).then(data => {
+            this.state.assetsSearch = data.quotes;
 
             this.update();
-        };
-
-        const callbackName = "YAHOO.Finance.SymbolSuggest.ssCallback";
-        const urlLang = "region=US&lang=en-US";
-        const urlParams = `${urlLang}&query=${query}&callback=${callbackName}`;
-        const url = `https://autoc.finance.yahoo.com/autoc?${urlParams}`;
-
-        Util.jsonp(url);
+        });
     }
 
     onAssetSearchClick(e, item) {

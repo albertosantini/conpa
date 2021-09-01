@@ -34,9 +34,9 @@ export class BasketTemplate {
                                 <td id="${id}" onclick="${e => events(e, asset)}"
                                     class="${trClassesLink}"
                                     title="Click to add the asset">${asset.symbol}</td>
-                                <td class="${trClasses}">${asset.name}</td>
-                                <td class="${trClasses}">${asset.type}</td>
-                                <td class="${trClasses}">${asset.exchDisp}</td>
+                                <td class="${trClasses}">${asset.shortname}</td>
+                                <td class="${trClasses}">${asset.quoteType}</td>
+                                <td class="${trClasses}">${asset.exchange}</td>
                             </tr>`;
                         })}</tbody>
                     </table>

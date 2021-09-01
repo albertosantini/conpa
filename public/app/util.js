@@ -49,16 +49,4 @@ export class Util {
 
         return parseFloat(num).toFixed(decimals);
     }
-
-    static jsonp(src) {
-        const script = document.createElement("script");
-
-        script.type = "text/javascript";
-        script.src = src;
-
-        document.head.appendChild(script);
-        setTimeout(() => {
-            document.head.removeChild(script);
-        }, 5000);
-    }
 }

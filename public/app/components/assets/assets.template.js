@@ -40,7 +40,7 @@ export class AssetsTemplate {
                         <td id="${id}" onclick="${e => events(e, asset)}"
                             class="${trClassesLink}"
                             title="Click to remove the asset">${asset.symbol}</td>
-                        <td class="${trClasses}">${asset.name}</td>
+                        <td class="${trClasses}">${asset.shortname}</td>
                         <td class="${trClassesNumber}">${Util.formatNumber(state.weightsTD[index] * 100, 1)}%</td>
                         <td class="${trClassesNumber}">${Util.formatNumber(state.weightsYOY[index] * 100, 1)}%</td>
                     </tr>`;

@@ -1,3 +1,9 @@
+7.3.1 / 2021-09-02
+==================
+
+* Use shortname in assets list
+* Fix empty search assets
+
 7.3.0 / 2021-09-01
 ==================
 

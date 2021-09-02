@@ -18,7 +18,7 @@ export class BasketTemplate {
                     placeholder="asset">
             </div>
 
-            ${state.assetsSearch.length ? () => hyperHTML.wire()`
+            ${state.assetsSearch?.length ? () => hyperHTML.wire()`
                     <table class="${tableClasses}">
                         <thead>
                             <th class="${headerClasses}">Symbol</th>

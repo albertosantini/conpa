@@ -13,7 +13,7 @@ export class StatsController {
 
     update() {
         const lastAsset = AssetsService.getLastAsset();
-        const symbol = lastAsset && lastAsset.symbol;
+        const symbol = lastAsset?.symbol;
 
         if (this.state.lastSymbol !== symbol) {
             this.template.update(this.render, { symbol });

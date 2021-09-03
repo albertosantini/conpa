@@ -32,7 +32,7 @@ export class StatsTemplate {
                             </thead>
 
                             <tbody>${labels.map(label => {
-                                const value = data[label] && data[label].fmt;
+                                const value = data[label]?.fmt;
 
                                 if (!value) {
                                     return hyperHTML.wire()`<tr></tr>`;

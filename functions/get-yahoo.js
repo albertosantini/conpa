@@ -36,37 +36,22 @@ const EventEmitter = require("events");
 
 function request({
     url = "",
-    method = "GET",
-    headers = {},
     body = null
 } = {}) {
     return new Promise((resolve, reject) => {
         const ee = new EventEmitter();
         const reqUrl = new URL(url);
-        const host = reqUrl.hostname;
-        const port = 443;
-
-        let path = reqUrl.pathname;
-
-        if (method === "GET" && Object.keys(body).length) {
-            const params = new URLSearchParams(body);
-
-            path += `?${params.toString()}`;
-        }
-
-        headers["Content-Type"] = headers["Content-Type"] || "application/json";
-
+        const params = new URLSearchParams(body);
+        const path = params ? `${reqUrl.pathname}?${params.toString()}` : reqUrl.pathname;
         const requestOptions = {
-            host,
-            port,
+            host: reqUrl.hostname,
+            port: 443,
             path,
-            method,
-            headers
+            method: "GET",
+            headers: {}
         };
 
         function requestResponse(res) {
-            ee.emit("response");
-
             res.setEncoding("utf8");
 
             let rawData = "";

@@ -1,11 +1,10 @@
 "use strict";
 
 module.exports = {
-    purge: [
+    content: [
         "./public/index.html",
         "./public/**/*.template.js"
     ],
-    darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
             backgroundImage: {

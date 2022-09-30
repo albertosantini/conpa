@@ -1,4 +1,4 @@
-7.4.0 / 2021-09-02
+7.4.0 / 2022-09-30
 ==================
 
 * Update finance dep to fix historical prices

@@ -19,7 +19,7 @@
         "css-watch": "NODE_ENV=production tailwindcss -o ./public/app/common/tailwind.css --minify --watch"
     },
     "dependencies": {
-        "@supabase/supabase-js": "^1.7.7",
+        "@supabase/supabase-js": "^2.0.4",
         "finance": "^5.1.0"
     },
     "devDependencies": {

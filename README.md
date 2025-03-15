@@ -1,8 +1,5 @@
 CONPA
 =====
-[![NPM version](https://badge.fury.io/js/conpa.svg)](http://badge.fury.io/js/conpa)
-![](https://github.com/albertosantini/node-conpa/workflows/CI/badge.svg)
-
 
 ConPA is a complete stack for an asset allocation application.
 
@@ -57,7 +54,9 @@ History
 - ConPA rel. 4 (2016 - 2018): Node.js + AngularJS + PouchDB / Cloudant.
 - ConPA rel. 5 (2018 - 2020): Node.js + hyperHTML / workway + PouchDB / Cloudant.
 - ConPA rel. 6 (2020 - 2021): Zeit Now + hyperHTML + PouchDB / Cloudant.
-- ConPA rel. 7 (2021 - present): Netlify (functions) + hyperHTML + Supabase.
+- ConPA rel. 7 (2021 - 2023): Netlify (functions) + hyperHTML + Supabase.
+
+-- "So long and thanks for all the fish!"
 
 There are two old videos about ConPA 0:
 [welcome](http://www.youtube.com/watch?v=ia_UVHtuBTM) and
